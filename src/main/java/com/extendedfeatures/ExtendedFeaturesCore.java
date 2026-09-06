@@ -2,10 +2,10 @@ package com.extendedfeatures;
 
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.internal.ConfigClass;
+import com.extendedfeatures.client.internal.rendering.PacketManager;
 import com.extendedfeatures.init.contents.electric.Machines;
 import com.extendedfeatures.init.contents.electric.Multiblocks;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
-import com.extendedfeatures.client.internal.rendering.PacketManager;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
