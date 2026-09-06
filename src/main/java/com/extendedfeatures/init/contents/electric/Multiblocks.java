@@ -49,7 +49,7 @@ public class Multiblocks {
     public static MultiblockMachineDefinition DISASSEMBLER = null;
     public static MultiblockMachineDefinition LARGE_GAS_COLLECTOR = null;
     public static MultiblockMachineDefinition MATRIX_DATA_RELAY = null;
-    public static MultiblockMachineDefinition EXPANDABLE_ACTIVE_TRANSFORMER = null;
+    public static MultiblockMachineDefinition EXPANDED_ACTIVE_TRANSFORMER = null;
 
     static {
         ExtendedFeaturesRegister.creativeModeTab(() -> CreativeTabs.MULTIBLOCKS_TAB);
