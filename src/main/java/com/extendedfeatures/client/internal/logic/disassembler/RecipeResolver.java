@@ -35,7 +35,7 @@ public class RecipeResolver {
 
     // This piece of code will try to match any circuit tag in the recipe to convert them into Universal circuits
     // So avoids giving a bad/good circuit, instead gives all of them in just one
-    public static final Map<TagKey<Item>, ItemStack> CIRCUIT_TAG_TO_UNIVERSAL = buildCircuitTagMap();
+    public static final Map<TagKey<Item>, ItemStack> CircuitToUniversal = buildCircuitTagMap();
 
     public static Optional<Integer> getMachineTier(ItemStack stack) {
         return getMachineDefinition(stack).map(MachineDefinition::getTier);
@@ -175,7 +175,7 @@ public class RecipeResolver {
 
     public static Optional<ItemStack> findCircuitReplacement(Ingredient ingredient) {
         for (ItemStack stack : ingredient.getItems()) {
-            for (var entry : CIRCUIT_TAG_TO_UNIVERSAL.entrySet()) {
+            for (var entry : CircuitToUniversal.entrySet()) {
                 if (stack.is(entry.getKey())) {
                     return Optional.of(entry.getValue());
                 }

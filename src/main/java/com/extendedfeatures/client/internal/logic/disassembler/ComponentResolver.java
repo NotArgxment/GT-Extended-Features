@@ -1,15 +1,18 @@
 package com.extendedfeatures.client.internal.logic.disassembler;
 
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeType;
 
 import java.util.*;
 
-import static java.util.Objects.*;
+import static java.util.Objects.hash;
 
 public class ComponentResolver {
 
@@ -59,7 +62,7 @@ public class ComponentResolver {
         return new ArrayList<>(merged.values());
     }
 
-    private record StackKey(net.minecraft.world.item.Item item, net.minecraft.nbt.CompoundTag tag) {
+    private record StackKey(Item item, CompoundTag tag) {
 
         StackKey(ItemStack stack) {
             this(stack.getItem(), stack.getTag());
