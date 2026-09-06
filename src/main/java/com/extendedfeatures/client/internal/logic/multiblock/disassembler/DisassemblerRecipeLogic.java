@@ -1,4 +1,4 @@
-package com.extendedfeatures.client.internal.logic.disassembler;
+package com.extendedfeatures.client.internal.logic.multiblock.disassembler;
 
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.gregtechceu.gtceu.api.GTValues;

@@ -6,7 +6,7 @@ import com.extendedfeatures.client.EFDisplayHelper;
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.internal.ConfigClass;
-import com.extendedfeatures.client.internal.logic.machine.ExpandedAssemblyLineMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
 import com.extendedfeatures.init.contents.misc.EFShapeInfosHelper;

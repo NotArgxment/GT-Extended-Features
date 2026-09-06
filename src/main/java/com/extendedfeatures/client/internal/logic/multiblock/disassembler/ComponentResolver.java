@@ -1,4 +1,4 @@
-package com.extendedfeatures.client.internal.logic.disassembler;
+package com.extendedfeatures.client.internal.logic.multiblock.disassembler;
 
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import net.minecraft.core.RegistryAccess;

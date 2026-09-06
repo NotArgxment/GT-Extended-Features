@@ -1,4 +1,4 @@
-package com.extendedfeatures.client.internal.logic.machine;
+package com.extendedfeatures.client.internal.logic.multiblock;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
