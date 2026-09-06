@@ -22,6 +22,8 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.common.data.*;
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.ActiveTransformerMachine;
+
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
@@ -433,7 +435,7 @@ public class Multiblocks {
     static {
         if (ConfigClass.INSTANCE.Multiblocks.Disassembler || GTCEu.isDataGen()) {
             DISASSEMBLER = ExtendedFeaturesRegister
-                    .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
+                    .multiblock("universal_disassembly_machine", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.UDMTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(
@@ -540,6 +542,30 @@ public class Multiblocks {
                             .where('H', abilities(ExtendedAbilities.WIRELESS_OPTICAL_TRANSMISSOR).setExactLimit(1))
                             .where('X', blocks(GTBlocks.HIGH_POWER_CASING.get())
                                     .or(abilities(PartAbility.DATA_ACCESS).setMinGlobalLimited(1).setMaxGlobalLimited(6)))
+                            .build())
+                    .workableCasingModel(
+                            GTCEu.id("block/casings/hpca/high_power_casing"),
+                            GTCEu.id("block/multiblock/hpca"))
+                    .register();
+        }
+    }
+
+    static {
+        if (ConfigClass.INSTANCE.Multiblocks.EnergyDistributionCenter || GTCEu.isDataGen()) {
+            EXPANDED_ACTIVE_TRANSFORMER = ExtendedFeaturesRegister
+                    .multiblock("expanded_active_transformer", ActiveTransformerMachine::new)
+                    .rotationState(RotationState.NON_Y_AXIS)
+                    .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+                    .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
+                    .pattern(definition -> FactoryBlockPattern.start()
+                            .aisle("EEE", "EEE", "EEE")
+                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 8)
+                            .aisle("EEE", "E@E", "EEE")
+                            .where('@', controller(blocks(definition.get())))
+                            .where('E', blocks(GTBlocks.HIGH_POWER_CASING.get())
+                                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY, PartAbility.OUTPUT_LASER, PartAbility.SUBSTATION_OUTPUT_ENERGY)))
+                            .where('D', abilities(PartAbility.INPUT_ENERGY, PartAbility.INPUT_LASER, PartAbility.SUBSTATION_INPUT_ENERGY))
+                            .where('F', blocks(GTBlocks.SUPERCONDUCTING_COIL.get()))
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/hpca/high_power_casing"),

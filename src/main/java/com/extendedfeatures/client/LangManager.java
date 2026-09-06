@@ -22,7 +22,7 @@ public class LangManager {
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
         replace(provider, "block.extendedfeatures.industrial_greenhouse", "Industrial Greenhouse [IGh]");
         replace(provider, "block.extendedfeatures.tree_growing_chamber", "Tree Growing Chamber [TGCh]");
-        replace(provider, "block.extendedfeatures.disassembler", "Disassembler [DA]");
+        replace(provider, "block.extendedfeatures.universal_disassembly_machine", "Universal Disassembly Machine [UDA]");
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
         replace(provider, "block.extendedfeatures.large_gas_collector", "Large Gas Collector [LGC]");
         replace(provider, "block.extendedfeatures.matrix_data_relay", "Matrix Data Relay [MDR]");
@@ -56,7 +56,7 @@ public class LangManager {
         replace(provider, "config.extendedfeatures.option.RockProcessingPlant", "§7Rock Processing Plant");
         replace(provider, "config.extendedfeatures.option.IndustrialGreenhouse", "§7Industrial Greenhouse");
         replace(provider, "config.extendedfeatures.option.TreeGrowingChamber", "§7Tree Growing Chamber");
-        replace(provider, "config.extendedfeatures.option.Disassembler", "§7Disassembler");
+        replace(provider, "config.extendedfeatures.option.Disassembler", "§7Universal Disassembly Machine");
         replace(provider, "config.extendedfeatures.option.LargeGasCollector", "§7Large Gas Collector");
         replace(provider, "config.extendedfeatures.option.MatrixDataRelay", "§7Matrix Data Relay");
         replace(provider, "config.extendedfeatures.option.DataHatchLinkingBehavior", "§7Restrict Data Hatch Linking Behavior");
@@ -128,10 +128,10 @@ public class LangManager {
         provider.add("extendedfeatures.greenhouse.tooltip.0", "§fAllows an easier way to obtain natural resources");
         provider.add("extendedfeatures.greenhouse_modes", "§fAvailable Recipes: Tree Growing, Crops Planting");
 
-        provider.add("extendedfeatures.disassembler.tooltip.0", "§7Available Machine Modes: §fComponent Disassembly, Machine Disassembly");
-        provider.add("extendedfeatures.disassembler.tooltip.1", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
-        provider.add("extendedfeatures.disassembler.tooltip.2", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
-        provider.add("extendedfeatures.disassembler.tooltip.3", "§7Allows §bone §7energy hatch");
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.0", "§7Available Machine Modes: §fComponent Disassembly, Machine Disassembly");
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.2", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.3", "§7Allows §bone §7energy hatch");
 
         provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Data Bank");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Hatches, both Normal and §6Expanded Data Hatches");
