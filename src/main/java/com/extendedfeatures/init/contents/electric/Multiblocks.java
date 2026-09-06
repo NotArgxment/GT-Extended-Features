@@ -7,7 +7,6 @@ import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.internal.ConfigClass;
 import com.extendedfeatures.client.internal.logic.machine.ExpandedAssemblyLineMachine;
-import com.extendedfeatures.client.internal.logic.multiblock.DisassemblerMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
 import com.extendedfeatures.init.contents.misc.EFShapeInfosHelper;
@@ -434,7 +433,7 @@ public class Multiblocks {
     static {
         if (ConfigClass.INSTANCE.Multiblocks.Disassembler || GTCEu.isDataGen()) {
             DISASSEMBLER = ExtendedFeaturesRegister
-                    .multiblock("disassembler", DisassemblerMachine::new)
+                    .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.UDMTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(
