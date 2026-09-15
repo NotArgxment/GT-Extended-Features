@@ -100,15 +100,6 @@ public class ConfigClass {
         })
         public boolean LargeGasCollector = true;
 
-        /* Deprecated - Will be removed on update 3.1.0
-        @Configurable
-        @Configurable.Comment({
-                "Whether the Expanded Data Bank is Enabled",
-                "Default = True"
-        })
-        public boolean ExpandedDatabank = true;
-         */
-
         @Configurable
         @Configurable.Comment({
                 "Whether the Matrix Data Relay is Enabled",
@@ -122,7 +113,7 @@ public class ConfigClass {
                 "Whether the Energy Distribution Center is Enabled",
                 "Default = True"
         })
-        public boolean EnergyDistributionCenter = true;
+        public boolean PowerTransformer = true;
 
     }
 
