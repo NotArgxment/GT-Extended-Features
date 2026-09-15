@@ -27,7 +27,7 @@ public class EFShapeInfosHelper {
     public static List<MultiblockShapeInfo> RobustAlloyMaterializer(MultiblockMachineDefinition definition) {
         List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         var builder = MultiblockShapeInfo.builder()
-                .aisle("   1@2   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   456   ")
+                .aisle("   B@2   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   456   ")
                 .aisle(" BBBCBBB ", " XXTTTXX ", " XXTTTXX ", " EETFTEE ", " XXTTTXX ", " XXTTTXX ", " BBBCBBB ")
                 .aisle(" BBBCBBB ", " XETTTEX ", " XETTTEX ", " EETFTEE ", " XETTTEX ", " XETTTEX ", " BEECEEB ")
                 .aisle("CBBCCCBBC", "XTTTTTTTX", "XTTTTTTTX", "ETTTFTTTE", "XTTTTTTTX", "XTTTTTTTX", "CBECCCEBC")
@@ -37,7 +37,6 @@ public class EFShapeInfosHelper {
                 .aisle(" BBBCBBB ", " XXTTTXX ", " XXTTTXX ", " EETFTEE ", " XXTTTXX ", " XXTTTXX ", " BBBCBBB ")
                 .aisle("   3CC   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   CCC   ")
                 .where('@', definition, Direction.NORTH)
-                .where('1', PARALLEL_HATCH[IV], Direction.NORTH)
                 .where('2', MAINTENANCE_HATCH, Direction.NORTH)
                 .where('3', ENERGY_INPUT_HATCH[LV], Direction.SOUTH)
                 .where('4', ITEM_IMPORT_BUS[LV], Direction.NORTH)
