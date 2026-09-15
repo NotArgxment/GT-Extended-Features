@@ -1,6 +1,7 @@
 package com.extendedfeatures.init.contents.electric;
 
 import com.extendedfeatures.CreativeTabs;
+import com.extendedfeatures.client.EFMachineRegistry;
 import com.extendedfeatures.client.internal.ConfigClass;
 import com.extendedfeatures.client.internal.logic.machine.ConfigurableCleanroomHatch;
 import com.extendedfeatures.client.internal.logic.machine.ExpandedDataAccessHatch;
@@ -27,12 +28,9 @@ public class Machines {
         ExtendedFeaturesRegister.creativeModeTab(() -> CreativeTabs.MACHINES_TAB);
     }
 
-    // Configurable Cleaning Maintenance Hatch
-    public static MachineDefinition CONFIGURABLE_CLEANING_MAINTENANCE_HATCH = null;
-
     static {
         if (ConfigClass.INSTANCE.RegularMachines.CCMHatch || GTCEu.isDataGen()) {
-            CONFIGURABLE_CLEANING_MAINTENANCE_HATCH = ExtendedFeaturesRegister
+            EFMachineRegistry.CONFIGURABLE_CLEANING_MAINTENANCE_HATCH = ExtendedFeaturesRegister
                     .machine("configurable_cleaning_maintenance_hatch", (holder) -> new ConfigurableCleanroomHatch(holder, CleanroomType.CLEANROOM))
                     .tooltips(
                             Component.translatable("gtceu.part_sharing.disabled"),
@@ -55,14 +53,9 @@ public class Machines {
         }
     }
 
-    // Expanded Data Access Hatches
-    public static MachineDefinition ZPM_DATA_ACCESS_HATCH = null;
-    public static MachineDefinition UV_DATA_ACCESS_HATCH = null;
-    public static MachineDefinition UHV_DATA_ACCESS_HATCH = null;
-
     static {
         if (ConfigClass.INSTANCE.RegularMachines.ExpandedDataAccessHatches || GTCEu.isDataGen()) {
-            ZPM_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
+            EFMachineRegistry.ZPM_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
                     .machine("zpm_data_access_hatch", (holder) -> new ExpandedDataAccessHatch(holder, ZPM, false) {
                                 @Override
                                 protected int getInventorySize() {
@@ -80,7 +73,7 @@ public class Machines {
                     .overlayTieredHullModel("expanded_data_access_hatch")
                     .register();
 
-            UV_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
+            EFMachineRegistry.UV_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
                     .machine("uv_data_access_hatch",
                             (holder) -> new ExpandedDataAccessHatch(holder, UV, false) {
                                 @Override
@@ -99,7 +92,7 @@ public class Machines {
                     .overlayTieredHullModel("expanded_data_access_hatch")
                     .register();
 
-            UHV_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
+            EFMachineRegistry.UHV_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
                     .machine("uhv_data_access_hatch",
                             (holder) -> new ExpandedDataAccessHatch(holder, UHV, false) {
                                 @Override
@@ -120,19 +113,9 @@ public class Machines {
         }
     }
 
-    // Wireless Optical T/R Hatches
-    public static MachineDefinition LUV_WIRELESS_TRANSMISSOR = null;
-    public static MachineDefinition LUV_WIRELESS_RECEPTOR = null;
-
-    public static MachineDefinition ZPM_WIRELESS_TRANSMISSOR = null;
-    public static MachineDefinition ZPM_WIRELESS_RECEPTOR = null;
-
-    public static MachineDefinition UV_WIRELESS_TRANSMISSOR = null;
-    public static MachineDefinition UV_WIRELESS_RECEPTOR = null;
-
     static {
         if (ConfigClass.INSTANCE.RegularMachines.WirelessOpticalHatches || GTCEu.isDataGen()) {
-            LUV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
+            EFMachineRegistry.LUV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
                     ("luv_wireless_data_transmissor", "LuV Wireless Optical Transmissor", LuV, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 16),
@@ -141,14 +124,14 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            LUV_WIRELESS_RECEPTOR = WirelessHatchRegister
+            EFMachineRegistry.LUV_WIRELESS_RECEPTOR = WirelessHatchRegister
                     ("luv_wireless_data_receptor", "LuV Wireless Optical Receptor", LuV, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            ZPM_WIRELESS_TRANSMISSOR = WirelessHatchRegister
+            EFMachineRegistry.ZPM_WIRELESS_TRANSMISSOR = WirelessHatchRegister
                     ("zpm_wireless_data_transmissor", "ZPM Wireless Optical Transmissor", ZPM, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 32),
@@ -157,14 +140,14 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            ZPM_WIRELESS_RECEPTOR = WirelessHatchRegister
+            EFMachineRegistry.ZPM_WIRELESS_RECEPTOR = WirelessHatchRegister
                     ("zpm_wireless_data_receptor", "ZPM Wireless Optical Receptor", ZPM, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            UV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
+            EFMachineRegistry.UV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
                     ("uv_wireless_data_transmissor", "UV Wireless Optical Transmissor", UV, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 64),
@@ -173,7 +156,7 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            UV_WIRELESS_RECEPTOR = WirelessHatchRegister
+            EFMachineRegistry.UV_WIRELESS_RECEPTOR = WirelessHatchRegister
                     ("uv_wireless_data_receptor", "UV Wireless Optical Receptor", UV, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),

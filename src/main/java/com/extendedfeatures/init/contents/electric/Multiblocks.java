@@ -14,7 +14,6 @@ import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
-import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
@@ -35,21 +34,9 @@ import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterialItems.MATERIAL_ITEMS;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.Ash;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
+import static com.extendedfeatures.client.EFMachineRegistry.*;
 
 public class Multiblocks {
-
-    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = null;
-    public static MultiblockMachineDefinition LARGE_CRACKING_MACHINE = null;
-    public static MultiblockMachineDefinition SYNTHESIS_VESSEL = null;
-    public static MultiblockMachineDefinition LARGE_PYROLYSE_OVEN = null;
-    public static MultiblockMachineDefinition EXPANDED_ASSEMBLY_LINE = null;
-    public static MultiblockMachineDefinition ROCK_PROCESSING_PLANT = null;
-    public static MultiblockMachineDefinition INDUSTRIAL_GREENHOUSE = null;
-    public static MultiblockMachineDefinition TREE_GROWING_CHAMBER = null;
-    public static MultiblockMachineDefinition DISASSEMBLER = null;
-    public static MultiblockMachineDefinition LARGE_GAS_COLLECTOR = null;
-    public static MultiblockMachineDefinition MATRIX_DATA_RELAY = null;
-    public static MultiblockMachineDefinition EXPANDED_ACTIVE_TRANSFORMER = null;
 
     static {
         ExtendedFeaturesRegister.creativeModeTab(() -> CreativeTabs.MULTIBLOCKS_TAB);
@@ -85,8 +72,7 @@ public class Multiblocks {
                                     .or(Predicates.abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_FLUIDS))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1).setPreviewCount(1)
                                             .or(Predicates.abilities(PartAbility.INPUT_LASER).setMaxGlobalLimited(1).setPreviewCount(1)))
-                                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
+                                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .where('B', Predicates.blocks(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING.get()))
                             .where('F', Predicates.blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
                             .where('E', Predicates.blocks(GCYMBlocks.HEAT_VENT.get()))
@@ -551,19 +537,20 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.EnergyDistributionCenter || GTCEu.isDataGen()) {
-            EXPANDED_ACTIVE_TRANSFORMER = ExtendedFeaturesRegister
+        if (ConfigClass.INSTANCE.Multiblocks.PowerTransformer || GTCEu.isDataGen()) {
+            POWER_TRANSFORMER = ExtendedFeaturesRegister
                     .multiblock("expanded_active_transformer", ActiveTransformerMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
-                    .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("EEE", "EEE", "EEE")
-                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 8)
+                    // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
+                    .pattern(definition -> FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.UP, RelativeDirection.BACK)
                             .aisle("EEE", "E@E", "EEE")
+                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 3)
+                            .aisle("EEE", "EEE", "EEE")
                             .where('@', controller(blocks(definition.get())))
-                            .where('E', blocks(GTBlocks.HIGH_POWER_CASING.get())
-                                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY, PartAbility.OUTPUT_LASER, PartAbility.SUBSTATION_OUTPUT_ENERGY)))
+                            .where('E', blocks(GTBlocks.HIGH_POWER_CASING.get()).setMinGlobalLimited(8)
+                                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY, PartAbility.OUTPUT_LASER, PartAbility.SUBSTATION_OUTPUT_ENERGY).setMinGlobalLimited(1)))
                             .where('D', abilities(PartAbility.INPUT_ENERGY, PartAbility.INPUT_LASER, PartAbility.SUBSTATION_INPUT_ENERGY))
                             .where('F', blocks(GTBlocks.SUPERCONDUCTING_COIL.get()))
                             .build())
