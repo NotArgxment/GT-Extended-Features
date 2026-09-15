@@ -166,7 +166,10 @@ public class Machines {
         }
     }
 
-    private static MachineBuilder<MachineDefinition, ?> WirelessHatchRegister(String name, String displayName, int tier, boolean isTransmissor) {
+    private static MachineBuilder<MachineDefinition, ?> WirelessHatchRegister(String name,
+                                                                              String displayName,
+                                                                              int tier,
+                                                                              boolean isTransmissor) {
         return ExtendedFeaturesRegister
                 .machine(name, (holder) -> new WirelessOpticalHatch(holder, isTransmissor, tier))
                 .langValue(displayName)
