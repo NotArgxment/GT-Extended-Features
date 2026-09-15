@@ -2,8 +2,8 @@ package com.extendedfeatures;
 
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.machines.GCYMMachines;
-import com.gregtechceu.gtceu.common.data.machines.GTResearchMachines;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -23,7 +23,7 @@ public class CreativeTabs {
                             )
                             .title(ExtendedFeaturesRegister.addLang(
                                     "itemGroup", ExtendedFeaturesCore.id("creative_tab_1"),
-                                    "GTEF: Multiblocks")
+                                    "GT:EF Multiblocks")
                             )
                             .icon(GCYMMachines.LARGE_ASSEMBLER::asStack)
                             .build()
@@ -40,8 +40,8 @@ public class CreativeTabs {
                             )
                             .title(ExtendedFeaturesRegister.addLang(
                                     "itemGroup", ExtendedFeaturesCore.id("creative_tab_2"),
-                                    "GTEF: Universal Circuits"))
-                            .icon(GTItems.CRYSTAL_ASSEMBLY_LuV::asStack)
+                                    "GT:EF Universal Circuits"))
+                            .icon(GTItems.WETWARE_MAINFRAME_UHV::asStack)
                             .build()
             )
             .register();
@@ -55,9 +55,9 @@ public class CreativeTabs {
                                             ExtendedFeaturesRegister))
                             .title(ExtendedFeaturesRegister.addLang(
                                     "itemGroup", ExtendedFeaturesCore.id("creative_tab_3"),
-                                    "GTEF: Machines")
+                                    "GT:EF Machines")
                             )
-                            .icon(GTResearchMachines.ADVANCED_DATA_ACCESS_HATCH::asStack)
+                            .icon(GTMachines.CLEANING_MAINTENANCE_HATCH::asStack)
                             .build()
             )
             .register();
