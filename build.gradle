@@ -187,6 +187,9 @@
         // KubeJS Aisle Tool
         modRuntimeOnly("curse.maven:kubejs-aisle-tool-1236291:7543948")
 
+        // GT Terminals
+        modRuntimeOnly("curse.maven:gtceu-terminals-1423461:8315854")
+
     }
 
     mixin {
