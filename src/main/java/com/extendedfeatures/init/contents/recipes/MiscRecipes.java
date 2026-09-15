@@ -1,5 +1,6 @@
 package com.extendedfeatures.init.contents.recipes;
 
+import com.extendedfeatures.client.EFMachineRegistry;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -15,11 +16,10 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Consumer;
 
 import static com.extendedfeatures.client.EFRecipeTypes.*;
-import static com.extendedfeatures.init.contents.electric.Multiblocks.LARGE_GAS_COLLECTOR;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
 import static com.gregtechceu.gtceu.common.data.GTItems.*;
-import static com.gregtechceu.gtceu.common.data.GTMachines.GAS_COLLECTOR;
+import static com.gregtechceu.gtceu.common.data.GTMachines.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
@@ -117,19 +117,19 @@ public class MiscRecipes {
         // ===================
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder("lgc_controller")
-                .inputItems(GAS_COLLECTOR[IV], 4)
-                .inputItems(CustomTags.IV_CIRCUITS, 8)
-                .inputItems(gear, TungstenSteel, 4)
-                .inputItems(plateDouble, TungstenSteel, 2)
-                .inputItems(ELECTRIC_MOTOR_IV, 16)
-                .inputItems(ELECTRIC_PUMP_IV, 16)
-                .inputFluids(SolderingAlloy.getFluid(576))
-                .inputFluids(Lubricant.getFluid(576))
-                .outputItems(LARGE_GAS_COLLECTOR)
+                .inputItems(GAS_COLLECTOR[IV], 1)
+                .inputItems(CustomTags.IV_CIRCUITS, 4)
+                .inputItems(gear, TungstenSteel, 8)
+                .inputItems(plateDouble, TungstenSteel, 4)
+                .inputItems(ELECTRIC_MOTOR_IV, 8)
+                .inputItems(ELECTRIC_PUMP_IV, 8)
+                .inputFluids(SolderingAlloy.getFluid(1152))
+                .inputFluids(Lubricant.getFluid(1152))
+                .outputItems(EFMachineRegistry.LARGE_GAS_COLLECTOR)
                 .scannerResearch(b -> b
                         .researchStack(GAS_COLLECTOR[IV].asStack())
                         .duration(500)
-                        .EUt(GTValues.VA[IV])
+                        .EUt(GTValues.VA[GTValues.IV])
                 )
                 .duration(750)
                 .EUt(GTValues.VA[GTValues.LuV])
@@ -162,27 +162,29 @@ public class MiscRecipes {
         // ===================
         // Universal Circuits
         // ===================
-        buildCircuitRecipe(provider, "ulv_universal_circuit", CustomTags.ULV_CIRCUITS, GTValues.ULV);
-        buildCircuitRecipe(provider, "lv_universal_circuit", CustomTags.LV_CIRCUITS, GTValues.LV);
-        buildCircuitRecipe(provider, "mv_universal_circuit", CustomTags.MV_CIRCUITS, GTValues.MV);
-        buildCircuitRecipe(provider, "hv_universal_circuit", CustomTags.HV_CIRCUITS, GTValues.HV);
-        buildCircuitRecipe(provider, "ev_universal_circuit", CustomTags.EV_CIRCUITS, GTValues.EV);
-        buildCircuitRecipe(provider, "iv_universal_circuit", CustomTags.IV_CIRCUITS, GTValues.IV);
-        buildCircuitRecipe(provider, "luv_universal_circuit", CustomTags.LuV_CIRCUITS, GTValues.LuV);
-        buildCircuitRecipe(provider, "zpm_universal_circuit", CustomTags.ZPM_CIRCUITS, GTValues.ZPM);
-        buildCircuitRecipe(provider, "uv_universal_circuit", CustomTags.UV_CIRCUITS, GTValues.UV);
+        circuitRecipe(provider, "ulv_universal_circuit", CustomTags.ULV_CIRCUITS, GTValues.ULV);
+        circuitRecipe(provider, "lv_universal_circuit", CustomTags.LV_CIRCUITS, GTValues.LV);
+        circuitRecipe(provider, "mv_universal_circuit", CustomTags.MV_CIRCUITS, GTValues.MV);
+        circuitRecipe(provider, "hv_universal_circuit", CustomTags.HV_CIRCUITS, GTValues.HV);
+        circuitRecipe(provider, "ev_universal_circuit", CustomTags.EV_CIRCUITS, GTValues.EV);
+        circuitRecipe(provider, "iv_universal_circuit", CustomTags.IV_CIRCUITS, GTValues.IV);
+        circuitRecipe(provider, "luv_universal_circuit", CustomTags.LuV_CIRCUITS, GTValues.LuV);
+        circuitRecipe(provider, "zpm_universal_circuit", CustomTags.ZPM_CIRCUITS, GTValues.ZPM);
+        circuitRecipe(provider, "uv_universal_circuit", CustomTags.UV_CIRCUITS, GTValues.UV);
 
         if (GTCEuAPI.isHighTier()) {
-            buildCircuitRecipe(provider, "uhv_universal_circuit", CustomTags.UHV_CIRCUITS, GTValues.UHV);
-            buildCircuitRecipe(provider, "uev_universal_circuit", CustomTags.UEV_CIRCUITS, GTValues.UEV);
-            buildCircuitRecipe(provider, "uiv_universal_circuit", CustomTags.UIV_CIRCUITS, GTValues.UIV);
-            buildCircuitRecipe(provider, "uxv_universal_circuit", CustomTags.UXV_CIRCUITS, GTValues.UXV);
-            buildCircuitRecipe(provider, "opv_universal_circuit", CustomTags.OpV_CIRCUITS, GTValues.OpV);
+            circuitRecipe(provider, "uhv_universal_circuit", CustomTags.UHV_CIRCUITS, GTValues.UHV);
+            circuitRecipe(provider, "uev_universal_circuit", CustomTags.UEV_CIRCUITS, GTValues.UEV);
+            circuitRecipe(provider, "uiv_universal_circuit", CustomTags.UIV_CIRCUITS, GTValues.UIV);
+            circuitRecipe(provider, "uxv_universal_circuit", CustomTags.UXV_CIRCUITS, GTValues.UXV);
+            circuitRecipe(provider, "opv_universal_circuit", CustomTags.OpV_CIRCUITS, GTValues.OpV);
         }
     }
 
-    private static void buildCircuitRecipe(Consumer<FinishedRecipe> provider, String recipeName,
-                                           TagKey<Item> inputTag, int tier) {
+    private static void circuitRecipe(Consumer<FinishedRecipe> provider,
+                                      String recipeName,
+                                      TagKey<Item> inputTag,
+                                      int tier) {
         ItemEntry<Item> output = UniversalCircuits.UNIVERSAL_CIRCUITS[tier];
         if (output == null) return;
 
@@ -191,7 +193,7 @@ public class MiscRecipes {
                 .outputItems(output)
                 .duration(10)
                 .EUt(GTValues.VA[GTValues.LV])
-                .circuitMeta(10)
+                .circuitMeta(16)
                 .save(provider);
     }
 
