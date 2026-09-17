@@ -22,7 +22,7 @@
   "block.extendedfeatures.zpm_data_access_hatch": "Elite Data Access Hatch",
   "block.extendedfeatures.zpm_wireless_data_receptor": "ZPM Wireless Optical Receptor",
   "block.extendedfeatures.zpm_wireless_data_transmissor": "ZPM Wireless Optical Transmissor",
-  "config.extendedfeatures.option.AdvancedConservatory": "§7Advanced Conservatory",
+  "config.extendedfeatures.option.ArtificialConservatory": "§7Artificial Conservatory",
   "config.extendedfeatures.option.CCMHatch": "§7Configurable Cleaning Maintenance Hatch",
   "config.extendedfeatures.option.DataHatchLinkingBehavior": "§7Restrict Data Hatch Linking Behavior",
   "config.extendedfeatures.option.Disassembler": "§7Universal Disassembly Machine",

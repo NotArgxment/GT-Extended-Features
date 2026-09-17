@@ -26,6 +26,7 @@ public class LangManager {
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
         replace(provider, "block.extendedfeatures.large_gas_collector", "Large Gas Collector [LGC]");
         replace(provider, "block.extendedfeatures.matrix_data_relay", "Matrix Data Relay [MDR]");
+        replace(provider, "block.extendedfeatures.power_transformer", "Power Transformer [PwTf]");
 
         // Expanded Data Hatches
         replace(provider, "block.extendedfeatures.zpm_data_access_hatch", "Elite Data Access Hatch");
@@ -59,6 +60,7 @@ public class LangManager {
         replace(provider, "config.extendedfeatures.option.Disassembler", "§7Universal Disassembly Machine");
         replace(provider, "config.extendedfeatures.option.LargeGasCollector", "§7Large Gas Collector");
         replace(provider, "config.extendedfeatures.option.MatrixDataRelay", "§7Matrix Data Relay");
+        replace(provider, "config.extendedfeatures.option.PowerTransformer", "§7Power Transformer");
         replace(provider, "config.extendedfeatures.option.DataHatchLinkingBehavior", "§7Restrict Data Hatch Linking Behavior");
 
         replace(provider, "config.extendedfeatures.option.ExpandedDataAccessHatches", "§7Expanded Data Access Hatches");
