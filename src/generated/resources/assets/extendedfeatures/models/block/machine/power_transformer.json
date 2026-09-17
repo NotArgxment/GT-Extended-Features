@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/block",
   "loader": "gtceu:machine",
-  "machine": "extendedfeatures:expanded_active_transformer",
+  "machine": "extendedfeatures:power_transformer",
   "texture_overrides": {
     "all": "gtceu:block/casings/hpca/high_power_casing"
   },

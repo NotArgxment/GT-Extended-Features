@@ -20,8 +20,8 @@ public class LangManager {
         replace(provider, "block.extendedfeatures.large_pyrolysis_oven", "Large Pyrolysis Oven [LPO]");
         replace(provider, "block.extendedfeatures.expanded_assembly_line", "Expanded Assembly Line [EAL]");
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
-        replace(provider, "block.extendedfeatures.industrial_greenhouse", "Industrial Greenhouse [IGh]");
-        replace(provider, "block.extendedfeatures.tree_growing_chamber", "Tree Growing Chamber [TGCh]");
+        replace(provider, "block.extendedfeatures.industrial_greenhouse", "Industrial Greenhouse [IdGh]");
+        replace(provider, "block.extendedfeatures.articial_conservatory", "Artificial Conservatory [ArCt]");
         replace(provider, "block.extendedfeatures.universal_disassembly_machine", "Universal Disassembly Machine [UDA]");
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
         replace(provider, "block.extendedfeatures.large_gas_collector", "Large Gas Collector [LGC]");
@@ -44,8 +44,8 @@ public class LangManager {
         // Configuration lang
         replace(provider, "config.screen.extendedfeatures", "§7Mod Configuration §c(Restart to Apply Changes)");
 
-        replace(provider, "config.extendedfeatures.option.Multiblocks", "§7Multiblocks");
-        replace(provider, "config.extendedfeatures.option.RegularMachines", "§7Machines");
+        replace(provider, "config.extendedfeatures.option.MultiblocksConfig", "§7Multiblocks");
+        replace(provider, "config.extendedfeatures.option.MachinesConfig", "§7Machines");
         replace(provider, "config.extendedfeatures.option.UniversalCircuits", "§7Universal Circuits");
 
         replace(provider, "config.extendedfeatures.option.RobustAlloyMaterializer", "§7Robust Alloy Materializer");
@@ -55,7 +55,7 @@ public class LangManager {
         replace(provider, "config.extendedfeatures.option.ExpandedAssemblyLine", "§7Expanded Assembly Line");
         replace(provider, "config.extendedfeatures.option.RockProcessingPlant", "§7Rock Processing Plant");
         replace(provider, "config.extendedfeatures.option.IndustrialGreenhouse", "§7Industrial Greenhouse");
-        replace(provider, "config.extendedfeatures.option.TreeGrowingChamber", "§7Tree Growing Chamber");
+        replace(provider, "config.extendedfeatures.option.ArtificialConservatory", "§7Artificial Conservatory");
         replace(provider, "config.extendedfeatures.option.Disassembler", "§7Universal Disassembly Machine");
         replace(provider, "config.extendedfeatures.option.LargeGasCollector", "§7Large Gas Collector");
         replace(provider, "config.extendedfeatures.option.MatrixDataRelay", "§7Matrix Data Relay");

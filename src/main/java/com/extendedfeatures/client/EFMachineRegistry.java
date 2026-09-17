@@ -1,14 +1,19 @@
 package com.extendedfeatures.client;
 
+import com.extendedfeatures.client.internal.ConfigClass;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 
 public class EFMachineRegistry {
 
+    // Shortened call to config
+    public static final ConfigClass.MultiblocksToggles MultiblocksConfig = ConfigClass.INSTANCE.MultiblocksConfig;
+    public static final ConfigClass.MachineToggles MachineConfig = ConfigClass.INSTANCE.MachinesConfig;
+
     // =========================
     //        Multiblocks
     // =========================
-
+    
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = null;
     public static MultiblockMachineDefinition LARGE_CRACKING_MACHINE = null;
     public static MultiblockMachineDefinition SYNTHESIS_VESSEL = null;
@@ -16,7 +21,7 @@ public class EFMachineRegistry {
     public static MultiblockMachineDefinition EXPANDED_ASSEMBLY_LINE = null;
     public static MultiblockMachineDefinition ROCK_PROCESSING_PLANT = null;
     public static MultiblockMachineDefinition INDUSTRIAL_GREENHOUSE = null;
-    public static MultiblockMachineDefinition TREE_GROWING_CHAMBER = null;
+    public static MultiblockMachineDefinition ARTIFICIAL_CONSERVATORY = null;
     public static MultiblockMachineDefinition DISASSEMBLER = null;
     public static MultiblockMachineDefinition LARGE_GAS_COLLECTOR = null;
     public static MultiblockMachineDefinition MATRIX_DATA_RELAY = null;
@@ -37,10 +42,8 @@ public class EFMachineRegistry {
     // Wireless Optical T/R Hatches
     public static MachineDefinition LUV_WIRELESS_TRANSMISSOR = null;
     public static MachineDefinition LUV_WIRELESS_RECEPTOR = null;
-
     public static MachineDefinition ZPM_WIRELESS_TRANSMISSOR = null;
     public static MachineDefinition ZPM_WIRELESS_RECEPTOR = null;
-
     public static MachineDefinition UV_WIRELESS_TRANSMISSOR = null;
     public static MachineDefinition UV_WIRELESS_RECEPTOR = null;
 

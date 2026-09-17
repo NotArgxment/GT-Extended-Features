@@ -19,12 +19,12 @@ public class ConfigClass {
     }
 
     @Configurable
-    @Configurable.Comment("Configuration Toggles for Multiblocks")
-    public MultiblocksToggles Multiblocks = new MultiblocksToggles();
+    @Configurable.Comment("Configuration Toggles for MultiblocksConfig")
+    public MultiblocksToggles MultiblocksConfig = new MultiblocksToggles();
 
     @Configurable
     @Configurable.Comment("Configuration Toggles for Normal Machines")
-    public MachineToggles RegularMachines = new MachineToggles();
+    public MachineToggles MachinesConfig = new MachineToggles();
 
     public static class MultiblocksToggles {
 
@@ -80,10 +80,10 @@ public class ConfigClass {
 
         @Configurable
         @Configurable.Comment({
-                "Whether the Tree Growing Chamber is Enabled",
+                "Whether the Artifical Conservatory (IV Greenhouse) is Enabled",
                 "Default = True"
         })
-        public boolean TreeGrowingChamber = true;
+        public boolean ArtificialConservatory = true;
 
         @Configurable
         @Configurable.Comment({

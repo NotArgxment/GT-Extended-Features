@@ -5,7 +5,6 @@ import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.EFDisplayHelper;
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
-import com.extendedfeatures.client.internal.ConfigClass;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
@@ -27,14 +26,15 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
+import static com.extendedfeatures.client.EFMachineRegistry.*;
 import static com.extendedfeatures.client.EFRecipeTypes.*;
+
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dustTiny;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterialItems.MATERIAL_ITEMS;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.Ash;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
-import static com.extendedfeatures.client.EFMachineRegistry.*;
 
 public class Multiblocks {
 
@@ -43,7 +43,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.RobustAlloyMaterializer || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.RobustAlloyMaterializer || GTCEu.isDataGen()) {
             ROBUST_ALLOY_MATERIALIZER = ExtendedFeaturesRegister
                     .multiblock("robust_alloy_materializer", CoilWorkableMultiblockLaser::new)
                     .tooltips(EFTooltipHelper.RAMTooltip)
@@ -92,7 +92,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.LargeCrackingMachine || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.LargeCrackingMachine || GTCEu.isDataGen()) {
             LARGE_CRACKING_MACHINE = ExtendedFeaturesRegister
                     .multiblock("large_cracking_machine", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LCMTooltip)
@@ -141,7 +141,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.SynthesisVessel || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.SynthesisVessel || GTCEu.isDataGen()) {
             SYNTHESIS_VESSEL = ExtendedFeaturesRegister
                     .multiblock("synthesis_vessel", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.SVTooltip)
@@ -182,7 +182,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.LargePyrolysisOven || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.LargePyrolysisOven || GTCEu.isDataGen()) {
             LARGE_PYROLYSE_OVEN = ExtendedFeaturesRegister
                     .multiblock("large_pyrolysis_oven", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LPOTooltip)
@@ -233,7 +233,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.ExpandedAssemblyLine || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.ExpandedAssemblyLine || GTCEu.isDataGen()) {
             EXPANDED_ASSEMBLY_LINE = ExtendedFeaturesRegister
                     .multiblock("expanded_assembly_line", ExpandedAssemblyLineMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
@@ -270,7 +270,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.RockProcessingPlant || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.RockProcessingPlant || GTCEu.isDataGen()) {
             ROCK_PROCESSING_PLANT = ExtendedFeaturesRegister
                     .multiblock("rock_processing_plant", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.RPPTooltip)
@@ -323,7 +323,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.IndustrialGreenhouse || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.IndustrialGreenhouse || GTCEu.isDataGen()) {
             INDUSTRIAL_GREENHOUSE = ExtendedFeaturesRegister
                     .multiblock("industrial_greenhouse", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.IGTooltip)
@@ -362,15 +362,15 @@ public class Multiblocks {
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
-                            GTCEu.id("block/multiblock/fusion_reactor"))
+                            GTCEu.id("block/multiblock/gcym/large_cutter"))
                     .register();
         }
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.TreeGrowingChamber || GTCEu.isDataGen()) {
-            TREE_GROWING_CHAMBER = ExtendedFeaturesRegister
-                    .multiblock("tree_growing_chamber", WorkableElectricMultiblockMachine::new)
+        if (MultiblocksConfig.ArtificialConservatory || GTCEu.isDataGen()) {
+            ARTIFICIAL_CONSERVATORY = ExtendedFeaturesRegister
+                    .multiblock("advanced_conservatory", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .tooltips(EFTooltipHelper.TGCTooltip)
                     .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
@@ -413,13 +413,13 @@ public class Multiblocks {
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            GTCEu.id("block/multiblock/fusion_reactor"))
+                            GTCEu.id("block/multiblock/gcym/large_cutter"))
                     .register();
         }
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.Disassembler || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.Disassembler || GTCEu.isDataGen()) {
             DISASSEMBLER = ExtendedFeaturesRegister
                     .multiblock("universal_disassembly_machine", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.UDMTooltip)
@@ -455,7 +455,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.LargeGasCollector || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.LargeGasCollector || GTCEu.isDataGen()) {
             LARGE_GAS_COLLECTOR = ExtendedFeaturesRegister
                     .multiblock("large_gas_collector", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LGCTooltip)
@@ -494,7 +494,7 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.MatrixDataRelay || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.MatrixDataRelay || GTCEu.isDataGen()) {
             MATRIX_DATA_RELAY = ExtendedFeaturesRegister
                     .multiblock("matrix_data_relay", MatrixDataRelayMachine::new)
                     .tooltips(EFTooltipHelper.MDRTooltip)
@@ -537,16 +537,16 @@ public class Multiblocks {
     }
 
     static {
-        if (ConfigClass.INSTANCE.Multiblocks.PowerTransformer || GTCEu.isDataGen()) {
+        if (MultiblocksConfig.PowerTransformer || GTCEu.isDataGen()) {
             POWER_TRANSFORMER = ExtendedFeaturesRegister
-                    .multiblock("expanded_active_transformer", ActiveTransformerMachine::new)
+                    .multiblock("power_transformer", ActiveTransformerMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
                     .pattern(definition -> FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.UP, RelativeDirection.BACK)
                             .aisle("EEE", "E@E", "EEE")
-                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 3)
+                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 4)
                             .aisle("EEE", "EEE", "EEE")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.HIGH_POWER_CASING.get()).setMinGlobalLimited(8)

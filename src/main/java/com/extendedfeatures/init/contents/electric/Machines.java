@@ -1,7 +1,6 @@
 package com.extendedfeatures.init.contents.electric;
 
 import com.extendedfeatures.CreativeTabs;
-import com.extendedfeatures.client.internal.ConfigClass;
 import com.extendedfeatures.client.internal.logic.machine.ConfigurableCleanroomHatch;
 import com.extendedfeatures.client.internal.logic.machine.ExpandedDataAccessHatch;
 import com.extendedfeatures.client.internal.logic.machine.WirelessOpticalHatch;
@@ -17,10 +16,11 @@ import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
+import static com.extendedfeatures.client.EFMachineRegistry.*;
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
+
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_FORMED;
-import static com.extendedfeatures.client.EFMachineRegistry.*;
 
 public class Machines {
 
@@ -29,7 +29,7 @@ public class Machines {
     }
 
     static {
-        if (ConfigClass.INSTANCE.RegularMachines.CCMHatch || GTCEu.isDataGen()) {
+        if (MachineConfig.CCMHatch || GTCEu.isDataGen()) {
             CONFIGURABLE_CLEANING_MAINTENANCE_HATCH = ExtendedFeaturesRegister
                     .machine("configurable_cleaning_maintenance_hatch", (holder) -> new ConfigurableCleanroomHatch(holder, CleanroomType.CLEANROOM))
                     .tooltips(
@@ -54,7 +54,7 @@ public class Machines {
     }
 
     static {
-        if (ConfigClass.INSTANCE.RegularMachines.ExpandedDataAccessHatches || GTCEu.isDataGen()) {
+        if (MachineConfig.ExpandedDataAccessHatches || GTCEu.isDataGen()) {
             ZPM_DATA_ACCESS_HATCH = ExtendedFeaturesRegister
                     .machine("zpm_data_access_hatch", (holder) -> new ExpandedDataAccessHatch(holder, ZPM, false) {
                                 @Override
@@ -114,7 +114,7 @@ public class Machines {
     }
 
     static {
-        if (ConfigClass.INSTANCE.RegularMachines.WirelessOpticalHatches || GTCEu.isDataGen()) {
+        if (MachineConfig.WirelessOpticalHatches || GTCEu.isDataGen()) {
             LUV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
                     ("luv_wireless_data_transmissor", "LuV Wireless Optical Transmissor", LuV, true)
                     .tooltips(
