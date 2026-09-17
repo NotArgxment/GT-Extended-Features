@@ -1,7 +1,6 @@
 package com.extendedfeatures.init.contents.electric;
 
 import com.extendedfeatures.CreativeTabs;
-import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.EFDisplayHelper;
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
@@ -224,7 +223,7 @@ public class Multiblocks {
                     })
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            ExtendedFeaturesCore.id("block/multiblock/pyrolyse_oven")
+                            GTCEu.id("block/multiblock/")
                     )
                     .additionalDisplay(EFDisplayHelper.PyroDisplay)
                     .shapeInfos(EFShapeInfosHelper::LargePyrolysisOven)
