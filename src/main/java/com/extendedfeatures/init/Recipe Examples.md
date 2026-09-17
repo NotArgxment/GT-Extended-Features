@@ -75,7 +75,7 @@
 ### Casing Disassembly
 ```javascript
     ServerEvents.recipes(event => {
-        event.recipes.extendedfeatures.casing_disassembly('recipe_name')
+        event.recipes.extendedfeatures.components_disassembly('recipe_name')
             .itemInputs()
             .itemOutputs()
             .outputFluids()
