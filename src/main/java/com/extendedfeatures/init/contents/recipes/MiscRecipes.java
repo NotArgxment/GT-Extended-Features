@@ -4,7 +4,9 @@ import com.extendedfeatures.client.EFMachineRegistry;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.TagKey;
@@ -116,24 +118,17 @@ public class MiscRecipes {
         // Large Gas Collector
         // ===================
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder("lgc_controller")
-                .inputItems(GAS_COLLECTOR[IV], 1)
-                .inputItems(CustomTags.IV_CIRCUITS, 4)
-                .inputItems(gear, TungstenSteel, 8)
-                .inputItems(plateDouble, TungstenSteel, 4)
-                .inputItems(ELECTRIC_MOTOR_IV, 8)
-                .inputItems(ELECTRIC_PUMP_IV, 8)
-                .inputFluids(SolderingAlloy.getFluid(1152))
-                .inputFluids(Lubricant.getFluid(1152))
-                .outputItems(EFMachineRegistry.LARGE_GAS_COLLECTOR)
-                .scannerResearch(b -> b
-                        .researchStack(GAS_COLLECTOR[IV].asStack())
-                        .duration(500)
-                        .EUt(GTValues.VA[GTValues.IV])
-                )
-                .duration(750)
-                .EUt(GTValues.VA[GTValues.LuV])
-                .save(provider);
+        VanillaRecipeHelper.addShapedRecipe(provider, false,
+                "large_gas_collector", EFMachineRegistry.LARGE_GAS_COLLECTOR.asStack(),
+                "MCM", 
+                "BXB",
+                "PKP",
+                    'C', CustomTags.IV_CIRCUITS,
+                    'P', new MaterialEntry(plate, CobaltBrass),
+                    'B', ELECTRIC_MOTOR_IV.asStack(),
+                    'M', ELECTRIC_PUMP_IV.asStack(),
+                    'X', GAS_COLLECTOR[IV].asStack(),
+                    'K', new MaterialEntry(cableGtSingle, Platinum));
 
         AIR_COLLECTOR.recipeBuilder("air")
                 .circuitMeta(1)
