@@ -114,18 +114,20 @@ public class LangManager {
         provider.add("extendedfeatures.separator_line_small", "§8--------------------------------------");
         provider.add("extendedfeatures.separator_line_large", "§8---------------------------------------------------------");
         provider.add("extendedfeatures.empty_space", " ");
-        provider.add("extendedfeatures.modifier.perfect_oc", "§fHas §6Perfect Overclock");
+        provider.add("extendedfeatures.modifier.poc", " §6Perfect Overclock");
+        provider.add("extendedfeatures.modifier.batch", " §eBatching");
+        provider.add("extendedfeatures.modifier.per_subt", " §9Perfect Subtick Parallels");
+        provider.add("extendedfeatures.modifier.imp_subt", " §sImperfect Subtick Parallels");
+        provider.add("extendedfeatures.limited_energy", "§7Only allows §bone §7energy hatch");
 
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.0", "§fAn Assembly Line that takes advantage of §9AE2 Stocking Hatches");
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.1", "§fAllows only §bone §fenergy hatch");
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.2", "§fRuns §c16 §frecipes in parallel");
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.3", "§fOnly works using Wireless Optical Receptors");
+        provider.add("extendedfeatures.expanded_assembly_line.tooltip.0", "§7An Assembly Line that takes advantage of §dAE2 Stocking Hatches");
+        provider.add("extendedfeatures.expanded_assembly_line.tooltip.1", "§7Only works using Wireless Optical Receptors");
 
         provider.add("extendedfeatures.synthesis_vessel.tooltip.0", "§7A §3Chemical Plant §7variant based on the Large Chemical Reactor");
         provider.add("extendedfeatures.synthesis_vessel.tooltip.1", "§7Performs entire chemical processing lines in 1 cycle");
 
         provider.add("extendedfeatures.rock_processing_plant.tooltip.0", "§7All in One Processing Machine!");
-        provider.add("extendedfeatures.rock_processing_plant.tooltip.1", "§7Turns the rocks you normally get from the rock breaker into their direct processed outputs");
+        provider.add("extendedfeatures.rock_processing_plant.tooltip.1", "§7Turns the rocks you normally get from the rock breaker into more useful resources");
 
         provider.add("extendedfeatures.greenhouse.tooltip.0", "§fAllows an easier way to obtain natural resources");
         provider.add("extendedfeatures.greenhouse_modes", "§fAvailable Recipes: Tree Growing, Crops Planting");
@@ -133,7 +135,6 @@ public class LangManager {
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.0", "§7Available Machine Modes: §fComponent Disassembly, Machine Disassembly");
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.2", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
-        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.3", "§7Allows §bone §7energy hatch");
 
         provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Data Bank");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Hatches, both Normal and §6Expanded Data Hatches");
