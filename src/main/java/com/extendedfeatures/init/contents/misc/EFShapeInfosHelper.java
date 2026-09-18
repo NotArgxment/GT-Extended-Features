@@ -27,7 +27,7 @@ public class EFShapeInfosHelper {
     public static List<MultiblockShapeInfo> RobustAlloyMaterializer(MultiblockMachineDefinition definition) {
         List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         var builder = MultiblockShapeInfo.builder()
-                .aisle("   B@2   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   456   ")
+                .aisle("   C@2   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   456   ")
                 .aisle(" BBBCBBB ", " XXTTTXX ", " XXTTTXX ", " EETFTEE ", " XXTTTXX ", " XXTTTXX ", " BBBCBBB ")
                 .aisle(" BBBCBBB ", " XETTTEX ", " XETTTEX ", " EETFTEE ", " XETTTEX ", " XETTTEX ", " BEECEEB ")
                 .aisle("CBBCCCBBC", "XTTTTTTTX", "XTTTTTTTX", "ETTTFTTTE", "XTTTTTTTX", "XTTTTTTTX", "CBECCCEBC")
