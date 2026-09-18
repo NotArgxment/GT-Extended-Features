@@ -10,9 +10,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -20,9 +18,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_paused",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_paused_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -30,9 +26,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -40,9 +34,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -50,9 +42,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -60,9 +50,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_paused",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_paused_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -70,9 +58,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     },
@@ -80,9 +66,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/pyrolyse_oven/overlay_front_active_emissive"
+          "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel"
         }
       }
     }
