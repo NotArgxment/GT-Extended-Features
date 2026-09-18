@@ -1,8 +1,8 @@
 package com.extendedfeatures;
 
 import com.extendedfeatures.client.EFRecipeTypes;
-import com.extendedfeatures.client.internal.ConfigClass;
-import com.extendedfeatures.client.internal.rendering.PacketManager;
+import com.extendedfeatures.client.core.EFModulesConfig;
+import com.extendedfeatures.client.core.visual.PacketManager;
 import com.extendedfeatures.init.contents.electric.Machines;
 import com.extendedfeatures.init.contents.electric.Multiblocks;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
@@ -35,7 +35,7 @@ public class ExtendedFeaturesCore {
 
     public ExtendedFeaturesCore() {
 
-        ConfigClass.init();
+        EFModulesConfig.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 

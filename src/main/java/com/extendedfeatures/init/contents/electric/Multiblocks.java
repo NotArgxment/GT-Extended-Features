@@ -4,8 +4,8 @@ import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.client.EFDisplayHelper;
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
-import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.core.logic.multiblock.ExpandedAssemblyLineMachine;
+import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
 import com.extendedfeatures.init.contents.misc.EFShapeInfosHelper;
 import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
@@ -371,7 +371,7 @@ public class Multiblocks {
             ARTIFICIAL_CONSERVATORY = ExtendedFeaturesRegister
                     .multiblock("advanced_conservatory", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .tooltips(EFTooltipHelper.TGCTooltip)
+                    .tooltips(EFTooltipHelper.ArCtTooltip)
                     .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
                     .recipeTypes(
                             EFRecipeTypes.GREENHOUSE_CROPS,

@@ -1,8 +1,8 @@
 package com.extendedfeatures.client.jade.provider;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.client.internal.logic.machine.WirelessOpticalHatch;
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.core.logic.machine.WirelessOpticalHatch;
+import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
