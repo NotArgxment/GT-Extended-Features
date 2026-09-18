@@ -6,11 +6,13 @@ import com.extendedfeatures.client.core.visual.network.LinksTogglePacket;
 import com.extendedfeatures.client.core.visual.network.RangeTogglePacket;
 import com.extendedfeatures.client.core.visual.PacketManager;
 
+import lombok.Getter;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import org.jetbrains.annotations.NotNull;
 
 public class WirelessHatchScreen extends Screen {
 
@@ -24,6 +26,7 @@ public class WirelessHatchScreen extends Screen {
     private static final int COLOR_TITLE = 0xFFAEEFFF;
     private static final int COLOR_COOLDOWN = 0xFFFF8A80;
 
+    @Getter
     private final BlockPos hatchPos;
 
     private boolean showRangeEnabled = false;
@@ -41,10 +44,6 @@ public class WirelessHatchScreen extends Screen {
     public WirelessHatchScreen(BlockPos hatchPos) {
         super(Component.translatable("gui.extendedfeatures.wireless_hatch.title"));
         this.hatchPos = hatchPos;
-    }
-
-    public BlockPos getHatchPos() {
-        return hatchPos;
     }
 
     @Override
@@ -76,13 +75,9 @@ public class WirelessHatchScreen extends Screen {
                 .build();
         addRenderableWidget(scanButton);
 
-        // Ask the server for the authoritative toggle/cooldown state — the local defaults
-        // above are just a neutral placeholder until this reply lands (usually same tick).
         PacketManager.CHANNEL.sendToServer(new RequestState(hatchPos));
     }
 
-    // Invoked by WirelessHatchScreenHandler whenever a WirelessStateSyncPacket for this
-    // hatch arrives (initial open, and after every toggle/scan action).
     public void applyStateSync(boolean showRange, boolean showLinks, long cooldownEndGameTime, boolean hasScannedOnce) {
         this.showRangeEnabled = showRange;
         this.showLinksEnabled = showLinks;
@@ -116,8 +111,6 @@ public class WirelessHatchScreen extends Screen {
         if (linksButton != null) linksButton.setMessage(linksLabel());
     }
 
-    // Greys out "Show current links" (and sets an explanatory tooltip) until the first
-    // scan has run — enabling it earlier would just show an empty loop with nothing linked.
     private void refreshLinksButtonState() {
         if (linksButton == null) return;
         boolean canToggle = hasScannedOnce || showLinksEnabled;
@@ -153,15 +146,13 @@ public class WirelessHatchScreen extends Screen {
     @Override
     public void tick() {
         super.tick();
-        // The cooldown is purely a client-side display concern; keep the scan button's
-        // enabled state in sync every tick using the client's own level game time.
         if (scanButton != null) {
             scanButton.active = !isOnCooldown();
         }
     }
 
     @Override
-    public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+    public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         renderBackground(graphics);
 
         graphics.fill(panelLeft, panelTop, panelLeft + PANEL_WIDTH, panelTop + PANEL_HEIGHT, COLOR_BG);
