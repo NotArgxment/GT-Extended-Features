@@ -1,6 +1,7 @@
 {
-  "parent": "gtceu:block/overlay/front",
+  "parent": "gtceu:block/overlay/2_layer/front_emissive",
   "textures": {
-    "overlay": "extendedfeatures:block/machine/part/configurable_cleaning_maintenance_hatch"
+    "overlay": "extendedfeatures:block/machine/part/configurable_cleaning_maintenance_hatch",
+    "overlay_emissive": "extendedfeatures:block/machine/part/configurable_cleaning_maintenance_hatch_emissive"
   }
 }
