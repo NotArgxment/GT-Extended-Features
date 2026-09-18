@@ -1,14 +1,14 @@
 package com.extendedfeatures.client;
 
-import com.extendedfeatures.client.internal.ConfigClass;
+import com.extendedfeatures.client.core.EFModulesConfig;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 
 public class EFMachineRegistry {
 
     // Shortened call to config
-    public static final ConfigClass.MultiblocksToggles MultiblocksConfig = ConfigClass.INSTANCE.MultiblocksConfig;
-    public static final ConfigClass.MachineToggles MachineConfig = ConfigClass.INSTANCE.MachinesConfig;
+    public static final EFModulesConfig.MultiblocksToggles MultiblocksConfig = EFModulesConfig.INSTANCE.MultiblocksConfig;
+    public static final EFModulesConfig.MachineToggles MachineConfig = EFModulesConfig.INSTANCE.MachinesConfig;
 
     // =========================
     //        Multiblocks
