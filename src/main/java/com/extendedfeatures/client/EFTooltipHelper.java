@@ -15,32 +15,31 @@ public class EFTooltipHelper {
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line_small"),
+            Component.translatable("extendedfeatures.modifier.imp_subt")
     );
 
     public static final List<Component> LCMTooltip = List.of(
             Component.translatable("gtceu.machine.cracker.tooltip"),
-            Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("gtceu.machine.cracker.tooltip.1")
+            Component.translatable("gtceu.machine.cracker.tooltip.1"),
+            Component.translatable("extendedfeatures.separator_line_small")
     );
 
     public static final List<Component> SVTooltip = List.of(
             Component.translatable("extendedfeatures.synthesis_vessel.tooltip.0"),
-            Component.translatable("extendedfeatures.synthesis_vessel.tooltip.1"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.synthesis_vessel.tooltip.1")
     );
 
     public static final List<Component> LPOTooltip = List.of(
             Component.translatable("gtceu.machine.pyrolyse_oven.tooltip"),
-            Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("gtceu.machine.pyrolyse_oven.tooltip.1")
+            Component.translatable("gtceu.machine.pyrolyse_oven.tooltip.1"),
+            Component.translatable("extendedfeatures.separator_line_small")
     );
 
     public static final List<Component> EALTooltip = List.of(
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.0"),
             Component.translatable("extendedfeatures.separator_line_small"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.1"),
-            Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.2"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.3")
     );
 
@@ -50,25 +49,26 @@ public class EFTooltipHelper {
 
     public static final List<Component> IGTooltip = List.of(
             Component.translatable("extendedfeatures.greenhouse.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("extendedfeatures.industrial_greenhouse.tooltip.1")
+            Component.translatable("extendedfeatures.separator_line_small")
     );
 
-    public static final List<Component> TGCTooltip = List.of(
-            Component.translatable("extendedfeatures.greenhouse.tooltip.0")
+    public static final List<Component> ArCtTooltip = List.of(
+            Component.translatable("extendedfeatures.greenhouse.tooltip.0"),
+            Component.translatable("extendedfeatures.separator_line_small")
     );
 
     public static final List<Component> UDMTooltip = List.of(
-            Component.translatable("extendedfeatures.disassembler.tooltip.0"),
+            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.0"),
             Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("extendedfeatures.disassembler.tooltip.1"),
-            Component.translatable("extendedfeatures.disassembler.tooltip.2"),
+            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.1"),
+            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.2"),
             Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("extendedfeatures.disassembler.tooltip.3")
+            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.3")
     );
 
     public static final List<Component> LGCTooltip = List.of(
-            Component.translatable("extendedfeatures.large_air_collector.tooltip.0")
+            Component.translatable("extendedfeatures.large_air_collector.tooltip.0"),
+            Component.translatable("extendedfeatures.separator_line_small")
     );
 
     public static final List<Component> MDRTooltip = List.of(
