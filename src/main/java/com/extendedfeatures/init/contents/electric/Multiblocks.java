@@ -545,12 +545,11 @@ public class Multiblocks {
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
                     .pattern(definition -> FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.UP, RelativeDirection.BACK)
                             .aisle("EEE", "E@E", "EEE")
-                            .aisle("DDD", "DFD", "DDD").setRepeatable(1, 4)
+                            .aisle("EEE", "EFE", "EEE").setRepeatable(1, 4)
                             .aisle("EEE", "EEE", "EEE")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.HIGH_POWER_CASING.get()).setMinGlobalLimited(8)
-                                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY, PartAbility.OUTPUT_LASER, PartAbility.SUBSTATION_OUTPUT_ENERGY).setMinGlobalLimited(1)))
-                            .where('D', abilities(PartAbility.INPUT_ENERGY, PartAbility.INPUT_LASER, PartAbility.SUBSTATION_INPUT_ENERGY))
+                                    .or(ActiveTransformerMachine.getHatchPredicates()))
                             .where('F', blocks(GTBlocks.SUPERCONDUCTING_COIL.get()))
                             .build())
                     .workableCasingModel(
