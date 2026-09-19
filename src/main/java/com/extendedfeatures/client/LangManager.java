@@ -111,32 +111,37 @@ public class LangManager {
 
     private static void Tooltips(RegistrateLangProvider provider) {
 
-        provider.add("extendedfeatures.separator_line_small", "§8--------------------------------------");
-        provider.add("extendedfeatures.separator_line_large", "§8---------------------------------------------------------");
-        provider.add("extendedfeatures.empty_space", " ");
-        provider.add("extendedfeatures.modifier.poc", " §6Perfect Overclock");
-        provider.add("extendedfeatures.modifier.batch", " §eBatching");
-        provider.add("extendedfeatures.modifier.per_subt", " §9Perfect Subtick Parallels");
-        provider.add("extendedfeatures.modifier.imp_subt", " §sImperfect Subtick Parallels");
-        provider.add("extendedfeatures.limited_energy", "§7Only allows §bone §7energy hatch");
+        // This basically prints the "-" 32 times in the same line, using color format 8 (dark gray)
+        provider.add("extendedfeatures.separator_line", "§8" + "-".repeat(32));
+
+        // Dynamic string, pass 2 arguments when making tooltips to display them in %s place
+        provider.add("extendedfeatures.machine_modes", "§7Available Machine Modes: §f%s, §f%s");
+
+        provider.add("extendedfeatures.recipe_modifier.single", "§fHas §r%s");
+        provider.add("extendedfeatures.recipe_modifier.double", "§fHas §r%s §fand §r%s");
+        provider.add("extendedfeatures.recipe_modifier.triple", "§fHas §r%s §f, §r%s §fand §r%s");
+        provider.add("extendedfeatures.limited_energy", "§fAllows §bone §fenergy hatch");
 
         provider.add("extendedfeatures.expanded_assembly_line.tooltip.0", "§7An Assembly Line that takes advantage of §dAE2 Stocking Hatches");
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.1", "§7Only works using Wireless Optical Receptors");
+        provider.add("extendedfeatures.expanded_assembly_line.tooltip.1", "§fPerforms recipes without §cOrdered Inputs");
+        provider.add("extendedfeatures.expanded_assembly_line.tooltip.2", "§fRequires §9Wireless Optical Receptors");
 
         provider.add("extendedfeatures.synthesis_vessel.tooltip.0", "§7A §3Chemical Plant §7variant based on the Large Chemical Reactor");
         provider.add("extendedfeatures.synthesis_vessel.tooltip.1", "§7Performs entire chemical processing lines in 1 cycle");
 
         provider.add("extendedfeatures.rock_processing_plant.tooltip.0", "§7All in One Processing Machine!");
-        provider.add("extendedfeatures.rock_processing_plant.tooltip.1", "§7Turns the rocks you normally get from the rock breaker into more useful resources");
+        provider.add("extendedfeatures.rock_processing_plant.tooltip.1", "§7Turns the rocks you normally get from the rock breaker into useful resources");
 
-        provider.add("extendedfeatures.greenhouse.tooltip.0", "§fAllows an easier way to obtain natural resources");
-        provider.add("extendedfeatures.greenhouse_modes", "§fAvailable Recipes: Tree Growing, Crops Planting");
+        provider.add("extendedfeatures.greenhouse.tooltip.0", "§7Allows an easier way to obtain natural resources");
 
-        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.0", "§7Available Machine Modes: §fComponent Disassembly, Machine Disassembly");
-        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
-        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.2", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
+        provider.add("extendedfeatures.large_air_collector.tooltip.0", "§fA Bigger Gas Collector");
 
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Data Bank");
+        provider.add("extendedfeatures.configurable_cleaning_maintenance_hatch", "§fFor configurable maintenance on multiblocks with Cleaning!");
+
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.0", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
+        provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
+
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fBulk Cloud Data Storage");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Hatches, both Normal and §6Expanded Data Hatches");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.3", "§7Each tier of Wireless Transmissors has an energy usage of the next tier:");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.4", "   §dLuV §fWireless Transmissor: §c131.072 §fEU/t");
@@ -146,9 +151,9 @@ public class LangManager {
         provider.add("extendedfeatures.matrix_data_relay.tooltip.8", "   §7Uses §98192 EU/t §7per §6Expanded Data Access Hatch");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.9", "§7While working, a constant supply of §fPCB Coolant (144 mb/t) §7is required");
 
-        provider.add("extendedfeatures.large_air_collector.tooltip.0", "§fA Bigger Gas Collector");
-
-        provider.add("extendedfeatures.configurable_cleaning_maintenance_hatch", "§fFor configurable multiblock maintenance with Cleaning!");
+        provider.add("extendedfeatures.power_transformer.tooltip.0", "§7Can be extended up to 4 rows");
+        provider.add("extendedfeatures.power_transformer.tooltip.1", "");
+        provider.add("extendedfeatures.power_transformer.tooltip.2", "");
 
         provider.add("extendedfeatures.regular.tooltip.1", "§fAllows");
         provider.add("extendedfeatures.regular.tooltip.2", "§fand");
