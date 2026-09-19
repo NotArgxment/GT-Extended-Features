@@ -15,73 +15,83 @@ public class EFTooltipHelper {
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"),
-            Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("extendedfeatures.modifier.imp_subt")
+            Component.translatable("extendedfeatures.separator_line")
     );
 
     public static final List<Component> LCMTooltip = List.of(
             Component.translatable("gtceu.machine.cracker.tooltip"),
             Component.translatable("gtceu.machine.cracker.tooltip.1"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line")
     );
 
     public static final List<Component> SVTooltip = List.of(
             Component.translatable("extendedfeatures.synthesis_vessel.tooltip.0"),
-            Component.translatable("extendedfeatures.synthesis_vessel.tooltip.1")
+            Component.translatable("extendedfeatures.synthesis_vessel.tooltip.1"),
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.single", "§aPerfect Overclocks")
     );
 
     public static final List<Component> LPOTooltip = List.of(
             Component.translatable("gtceu.machine.pyrolyse_oven.tooltip"),
             Component.translatable("gtceu.machine.pyrolyse_oven.tooltip.1"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.single", "§aPerfect Overclocks")
     );
 
     public static final List<Component> EALTooltip = List.of(
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small"),
+            Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.1"),
-            Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.3")
+            Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.2"),
+            Component.translatable("extendedfeatures.limited_energy"),
+            Component.translatable("extendedfeatures.recipe_modifier.double", "§3Imperfect Subtick Parallels", "§eBatching")
     );
 
     public static final List<Component> RPPTooltip = List.of(
-            Component.translatable("extendedfeatures.rock_processing_plant.tooltip.0")
+            Component.translatable("extendedfeatures.rock_processing_plant.tooltip.0"),
+            Component.translatable("extendedfeatures.rock_processing_plant.tooltip.1"),
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.single", "Batching")
     );
 
     public static final List<Component> IGTooltip = List.of(
+            Component.translatable("extendedfeatures.machine_modes", "Trees", "Crops"),
+            Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("extendedfeatures.greenhouse.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.double", "§aPerfect Overclocks", "§eBatching")
     );
 
     public static final List<Component> ArCtTooltip = List.of(
             Component.translatable("extendedfeatures.greenhouse.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line")
     );
 
     public static final List<Component> UDMTooltip = List.of(
+            Component.translatable("extendedfeatures.machine_modes", "Machine Disassembly", "Component Disassembly"),
+            Component.translatable("extendedfeatures.separator_line", "-".repeat(10)),
             Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small"),
             Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.1"),
-            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.2"),
-            Component.translatable("extendedfeatures.separator_line_small"),
-            Component.translatable("extendedfeatures.universal_disassembly_machine.tooltip.3")
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.limited_energy")
     );
 
     public static final List<Component> LGCTooltip = List.of(
             Component.translatable("extendedfeatures.large_air_collector.tooltip.0"),
-            Component.translatable("extendedfeatures.separator_line_small")
+            Component.translatable("extendedfeatures.separator_line")
     );
 
     public static final List<Component> MDRTooltip = List.of(
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.1"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.2"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.3"),
-            Component.translatable("extendedfeatures.separator_line_small"),
+            Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.4"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.5"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.6"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.7"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.8"),
-            Component.translatable("extendedfeatures.separator_line_small"),
+            Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("extendedfeatures.matrix_data_relay.tooltip.9")
     );
 
