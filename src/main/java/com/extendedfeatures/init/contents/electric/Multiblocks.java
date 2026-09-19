@@ -239,7 +239,7 @@ public class Multiblocks {
                     .tooltips(EFTooltipHelper.EALTooltip)
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
                     .recipeModifiers(
-                            GTRecipeModifiers.OC_PERFECT,
+                            GTRecipeModifiers.OC_NON_PERFECT_SUBTICK,
                             GTRecipeModifiers.BATCH_MODE)
                     .appearanceBlock(CASING_STEEL_SOLID)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
@@ -249,7 +249,7 @@ public class Multiblocks {
                             .aisle("EENEE", "RLKLR", "HHEHH")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.CASING_STEEL_SOLID.get())
-                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY))
+                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_4X))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(ExtendedAbilities.WIRELESS_OPTICAL_RECEPTOR).setExactLimit(1))
