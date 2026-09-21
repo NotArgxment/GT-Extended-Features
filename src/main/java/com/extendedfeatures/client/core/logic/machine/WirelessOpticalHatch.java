@@ -137,12 +137,13 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
                 : linkedTransmissorPos != null;
     }
 
-    // 3.0.0 Fix: automatically switches the max distance render to false on world load
-    // Avoids an undesired update when a receptor updates its state
+    // 3.0.0 Fix
+    // Avoids an undesired update on visual feedback when a receptor updates its state
     @Override
     public void onLoad() {
         super.onLoad();
         showRangeEnabled = false;
+        showLinksEnabled = false;
     }
 
     @Override
