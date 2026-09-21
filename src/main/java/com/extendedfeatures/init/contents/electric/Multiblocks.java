@@ -190,7 +190,8 @@ public class Multiblocks {
                     .recipeType(GTRecipeTypes.PYROLYSE_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
-                            GTRecipeModifiers.OC_PERFECT,
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT,
                             GTRecipeModifiers::pyrolyseOvenOverclock)
                     .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
                     .pattern(definition -> FactoryBlockPattern.start()
@@ -276,7 +277,7 @@ public class Multiblocks {
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(EFRecipeTypes.ROCK_PROCESSING_RECIPES)
                     .recipeModifiers(
-                            GTRecipeModifiers.OC_NON_PERFECT,
+                            GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.BATCH_MODE)
                     .appearanceBlock(GCYMBlocks.CASING_SECURE_MACERATION)
                     .pattern(definition -> FactoryBlockPattern.start()
@@ -312,7 +313,8 @@ public class Multiblocks {
                                             PartAbility.EXPORT_FLUIDS,
                                             PartAbility.EXPORT_ITEMS))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
-                                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH)).setMaxGlobalLimited(1))
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/gcym/secure_maceration_casing"),
@@ -426,7 +428,7 @@ public class Multiblocks {
                     .recipeTypes(
                             EFRecipeTypes.DISASSEMBLER_MACHINES,
                             EFRecipeTypes.DISASSEMBER_COMPONENTS)
-                    .recipeModifiers(OC_NON_PERFECT)
+                    .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle("OOOOOOO", "OOOOOOO", "OOOOOOO")
@@ -461,7 +463,9 @@ public class Multiblocks {
                     .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(EFRecipeTypes.AIR_COLLECTOR)
-                    .recipeModifiers(PARALLEL_HATCH, OC_NON_PERFECT)
+                    .recipeModifiers(
+                            GTRecipeModifiers.PARALLEL_HATCH,
+                            GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GCYMBlocks.CASING_CORROSION_PROOF)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle("ARRRA", " RPR ", "ARRRA")
