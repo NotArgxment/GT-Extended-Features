@@ -2,16 +2,20 @@ package com.extendedfeatures.client.core.logic.multiblock;
 
 import com.extendedfeatures.client.core.logic.machine.ExpandedDataAccessHatch;
 import com.extendedfeatures.client.core.logic.machine.WirelessOpticalHatch;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.transfer.fluid.FluidHandlerList;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.research.DataBankMachine;
+
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
 import lombok.Getter;
+
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.fluids.FluidStack;
@@ -36,6 +40,10 @@ public class MatrixDataRelayMachine extends DataBankMachine {
     public static final int coolantAmount = 144;
     private static final int consuptionInterval = 20;
 
+    private static final int rebootTime = 10;
+    private boolean rebootPending = false;
+    private int rebootTicks = 0;
+
     private IFluidHandler coolantHandler = new FluidHandlerList(new ArrayList<>());
     private int coolantTickCounter = 0;
 
@@ -44,6 +52,16 @@ public class MatrixDataRelayMachine extends DataBankMachine {
 
     public MatrixDataRelayMachine(IMachineBlockEntity holder) {
         super(holder);
+    }
+
+    // Called on world load
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (getLevel() != null && !getLevel().isClientSide) {
+            rebootPending = true;
+            rebootTicks = 0;
+        }
     }
 
     // Checks for an avaiable input hatch and tried to gather PCB Coolant from it
@@ -56,8 +74,7 @@ public class MatrixDataRelayMachine extends DataBankMachine {
 
         List<IFluidHandler> coolantContainers = new ArrayList<>();
 
-        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap",
-                Long2ObjectMaps::emptyMap);
+        Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap", Long2ObjectMaps::emptyMap);
 
         for (IMultiPart part : getParts()) {
             IO io = ioMap.getOrDefault(part.self().getPos().asLong(), IO.BOTH);
@@ -92,6 +109,11 @@ public class MatrixDataRelayMachine extends DataBankMachine {
         super.tick();
         if (!isFormed()) return;
 
+        if (rebootPending && ++rebootTicks >= rebootTime) {
+            rebootPending = false;
+            reboot();
+        }
+
         if (++coolantTickCounter >= consuptionInterval) {
             coolantTickCounter = 0;
             coolantStarved = !consumeCoolant();
@@ -103,6 +125,24 @@ public class MatrixDataRelayMachine extends DataBankMachine {
         }
     }
 
+    /*
+    3.0.0 Fix:
+        This acts like a "reboot" on world load, so the MDR is always in "working" state without
+        failing because of missing PCB Coolant supply
+     */
+    private void reboot() {
+
+        if (!isWorkingEnabled()) return;
+
+        RecipeLogic logic = getRecipeLogic();
+        logic.resetRecipeLogic();
+        logic.setStatus(RecipeLogic.Status.IDLE);
+        logic.updateTickSubscription();
+
+        coolantStarved = !consumeCoolant();
+        coolantTickCounter = 0;
+    }
+
     // Passive PCB Coolant Draining WHILE working
     private boolean consumeCoolant() {
         FluidStack required = PCBCoolant.getFluid(coolantAmount);
@@ -110,7 +150,7 @@ public class MatrixDataRelayMachine extends DataBankMachine {
         if (simulated.getAmount() < coolantAmount)
             return false;
         drainFluidAccountNotifiableList(coolantHandler, required, EXECUTE);
-            return true;
+        return true;
     }
 
     // Checks for the W.H tier, and applies an energy consuption of 1A of the next tier
