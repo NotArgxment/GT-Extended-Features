@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.misc;
+package com.extendedfeatures.client;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
