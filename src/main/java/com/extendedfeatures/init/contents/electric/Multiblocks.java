@@ -433,7 +433,6 @@ public class Multiblocks {
                             .where('K', blocks(GTBlocks.CASING_TUNGSTENSTEEL_GEARBOX.get()))
                             .where('O', blocks(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING.get()).setMinGlobalLimited(50)
                                     .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .build())
                     .workableCasingModel(
