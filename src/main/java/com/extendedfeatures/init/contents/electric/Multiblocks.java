@@ -33,7 +33,6 @@ import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterialItems.MATERIAL_ITEMS;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.Ash;
-import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
 
 public class Multiblocks {
 
@@ -51,6 +50,7 @@ public class Multiblocks {
                     .recipeType(GCYMRecipeTypes.ALLOY_BLAST_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
+                            GTRecipeModifiers.BATCH_MODE,
                             GTRecipeModifiers::ebfOverclock)
                     .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
                     .pattern(definition -> FactoryBlockPattern.start()
@@ -68,7 +68,7 @@ public class Multiblocks {
                             .where('T', air())
                             .where(' ', any())
                             .where('C', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())
-                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_FLUIDS))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1).setPreviewCount(1)
                                             .or(Predicates.abilities(PartAbility.INPUT_LASER).setMaxGlobalLimited(1).setPreviewCount(1)))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
@@ -116,11 +116,8 @@ public class Multiblocks {
                             .where(' ', any())
                             .where('I', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
                             .where('D', blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
-                            .where('F', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())
-                                    .or(Predicates.abilities(
-                                            PartAbility.IMPORT_ITEMS,
-                                            PartAbility.IMPORT_FLUIDS,
-                                            PartAbility.EXPORT_FLUIDS))
+                            .where('F', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get()).setMinGlobalLimited(40)
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
@@ -148,7 +145,8 @@ public class Multiblocks {
                     .recipeTypes(EFRecipeTypes.CHEMICAL_REDUCTION)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
-                            GTRecipeModifiers.BATCH_MODE)
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle(" FDDDF ", " FDDDF ", " FDDDF ")
@@ -164,10 +162,8 @@ public class Multiblocks {
                             .where('F', frames(GTMaterials.Polytetrafluoroethylene))
                             .where('K', blocks(GTBlocks.CASING_POLYTETRAFLUOROETHYLENE_PIPE.get()))
                             .where('C', heatingCoils())
-                            .where('D', blocks(GTBlocks.CASING_PTFE_INERT.get())
-                                    .or(Predicates.abilities(
-                                            PartAbility.IMPORT_ITEMS, PartAbility.EXPORT_ITEMS,
-                                            PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_FLUIDS))
+                            .where('D', blocks(GTBlocks.CASING_PTFE_INERT.get()).setMinGlobalLimited(65)
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .where('N', blocks(GCYMBlocks.HEAT_VENT.get()))
@@ -211,9 +207,7 @@ public class Multiblocks {
                             .where('O', blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
                             .where('H', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
                             .where('E', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())
-                                    .or(Predicates.abilities(
-                                            PartAbility.IMPORT_ITEMS, PartAbility.EXPORT_ITEMS,
-                                            PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_FLUIDS))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
@@ -241,7 +235,8 @@ public class Multiblocks {
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_NON_PERFECT_SUBTICK,
-                            GTRecipeModifiers.BATCH_MODE)
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(CASING_STEEL_SOLID)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
                     .pattern(definition -> FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.UP, RelativeDirection.BACK)
@@ -250,8 +245,7 @@ public class Multiblocks {
                             .aisle("EENEE", "RLKLR", "HHEHH")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.CASING_STEEL_SOLID.get())
-                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1))
-                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_4X))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(ExtendedAbilities.WIRELESS_OPTICAL_RECEPTOR).setExactLimit(1))
                             )
@@ -278,7 +272,8 @@ public class Multiblocks {
                     .recipeTypes(EFRecipeTypes.ROCK_PROCESSING_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
-                            GTRecipeModifiers.BATCH_MODE)
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GCYMBlocks.CASING_SECURE_MACERATION)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle("DDDDDDD", "DDDDDDD", "DDDDDDD", "DDDDDDD", "       ")
@@ -291,7 +286,7 @@ public class Multiblocks {
                             .aisle(" CCCCC ", " C#E#C ", " CFFFC ", " C###C ", " CGGGC ")
                             .aisle(" CCCCC ", " CEEEC ", " CFFFC ", " C###C ", " CGGGC ")
                             .aisle("CCCCCCC", "C##E##C", "CFFFFFC", "C#####C", "CGGGGGC")
-                            .aisle("CCCCCCC", "CEEEEEC", "HFFFFFH", "C#####C", "CGGGGGC")
+                            .aisle("CCCCCCC", "CEEEEEC", "CFFFFFC", "C#####C", "CGGGGGC")
                             .aisle("CCCCCCC", "C##E##C", "CFFFFFC", "C#####C", "CGGGGGC")
                             .aisle(" CCCCC ", " CEEEC ", " CFFFC ", " C###C ", " CGGGC ")
                             .aisle(" CCCCC ", " C#E#C ", " CFFFC ", " C###C ", " CGGGC ")
@@ -307,14 +302,10 @@ public class Multiblocks {
                             .where('G', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
                             .where('H', abilities(PartAbility.ROTOR_HOLDER))
                             .where('C', blocks(GCYMBlocks.CASING_SECURE_MACERATION.get())
-                                    .or(Predicates.abilities(
-                                            PartAbility.IMPORT_ITEMS,
-                                            PartAbility.IMPORT_FLUIDS,
-                                            PartAbility.EXPORT_FLUIDS,
-                                            PartAbility.EXPORT_ITEMS))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH)).setMaxGlobalLimited(1))
+                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/gcym/secure_maceration_casing"),
@@ -332,7 +323,8 @@ public class Multiblocks {
                     .recipeTypes(GREENHOUSE_CROPS, GREENHOUSE_WOOD)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
-                            GTRecipeModifiers.BATCH_MODE)
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(CASING_STEEL_SOLID)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle("    BBB    ", "    DDD    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
@@ -357,7 +349,7 @@ public class Multiblocks {
                             .where('E', blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
                             .where('F', frames(GTMaterials.Steel))
                             .where('D', blocks(CASING_STEEL_SOLID.get())
-                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_ITEMS))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .build())
@@ -407,7 +399,7 @@ public class Multiblocks {
                             .where('E', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
                             .where('F', frames(GTMaterials.TungstenSteel))
                             .where('D', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())
-                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_ITEMS))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
@@ -441,11 +433,9 @@ public class Multiblocks {
                             .where('D', blocks(GTBlocks.CASING_GRATE.get()))
                             .where('G', blocks(GTBlocks.CASING_TEMPERED_GLASS.get()))
                             .where('K', blocks(GTBlocks.CASING_TUNGSTENSTEEL_GEARBOX.get()))
-                            .where('O', blocks(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING.get())
-                                    .or(Predicates.abilities(
-                                            PartAbility.IMPORT_ITEMS, PartAbility.EXPORT_ITEMS,
-                                            PartAbility.EXPORT_FLUIDS, PartAbility.INPUT_ENERGY,
-                                            PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                            .where('O', blocks(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING.get()).setMinGlobalLimited(50)
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .build())
                     .workableCasingModel(
@@ -476,12 +466,9 @@ public class Multiblocks {
                             .where('@', controller(blocks(definition.get())))
                             .where(" ", any())
                             .where("A", blocks(GCYMBlocks.CASING_CORROSION_PROOF.get())
-                                    .or(abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1)) // required for circuit
-                                    .or(abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(4))
-                                    .or(abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
+                                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                                    .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
-                            )
+                                    .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
                             .where('R', blocks(GCYMBlocks.CASING_CORROSION_PROOF.get())) // Forces the rotor area to be clear, just visuals :)
                             .where("B", blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
                             .where("P", abilities(PartAbility.ROTOR_HOLDER))
@@ -544,6 +531,7 @@ public class Multiblocks {
             POWER_TRANSFORMER = ExtendedFeaturesRegister
                     .multiblock("power_transformer", ActiveTransformerMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
+                    .tooltips(EFTooltipHelper.PwTfTooltip)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
