@@ -141,7 +141,7 @@ public class LangManager {
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.0", "§7This machine can revert a §aMachine §7or §cComponent §7creation process in exchange of the components that were used to make it");
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7If set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
 
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fBulk Cloud Data Storage");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Databank");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Hatches, both Normal and §6Expanded Data Hatches");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.3", "§7Each tier of Wireless Transmissors has an energy usage of the next tier:");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.4", "   §dLuV §fWireless Transmissor: §c131.072 §fEU/t");
@@ -151,9 +151,9 @@ public class LangManager {
         provider.add("extendedfeatures.matrix_data_relay.tooltip.8", "   §7Uses §98192 EU/t §7per §6Expanded Data Access Hatch");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.9", "§7While working, a constant supply of §fPCB Coolant (144 mb/t) §7is required");
 
-        provider.add("extendedfeatures.power_transformer.tooltip.0", "§7Can be extended up to 4 rows");
-        provider.add("extendedfeatures.power_transformer.tooltip.1", "");
-        provider.add("extendedfeatures.power_transformer.tooltip.2", "");
+        provider.add("extendedfeatures.power_transformer.tooltip.0", "§fAlternative Active Transformer");
+        provider.add("extendedfeatures.power_transformer.tooltip.1", "§7Can be extended up to 4 rows");
+        provider.add("extendedfeatures.power_transformer.tooltip.2", "§7Allows %s§7, %s §7and %s");
 
         provider.add("extendedfeatures.regular.tooltip.1", "§fAllows");
         provider.add("extendedfeatures.regular.tooltip.2", "§fand");
