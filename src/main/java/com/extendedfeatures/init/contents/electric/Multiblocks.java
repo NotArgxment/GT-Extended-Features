@@ -7,7 +7,7 @@ import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.core.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
-import com.extendedfeatures.init.contents.misc.EFShapeInfosHelper;
+import com.extendedfeatures.client.EFShapeInfosHelper;
 import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.Blocks;
 
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
 import static com.extendedfeatures.client.EFMachineRegistry.*;
-import static com.extendedfeatures.client.EFRecipeTypes.*;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dustTiny;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
@@ -145,8 +144,7 @@ public class Multiblocks {
                     .recipeTypes(EFRecipeTypes.CHEMICAL_REDUCTION)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
-                            GTRecipeModifiers.BATCH_MODE,
-                            GTRecipeModifiers.OC_NON_PERFECT)
+                            GTRecipeModifiers.BATCH_MODE)
                     .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle(" FDDDF ", " FDDDF ", " FDDDF ")
@@ -237,7 +235,7 @@ public class Multiblocks {
                             GTRecipeModifiers.OC_NON_PERFECT_SUBTICK,
                             GTRecipeModifiers.BATCH_MODE,
                             GTRecipeModifiers.OC_NON_PERFECT)
-                    .appearanceBlock(CASING_STEEL_SOLID)
+                    .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
                     // RIGHT, UP and BACK are required to allow the terminal item to build the multiblock in the correct way
                     .pattern(definition -> FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.UP, RelativeDirection.BACK)
                             .aisle("EE@EE", "RLKLR", "HHEHH")
@@ -245,6 +243,7 @@ public class Multiblocks {
                             .aisle("EENEE", "RLKLR", "HHEHH")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.CASING_STEEL_SOLID.get())
+                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_4X))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(ExtendedAbilities.WIRELESS_OPTICAL_RECEPTOR).setExactLimit(1)))
                             .where('L', blocks(GTBlocks.CASING_ASSEMBLY_CONTROL.get()))
@@ -318,24 +317,25 @@ public class Multiblocks {
                     .multiblock("industrial_greenhouse", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.IGTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .recipeTypes(GREENHOUSE_CROPS, GREENHOUSE_WOOD)
+                    .recipeTypes(
+                            EFRecipeTypes.GREENHOUSE_CROPS,
+                            EFRecipeTypes.GREENHOUSE_WOOD)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
-                            GTRecipeModifiers.BATCH_MODE,
-                            GTRecipeModifiers.OC_NON_PERFECT)
-                    .appearanceBlock(CASING_STEEL_SOLID)
+                            GTRecipeModifiers.BATCH_MODE)
+                    .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
                     .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("    BBB    ", "    DDD    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
+                            .aisle("    DDD    ", "    DDD    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
                             .aisle("  BBDDDBB  ", "  DDCCCDD  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "    EDE    ", "    EDE    ", "           ")
                             .aisle(" BDDDDDDDB ", " DCCCCCCCD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", "  DE###ED  ", "  DEE#EED  ", "     D     ")
                             .aisle(" BDDDDDDDB ", " DCCGGGCCD ", " E#######E ", " E#######E ", " E#######E ", " E#######E ", " E##HHH##E ", " E##HHH##E ", " E##HHH##E ", "  E#####E  ", "  E#####E  ", "   DEDED   ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "D###III###D", "D###III###D", "D####I####D", "D###HIH###D", "D##HHIHH##D", "D##HHIHH##D", "D##HHIHH##D", " D##HHH##D ", " D#######D ", "  DDDDDDD  ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "D###III###D", "D###III###D", "D####I####D", "D###HIH###D", "D##HHIHH##D", "D##HHIHH##D", "D##HHIHH##D", " D##HHH##D ", " D#######D ", "  DDDDDDD  ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
                             .aisle(" BDDDDDDDB ", " DCCGGGCCD ", " E#######E ", " E#######E ", " E#######E ", " E#######E ", " E##HHH##E ", " E##HHH##E ", " E##HHH##E ", "  E#####E  ", "  E#####E  ", "   DEDED   ")
                             .aisle(" BDDDDDDDB ", " DCCCCCCCD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", "  DE###ED  ", "  DEE#EED  ", "     D     ")
                             .aisle("  BBDDDBB  ", "  DDCCCDD  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "    EDE    ", "    EDE    ", "           ")
-                            .aisle("    BBB    ", "    D@D    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
+                            .aisle("    DDD    ", "    D@D    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
                             .where('@', controller(blocks(definition.get())))
                             .where(' ', any())
                             .where('#', air())
@@ -374,17 +374,17 @@ public class Multiblocks {
                             GTRecipeModifiers.BATCH_MODE)
                     .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
                     .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("    BBB    ", "    DDD    ", "    EDE    ", "    EDE    ", "    EKE    ", "    EKE    ", "    EKE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
+                            .aisle("    DDD    ", "    DDD    ", "    EDE    ", "    EDE    ", "    EKE    ", "    EKE    ", "    EKE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
                             .aisle("  BBDDDBB  ", "  DDCCCDD  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "    EDE    ", "    EDE    ", "           ")
                             .aisle(" BDDDDDDDB ", " DCCCCCCCD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", "  DE###ED  ", "  DEE#EED  ", "     D     ")
                             .aisle(" BDDDDDDDB ", " DCCGGGCCD ", " E#######E ", " E#######E ", " E#######E ", " E#######E ", " E##HHH##E ", " E##HHH##E ", " E##HHH##E ", "  E#####E  ", "  E#####E  ", "   DEDED   ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "D###III###D", "D###III###D", "K####I####K", "K###HIH###K", "K##HHIHH##K", "D##HHIHH##D", "D##HHIHH##D", " D##HHH##D ", " D#######D ", "  DDDDDDD  ")
-                            .aisle("BDDDDDDDDDB", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "D###III###D", "D###III###D", "K####I####K", "K###HIH###K", "K##HHIHH##K", "D##HHIHH##D", "D##HHIHH##D", " D##HHH##D ", " D#######D ", "  DDDDDDD  ")
+                            .aisle("DDDDDDDDDDD", "DCCGGGGGCCD", "E###III###E", "E####I####E", "E#########E", "E####H####E", "E##HHHHH##E", "E##HHHHH##E", "E##HHHHH##E", " E###H###E ", " EE#####EE ", "   EDDDE   ")
                             .aisle(" BDDDDDDDB ", " DCCGGGCCD ", " E#######E ", " E#######E ", " E#######E ", " E#######E ", " E##HHH##E ", " E##HHH##E ", " E##HHH##E ", "  E#####E  ", "  E#####E  ", "   DEDED   ")
                             .aisle(" BDDDDDDDB ", " DCCCCCCCD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", " DF#####FD ", "  DE###ED  ", "  DEE#EED  ", "     D     ")
                             .aisle("  BBDDDBB  ", "  DDCCCDD  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "  DE###ED  ", "    EDE    ", "    EDE    ", "           ")
-                            .aisle("    BBB    ", "    D@D    ", "    EDE    ", "    EDE    ", "    EKE    ", "    EKE    ", "    EKE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
+                            .aisle("    DDD    ", "    D@D    ", "    EDE    ", "    EDE    ", "    EKE    ", "    EKE    ", "    EKE    ", "    EDE    ", "    EDE    ", "           ", "           ", "           ")
                             .where('@', controller(blocks(definition.get())))
                             .where(' ', any())
                             .where('#', air())
