@@ -15,27 +15,29 @@ public class EFTooltipHelper {
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
             Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"),
-            Component.translatable("extendedfeatures.separator_line")
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.double", "§aPerfect Overclocks", "§9Batching")
     );
 
     public static final List<Component> LCMTooltip = List.of(
             Component.translatable("gtceu.machine.cracker.tooltip"),
             Component.translatable("gtceu.machine.cracker.tooltip.1"),
-            Component.translatable("extendedfeatures.separator_line")
+            Component.translatable("extendedfeatures.separator_line"),
+            Component.translatable("extendedfeatures.recipe_modifier.single", "§9Batching")
     );
 
     public static final List<Component> SVTooltip = List.of(
             Component.translatable("extendedfeatures.synthesis_vessel.tooltip.0"),
             Component.translatable("extendedfeatures.synthesis_vessel.tooltip.1"),
             Component.translatable("extendedfeatures.separator_line"),
-            Component.translatable("extendedfeatures.recipe_modifier.single", "§aPerfect Overclocks")
+            Component.translatable("extendedfeatures.recipe_modifier.double", "§aPerfect Overclocks", "§9Batching")
     );
 
     public static final List<Component> LPOTooltip = List.of(
             Component.translatable("gtceu.machine.pyrolyse_oven.tooltip"),
             Component.translatable("gtceu.machine.pyrolyse_oven.tooltip.1"),
             Component.translatable("extendedfeatures.separator_line"),
-            Component.translatable("extendedfeatures.recipe_modifier.single", "§aPerfect Overclocks")
+            Component.translatable("extendedfeatures.recipe_modifier.single", "§9Batching")
     );
 
     public static final List<Component> EALTooltip = List.of(
@@ -44,7 +46,7 @@ public class EFTooltipHelper {
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.1"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.2"),
             Component.translatable("extendedfeatures.limited_energy"),
-            Component.translatable("extendedfeatures.recipe_modifier.double", "§3Imperfect Subtick Parallels", "§bBatching")
+            Component.translatable("extendedfeatures.recipe_modifier.double", "§3Imperfect Subtick Parallels", "§9Batching")
     );
 
     public static final List<Component> RPPTooltip = List.of(
@@ -62,7 +64,8 @@ public class EFTooltipHelper {
 
     public static final List<Component> ArCtTooltip = List.of(
             Component.translatable("extendedfeatures.machine_modes", "Trees", "Crops"),
-            Component.translatable("extendedfeatures.greenhouse.tooltip.0")
+            Component.translatable("extendedfeatures.greenhouse.tooltip.0"),
+            Component.translatable("extendedfeatures.recipe_modifier.single", "§9Batching")
     );
 
     public static final List<Component> UDMTooltip = List.of(
@@ -106,7 +109,7 @@ public class EFTooltipHelper {
                             .append(Component.translatable("extendedfeatures.styled.tooltip.1")
                                     .withStyle(RAINBOW_HSL_SLOW)));
 
-    public static final BiConsumer<ItemStack, List<Component>> ParallelTooltip =
+    public static final BiConsumer<ItemStack, List<Component>> ParallelHatch =
             (stack, list) -> list.add(
                     Component.translatable("extendedfeatures.regular.tooltip.1")
                             .append(Component.translatable("extendedfeatures.styled.tooltip.2")
