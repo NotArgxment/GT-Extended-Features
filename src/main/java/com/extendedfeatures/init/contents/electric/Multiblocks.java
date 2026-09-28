@@ -94,7 +94,7 @@ public class Multiblocks {
             LARGE_CRACKING_MACHINE = ExtendedFeaturesRegister
                     .multiblock("large_cracking_machine", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LCMTooltip)
-                    .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
+                    .tooltipBuilder(EFTooltipHelper.ParallelHatch)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.CRACKING_RECIPES)
                     .recipeModifiers(
@@ -179,7 +179,7 @@ public class Multiblocks {
             LARGE_PYROLYSE_OVEN = ExtendedFeaturesRegister
                     .multiblock("large_pyrolysis_oven", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LPOTooltip)
-                    .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
+                    .tooltipBuilder(EFTooltipHelper.ParallelHatch)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.PYROLYSE_RECIPES)
                     .recipeModifiers(
@@ -364,7 +364,7 @@ public class Multiblocks {
                     .multiblock("advanced_conservatory", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .tooltips(EFTooltipHelper.ArCtTooltip)
-                    .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
+                    .tooltipBuilder(EFTooltipHelper.ParallelHatch)
                     .recipeTypes(
                             EFRecipeTypes.GREENHOUSE_CROPS,
                             EFRecipeTypes.GREENHOUSE_WOOD)
@@ -447,7 +447,7 @@ public class Multiblocks {
             LARGE_GAS_COLLECTOR = ExtendedFeaturesRegister
                     .multiblock("large_gas_collector", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LGCTooltip)
-                    .tooltipBuilder(EFTooltipHelper.ParallelTooltip)
+                    .tooltipBuilder(EFTooltipHelper.ParallelHatch)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(EFRecipeTypes.AIR_COLLECTOR)
                     .recipeModifiers(
