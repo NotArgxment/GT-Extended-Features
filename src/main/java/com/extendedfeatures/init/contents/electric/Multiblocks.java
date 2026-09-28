@@ -6,7 +6,7 @@ import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.core.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
-import com.extendedfeatures.init.contents.behavior.CoilWorkableMultiblockLaser;
+import com.extendedfeatures.init.contents.behavior.CoilLaserMultiblock;
 import com.extendedfeatures.client.EFShapeInfosHelper;
 import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
 
@@ -42,10 +42,10 @@ public class Multiblocks {
     static {
         if (MultiblocksConfig.RobustAlloyMaterializer || GTCEu.isDataGen()) {
             ROBUST_ALLOY_MATERIALIZER = ExtendedFeaturesRegister
-                    .multiblock("robust_alloy_materializer", CoilWorkableMultiblockLaser::new)
+                    .multiblock("robust_alloy_materializer", CoilLaserMultiblock::new)
                     .tooltips(EFTooltipHelper.RAMTooltip)
                     .tooltipBuilder(EFTooltipHelper.RAMTooltipExtra)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeType(GCYMRecipeTypes.ALLOY_BLAST_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
@@ -95,7 +95,7 @@ public class Multiblocks {
                     .multiblock("large_cracking_machine", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LCMTooltip)
                     .tooltipBuilder(EFTooltipHelper.ParallelHatch)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.CRACKING_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
@@ -127,7 +127,7 @@ public class Multiblocks {
                     })
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            GTCEu.id("block/multiblock/cracking_unit")
+                            GTCEu.id("block/machines/fluid_heater")
                     )
                     .additionalDisplay(EFDisplayHelper.CrackerDisplay)
                     .shapeInfos(EFShapeInfosHelper::LargeCrackingMachine)
@@ -140,7 +140,7 @@ public class Multiblocks {
             SYNTHESIS_VESSEL = ExtendedFeaturesRegister
                     .multiblock("synthesis_vessel", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.SVTooltip)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeTypes(EFRecipeTypes.CHEMICAL_REDUCTION)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
@@ -180,7 +180,7 @@ public class Multiblocks {
                     .multiblock("large_pyrolysis_oven", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LPOTooltip)
                     .tooltipBuilder(EFTooltipHelper.ParallelHatch)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.PYROLYSE_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
@@ -216,7 +216,7 @@ public class Multiblocks {
                     })
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            GTCEu.id("block/multiblock/")
+                            GTCEu.id("block/machines/alloy_smelter")
                     )
                     .additionalDisplay(EFDisplayHelper.PyroDisplay)
                     .shapeInfos(EFShapeInfosHelper::LargePyrolysisOven)
@@ -228,7 +228,7 @@ public class Multiblocks {
         if (MultiblocksConfig.ExpandedAssemblyLine || GTCEu.isDataGen()) {
             EXPANDED_ASSEMBLY_LINE = ExtendedFeaturesRegister
                     .multiblock("expanded_assembly_line", ExpandedAssemblyLineMachine::new)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .tooltips(EFTooltipHelper.EALTooltip)
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
                     .recipeModifiers(
@@ -414,7 +414,7 @@ public class Multiblocks {
             DISASSEMBLER = ExtendedFeaturesRegister
                     .multiblock("universal_disassembly_machine", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.UDMTooltip)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeTypes(
                             EFRecipeTypes.DISASSEMBLER_MACHINES,
                             EFRecipeTypes.DISASSEMBER_COMPONENTS)
@@ -448,7 +448,7 @@ public class Multiblocks {
                     .multiblock("large_gas_collector", WorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.LGCTooltip)
                     .tooltipBuilder(EFTooltipHelper.ParallelHatch)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .recipeType(EFRecipeTypes.AIR_COLLECTOR)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
@@ -527,7 +527,7 @@ public class Multiblocks {
         if (MultiblocksConfig.PowerTransformer || GTCEu.isDataGen()) {
             POWER_TRANSFORMER = ExtendedFeaturesRegister
                     .multiblock("power_transformer", ActiveTransformerMachine::new)
-                    .rotationState(RotationState.NON_Y_AXIS)
+                    .rotationState(RotationState.ALL)
                     .tooltips(EFTooltipHelper.PwTfTooltip)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
@@ -549,5 +549,10 @@ public class Multiblocks {
     }
 
     public static void init() {
+        // 3.0.0 took long enough huh
+        // Anyway, hello stranger
+        // I hope you are good past the screen :)
+        // Eternal hell for mods made in kotlin. EMBRACE JAVA!
+        // Go try Mindustry :)
     }
 }

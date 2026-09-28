@@ -11,8 +11,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_emissive"
         }
       }
     },
@@ -21,8 +25,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_paused",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_paused_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_emissive"
         }
       }
     },
@@ -31,8 +39,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_active",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_active_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_active_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side_active",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_active_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top_active",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_active_emissive"
         }
       }
     },
@@ -41,8 +53,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_active",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_active_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_active_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side_active",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_active_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top_active",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_active_emissive"
         }
       }
     },
@@ -51,8 +67,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_emissive"
         }
       }
     },
@@ -61,8 +81,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_paused",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_paused_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_emissive"
         }
       }
     },
@@ -71,8 +95,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_active",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_active_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_active_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side_active",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_active_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top_active",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_active_emissive"
         }
       }
     },
@@ -81,8 +109,12 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "gtceu:block/multiblock/cracking_unit/overlay_front_active",
-          "overlay_front_emissive": "gtceu:block/multiblock/cracking_unit/overlay_front_active_emissive"
+          "overlay_front": "gtceu:block/machines/fluid_heater/overlay_front_active",
+          "overlay_front_emissive": "gtceu:block/machines/fluid_heater/overlay_front_active_emissive",
+          "overlay_side": "gtceu:block/machines/fluid_heater/overlay_side_active",
+          "overlay_side_emissive": "gtceu:block/machines/fluid_heater/overlay_side_active_emissive",
+          "overlay_top": "gtceu:block/machines/fluid_heater/overlay_top_active",
+          "overlay_top_emissive": "gtceu:block/machines/fluid_heater/overlay_top_active_emissive"
         }
       }
     }
