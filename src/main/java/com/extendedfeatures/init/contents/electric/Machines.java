@@ -115,8 +115,7 @@ public class Machines {
 
     static {
         if (MachineConfig.WirelessOpticalHatches || GTCEu.isDataGen()) {
-            LUV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
-                    ("luv_wireless_data_transmissor", "LuV Wireless Optical Transmissor", LuV, true)
+            LUV_WIRELESS_TRANSMISSOR = registerHatch("luv_wireless_data_transmissor", "LuV Wireless Optical Transmissor", LuV, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 16),
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.connections", 4),
@@ -124,15 +123,13 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            LUV_WIRELESS_RECEPTOR = WirelessHatchRegister
-                    ("luv_wireless_data_receptor", "LuV Wireless Optical Receptor", LuV, false)
+            LUV_WIRELESS_RECEPTOR = registerHatch("luv_wireless_data_receptor", "LuV Wireless Optical Receptor", LuV, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            ZPM_WIRELESS_TRANSMISSOR = WirelessHatchRegister
-                    ("zpm_wireless_data_transmissor", "ZPM Wireless Optical Transmissor", ZPM, true)
+            ZPM_WIRELESS_TRANSMISSOR = registerHatch("zpm_wireless_data_transmissor", "ZPM Wireless Optical Transmissor", ZPM, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 32),
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.connections", 8),
@@ -140,15 +137,13 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            ZPM_WIRELESS_RECEPTOR = WirelessHatchRegister
-                    ("zpm_wireless_data_receptor", "ZPM Wireless Optical Receptor", ZPM, false)
+            ZPM_WIRELESS_RECEPTOR = registerHatch("zpm_wireless_data_receptor", "ZPM Wireless Optical Receptor", ZPM, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            UV_WIRELESS_TRANSMISSOR = WirelessHatchRegister
-                    ("uv_wireless_data_transmissor", "UV Wireless Optical Transmissor", UV, true)
+            UV_WIRELESS_TRANSMISSOR = registerHatch("uv_wireless_data_transmissor", "UV Wireless Optical Transmissor", UV, true)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.range", 64),
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.connections", 16),
@@ -156,8 +151,7 @@ public class Machines {
                             Component.translatable("gtceu.part_sharing.disabled"))
                     .register();
 
-            UV_WIRELESS_RECEPTOR = WirelessHatchRegister
-                    ("uv_wireless_data_receptor", "UV Wireless Optical Receptor", UV, false)
+            UV_WIRELESS_RECEPTOR = registerHatch("uv_wireless_data_receptor", "UV Wireless Optical Receptor", UV, false)
                     .tooltips(
                             Component.translatable("extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor"),
                             Component.translatable("gtceu.part_sharing.disabled"))
@@ -166,10 +160,8 @@ public class Machines {
         }
     }
 
-    private static MachineBuilder<MachineDefinition, ?> WirelessHatchRegister(String name,
-                                                                              String displayName,
-                                                                              int tier,
-                                                                              boolean isTransmissor) {
+    private static MachineBuilder<MachineDefinition, ?> registerHatch(String name, String displayName,
+                                                                      int tier, boolean isTransmissor) {
         return ExtendedFeaturesRegister
                 .machine(name, (holder) -> new WirelessOpticalHatch(holder, isTransmissor, tier))
                 .langValue(displayName)
