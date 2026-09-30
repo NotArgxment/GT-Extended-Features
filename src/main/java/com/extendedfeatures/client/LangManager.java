@@ -124,7 +124,7 @@ public class LangManager {
 
         provider.add("extendedfeatures.expanded_assembly_line.tooltip.0", "§7An Assembly Line that takes advantage of §dAE2 Stocking Hatches");
         provider.add("extendedfeatures.expanded_assembly_line.tooltip.1", "§fPerforms recipes without §cOrdered Inputs");
-        provider.add("extendedfeatures.expanded_assembly_line.tooltip.2", "§fRequires §9Wireless Optical Receptors");
+        provider.add("extendedfeatures.expanded_assembly_line.tooltip.2", "§fRequires §6Wireless Optical Receptors");
 
         provider.add("extendedfeatures.synthesis_vessel.tooltip.0", "§7A §3Chemical Plant §7variant based on the Large Chemical Reactor");
         provider.add("extendedfeatures.synthesis_vessel.tooltip.1", "§7Performs entire chemical processing lines in 1 cycle");
