@@ -1,12 +1,12 @@
 package com.extendedfeatures.init.contents.electric;
 
 import com.extendedfeatures.CreativeTabs;
+import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.EFDisplayHelper;
 import com.extendedfeatures.client.EFRecipeTypes;
 import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.core.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
-import com.extendedfeatures.init.contents.behavior.CoilLaserMultiblock;
 import com.extendedfeatures.client.EFShapeInfosHelper;
 import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
 
@@ -42,7 +42,7 @@ public class Multiblocks {
     static {
         if (MultiblocksConfig.RobustAlloyMaterializer || GTCEu.isDataGen()) {
             ROBUST_ALLOY_MATERIALIZER = ExtendedFeaturesRegister
-                    .multiblock("robust_alloy_materializer", CoilLaserMultiblock::new)
+                    .multiblock("robust_alloy_materializer", CoilWorkableElectricMultiblockMachine::new)
                     .tooltips(EFTooltipHelper.RAMTooltip)
                     .tooltipBuilder(EFTooltipHelper.RAMTooltipExtra)
                     .rotationState(RotationState.ALL)
@@ -68,8 +68,7 @@ public class Multiblocks {
                             .where(' ', any())
                             .where('C', blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get()).setMinGlobalLimited(40)
                                     .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1).setPreviewCount(1)
-                                            .or(Predicates.abilities(PartAbility.INPUT_LASER).setMaxGlobalLimited(1).setPreviewCount(1)))
+                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
                             .where('B', Predicates.blocks(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING.get()))
                             .where('F', Predicates.blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
