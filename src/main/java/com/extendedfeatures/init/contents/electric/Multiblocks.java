@@ -126,7 +126,7 @@ public class Multiblocks {
                     })
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            GTCEu.id("block/machines/fluid_heater")
+                            ExtendedFeaturesCore.id("block/machine/large_cracking_machine")
                     )
                     .additionalDisplay(EFDisplayHelper.CrackerDisplay)
                     .shapeInfos(EFShapeInfosHelper::LargeCrackingMachine)
@@ -242,7 +242,7 @@ public class Multiblocks {
                             .aisle("EENEE", "RLKLR", "HHEHH")
                             .where('@', controller(blocks(definition.get())))
                             .where('E', blocks(GTBlocks.CASING_STEEL_SOLID.get())
-                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS, PartAbility.IMPORT_FLUIDS_4X))
+                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(Predicates.abilities(ExtendedAbilities.WIRELESS_OPTICAL_RECEPTOR).setExactLimit(1)))
                             .where('L', blocks(GTBlocks.CASING_ASSEMBLY_CONTROL.get()))
