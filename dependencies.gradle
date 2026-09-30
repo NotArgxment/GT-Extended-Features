@@ -1,0 +1,110 @@
+repositories {
+
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
+
+    maven {
+        name 'FirstDarkDev'
+        url "https://maven.firstdark.dev/snapshots/"
+    }
+
+    maven {
+        // Registrate
+        url = "https://maven.tterrag.com/"
+        content {
+            includeGroup("com.tterrag.registrate")
+        }
+    }
+
+    maven {
+        // Patchouli, JEI
+        name = "BlameJared"
+        url = "https://maven.blamejared.com/"
+    }
+
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+
+    maven {
+        // Curse Forge File
+        url "https://cursemaven.com/"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
+
+    maven {
+        url = "https://thedarkcolour.github.io/KotlinForForge/"
+    }
+
+    maven {
+        url = "https://api.modrinth.com/maven" }
+
+    }
+
+dependencies {
+
+    // Annotations
+    compileOnly("org.jetbrains:annotations:26.0.1")
+
+    // Mixins
+    annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
+
+    // Jade
+    modCompileOnly("curse.maven:jade-324717:6855440")
+    modRuntimeOnly("curse.maven:jade-324717:6855440")
+
+    // GregTech and dependencies
+    modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
+    modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
+    modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // ===================================
+    //       DEV INSTANCE MODS/QOL
+    // ===================================
+
+    // Emi
+    modRuntimeOnly("curse.maven:emi-580555:8081375")
+
+    // AE2
+    modRuntimeOnly("curse.maven:applied-energistics-2-223794:7148487")
+    modRuntimeOnly("curse.maven:guideme-1173950:8204776")
+
+    // Effortless Structure
+    modRuntimeOnly("curse.maven:effortless-676885:6251939")
+
+    // Spatial Tools (Copy pasting - Moving)
+    modRuntimeOnly("curse.maven:spatial-tools-compatible-1528726:8533862")
+
+    // KubeJS Aisle Tool
+    modRuntimeOnly("curse.maven:kubejs-aisle-tool-1236291:7543948")
+
+    // GT Terminals
+    modRuntimeOnly("curse.maven:gtceu-terminals-1423461:8315854")
+
+    // GTM Utils
+    modRuntimeOnly("curse.maven:gregtech-modern-utilities-1235020:8728484")
+
+    // GTM Things
+    modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
+
+    }
