@@ -49,7 +49,7 @@
   "extendedfeatures.configurable_cleaning_maintenance_hatch": "§fFor configurable maintenance on multiblocks with Cleaning!",
   "extendedfeatures.expanded_assembly_line.tooltip.0": "§7An Assembly Line that takes advantage of §dAE2 Stocking Hatches",
   "extendedfeatures.expanded_assembly_line.tooltip.1": "§fPerforms recipes without §cOrdered Inputs",
-  "extendedfeatures.expanded_assembly_line.tooltip.2": "§fRequires §9Wireless Optical Receptors",
+  "extendedfeatures.expanded_assembly_line.tooltip.2": "§fRequires §6Wireless Optical Receptors",
   "extendedfeatures.gas_collection": "Gas Collection",
   "extendedfeatures.greenhouse.tooltip.0": "§7Allows an easier way to obtain natural resources",
   "extendedfeatures.greenhouse_crop_recipes": "Greenhouse: Crops",
