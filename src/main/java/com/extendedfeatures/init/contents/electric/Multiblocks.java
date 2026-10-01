@@ -126,7 +126,7 @@ public class Multiblocks {
                     })
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
-                            ExtendedFeaturesCore.id("block/machine/large_cracking_machine")
+                            ExtendedFeaturesCore.id("block/multiblock/large_cracking_machine")
                     )
                     .additionalDisplay(EFDisplayHelper.CrackerDisplay)
                     .shapeInfos(EFShapeInfosHelper::LargeCrackingMachine)
@@ -451,26 +451,26 @@ public class Multiblocks {
                     .recipeType(EFRecipeTypes.AIR_COLLECTOR)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
+                            GTRecipeModifiers.BATCH_MODE,
                             GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GCYMBlocks.CASING_CORROSION_PROOF)
                     .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("ARRRA", " RPR ", "ARRRA")
-                            .aisle("AAAAA", "ADEDA", "AFAFA")
-                            .aisle("AAAAA", "BDEDB", "AAAAA")
-                            .aisle("AAAAA", "ADEDA", "AFAFA")
+                            .aisle("ARRRA", " RBR ", "ARRRA")
+                            .aisle("AAAAA", "ADEDA", "AFXFA")
+                            .aisle("AAAAA", "BDEDB", "AXXXA")
+                            .aisle("AAAAA", "ADEDA", "AFXFA")
                             .aisle("AAAAA", " A@A ", "AAAAA")
                             .where('@', controller(blocks(definition.get())))
-                            .where(" ", any())
-                            .where("A", blocks(GCYMBlocks.CASING_CORROSION_PROOF.get())
+                            .where(' ', any())
+                            .where('A', blocks(GCYMBlocks.CASING_CORROSION_PROOF.get())
                                     .or(Predicates.autoAbilities(definition.getRecipeTypes()))
                                     .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                                     .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
-                            .where('R', blocks(GCYMBlocks.CASING_CORROSION_PROOF.get())) // Forces the rotor area to be clear, just visuals :)
-                            .where("B", blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
-                            .where("P", abilities(PartAbility.ROTOR_HOLDER))
-                            .where("E", blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
-                            .where("D", blocks(GTBlocks.CASING_TUNGSTENSTEEL_GEARBOX.get()))
-                            .where("F", blocks(GTBlocks.CASING_EXTREME_ENGINE_INTAKE.get()))
+                            .where('B', blocks(GCYMBlocks.MOLYBDENUM_DISILICIDE_COIL_BLOCK.get()))
+                            .where('X', blocks(GTBlocks.CASING_GRATE.get()))
+                            .where('E', blocks(GTBlocks.CASING_TUNGSTENSTEEL_PIPE.get()))
+                            .where('D', blocks(GTBlocks.CASING_TUNGSTENSTEEL_GEARBOX.get()))
+                            .where('F', blocks(GTBlocks.CASING_EXTREME_ENGINE_INTAKE.get()))
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/gcym/corrosion_proof_casing"),
@@ -517,7 +517,7 @@ public class Multiblocks {
                             .build())
                     .workableCasingModel(
                             GTCEu.id("block/casings/hpca/high_power_casing"),
-                            GTCEu.id("block/multiblock/hpca"))
+                            ExtendedFeaturesCore.id("block/multiblock/matrix_data_relay"))
                     .register();
         }
     }
