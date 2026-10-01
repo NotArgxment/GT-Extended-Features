@@ -38,11 +38,7 @@ public class MatrixDataRelayMachine extends DataBankMachine {
     public static final int expandedDataHatchUsage = 8192;
 
     public static final int coolantAmount = 144;
-    private static final int consuptionInterval = 20;
-
-    private static final int rebootTime = 10;
-    private boolean rebootPending = false;
-    private int rebootTicks = 0;
+    public static final int consuptionInterval = 20;
 
     private IFluidHandler coolantHandler = new FluidHandlerList(new ArrayList<>());
     private int coolantTickCounter = 0;
@@ -52,16 +48,6 @@ public class MatrixDataRelayMachine extends DataBankMachine {
 
     public MatrixDataRelayMachine(IMachineBlockEntity holder) {
         super(holder);
-    }
-
-    // Called on world load
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        if (getLevel() != null && !getLevel().isClientSide) {
-            rebootPending = true;
-            rebootTicks = 0;
-        }
     }
 
     // Checks for an avaiable input hatch and tried to gather PCB Coolant from it
@@ -98,20 +84,25 @@ public class MatrixDataRelayMachine extends DataBankMachine {
 
     @Override
     public void onStructureInvalid() {
+
         super.onStructureInvalid();
+        forceIdle();
         this.coolantHandler = new FluidHandlerList(new ArrayList<>());
         this.coolantTickCounter = 0;
         this.coolantStarved = false;
+
     }
 
     @Override
     public void tick() {
-        super.tick();
-        if (!isFormed()) return;
 
-        if (rebootPending && ++rebootTicks >= rebootTime) {
-            rebootPending = false;
-            reboot();
+        super.tick();
+
+        if (!isFormed()) {
+            if (!isRemote() && getRecipeLogic().getStatus() != RecipeLogic.Status.IDLE) {
+                forceIdle();
+            }
+            return;
         }
 
         if (++coolantTickCounter >= consuptionInterval) {
@@ -125,22 +116,11 @@ public class MatrixDataRelayMachine extends DataBankMachine {
         }
     }
 
-    /*
-    3.0.0 Fix:
-        This acts like a "reboot" on world load, so the MDR is always in "working" state without
-        failing because of missing PCB Coolant supply
-     */
-    private void reboot() {
-
-        if (!isWorkingEnabled()) return;
-
+    private void forceIdle() {
         RecipeLogic logic = getRecipeLogic();
         logic.resetRecipeLogic();
         logic.setStatus(RecipeLogic.Status.IDLE);
-        logic.updateTickSubscription();
-
-        coolantStarved = !consumeCoolant();
-        coolantTickCounter = 0;
+        if (!isRemote()) scheduleRenderUpdate();
     }
 
     // Passive PCB Coolant Draining WHILE working
