@@ -101,10 +101,4 @@ dependencies {
     // GT Terminals
     modRuntimeOnly("curse.maven:gtceu-terminals-1423461:8315854")
 
-    // GTM Utils
-    modRuntimeOnly("curse.maven:gregtech-modern-utilities-1235020:8728484")
-
-    // GTM Things
-    modRuntimeOnly("curse.maven:gtmthings-1104310:7712957")
-
     }
