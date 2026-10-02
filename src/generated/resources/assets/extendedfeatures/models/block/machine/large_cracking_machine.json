@@ -11,8 +11,7 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front_emissive"
+          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front"
         }
       }
     },
@@ -21,8 +20,7 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front_emissive"
+          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front"
         }
       }
     },
@@ -51,8 +49,7 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front_emissive"
+          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front"
         }
       }
     },
@@ -61,8 +58,7 @@
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
           "all": "gtceu:block/casings/solid/machine_casing_robust_tungstensteel",
-          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front",
-          "overlay_front_emissive": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front_emissive"
+          "overlay_front": "extendedfeatures:block/multiblock/large_cracking_machine/overlay_front"
         }
       }
     },
