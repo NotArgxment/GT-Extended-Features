@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.core.logic.multiblock.disassembler;
 
-import com.extendedfeatures.client.core.EFModulesConfig;
+import com.extendedfeatures.client.core.EFConfig;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.*;
@@ -51,7 +51,7 @@ public class RecipeResolver {
     private static Map<TagKey<Item>, ItemStack> buildCircuitTagMap() {
         Map<TagKey<Item>, ItemStack> map = new HashMap<>();
 
-        if (!EFModulesConfig.INSTANCE.UniversalCircuits) {
+        if (!EFConfig.INSTANCE.UniversalCircuits) {
             return Map.of();
         }
 

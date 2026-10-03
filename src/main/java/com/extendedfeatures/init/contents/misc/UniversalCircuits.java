@@ -1,7 +1,7 @@
 package com.extendedfeatures.init.contents.misc;
 
 import com.extendedfeatures.CreativeTabs;
-import com.extendedfeatures.client.core.EFModulesConfig;
+import com.extendedfeatures.client.core.EFConfig;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
@@ -46,7 +46,7 @@ public class UniversalCircuits {
     };
 
     static {
-        if (EFModulesConfig.INSTANCE.UniversalCircuits || GTCEu.isDataGen()) {
+        if (EFConfig.INSTANCE.UniversalCircuits || GTCEu.isDataGen()) {
 
             for (Object[] data : CIRCUIT_DATA) {
                 int tier = (int) data[0];

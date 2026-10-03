@@ -8,13 +8,13 @@ import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
 @Config(id = ExtendedFeaturesCore.MOD_ID)
-public class EFModulesConfig {
+public class EFConfig {
 
-    public static EFModulesConfig INSTANCE;
-    public static ConfigHolder<EFModulesConfig> CONFIG_HOLDER;
+    public static EFConfig INSTANCE;
+    public static ConfigHolder<EFConfig> CONFIG_HOLDER;
 
     public static void init() {
-        CONFIG_HOLDER = Configuration.registerConfig(EFModulesConfig.class, ConfigFormats.yaml());
+        CONFIG_HOLDER = Configuration.registerConfig(EFConfig.class, ConfigFormats.yaml());
         INSTANCE = CONFIG_HOLDER.getConfigInstance();
     }
 
