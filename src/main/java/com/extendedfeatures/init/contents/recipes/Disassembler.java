@@ -10,7 +10,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.DISASSEMBER_COMPONENTS;
+import static com.extendedfeatures.client.EFRecipeTypes.DISASSEMBLER_COMPONENTS;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class Disassembler {
@@ -18,7 +18,7 @@ public class Disassembler {
     public static void init(Consumer<FinishedRecipe> provider) {
 
         // MK1 Casing
-        DISASSEMBER_COMPONENTS.recipeBuilder("mk1_casing")
+        DISASSEMBLER_COMPONENTS.recipeBuilder("mk1_casing")
                 .inputItems(GTBlocks.FUSION_CASING, 2)
                 .outputItems(GTBlocks.MACHINE_CASING_LuV)
                 .outputItems(GTBlocks.SUPERCONDUCTING_COIL)
@@ -31,7 +31,7 @@ public class Disassembler {
                 .save(provider);
 
        // MK2 Casing
-        DISASSEMBER_COMPONENTS.recipeBuilder("mk2_casing")
+        DISASSEMBLER_COMPONENTS.recipeBuilder("mk2_casing")
                 .inputItems(GTBlocks.FUSION_CASING_MK2, 2)
                 .outputItems(GTBlocks.MACHINE_CASING_ZPM)
                 .outputItems(GTBlocks.FUSION_COIL, 2)
@@ -44,7 +44,7 @@ public class Disassembler {
                 .save(provider);
 
         // MK3 Casing
-        DISASSEMBER_COMPONENTS.recipeBuilder("mk3_casing")
+        DISASSEMBLER_COMPONENTS.recipeBuilder("mk3_casing")
                 .inputItems(GTBlocks.FUSION_CASING_MK3, 2)
                 .outputItems(GTBlocks.MACHINE_CASING_UV)
                 .outputItems(GTBlocks.FUSION_COIL, 2)
@@ -57,7 +57,7 @@ public class Disassembler {
                 .save(provider);
 
         // Fusion Coil
-        DISASSEMBER_COMPONENTS.recipeBuilder("fusion_coil")
+        DISASSEMBLER_COMPONENTS.recipeBuilder("fusion_coil")
                 .inputItems(GTBlocks.FUSION_COIL)
                 .outputItems(GTBlocks.SUPERCONDUCTING_COIL.asStack())
                 .outputItems(GTItems.FIELD_GENERATOR_IV.asStack(2))

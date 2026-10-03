@@ -46,7 +46,7 @@ public class EFRecipeTypes {
                 .setSound(GTSoundEntries.ASSEMBLER)
                 .addCustomRecipeLogic(DisassemblerRecipeLogic.INSTANCE);
 
-    public static GTRecipeType DISASSEMBER_COMPONENTS = RecipeTypeRegistry("component_disassembly", MULTIBLOCK)
+    public static GTRecipeType DISASSEMBLER_COMPONENTS = RecipeTypeRegistry("component_disassembly", MULTIBLOCK)
                 .setEUIO(IO.IN)
                 .setMaxIOSize(1, 9, 0, 1)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
