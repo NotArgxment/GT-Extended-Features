@@ -48,7 +48,7 @@ public class EFRecipeTypes {
 
     public static GTRecipeType DISASSEMBLER_COMPONENTS = RecipeTypeRegistry("component_disassembly", MULTIBLOCK)
                 .setEUIO(IO.IN)
-                .setMaxIOSize(1, 9, 0, 1)
+                .setMaxIOSize(1, 9, 0, 0)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.ASSEMBLER);
 
@@ -58,7 +58,7 @@ public class EFRecipeTypes {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
                 .setSound(GTSoundEntries.CHEMICAL);
 
-    public static GTRecipeType AIR_COLLECTOR = RecipeTypeRegistry("air_collection", MULTIBLOCK)
+    public static GTRecipeType GAS_COLLECTOR = RecipeTypeRegistry("gas_collection", MULTIBLOCK)
                 .setEUIO(IO.IN)
                 .setMaxIOSize(1, 0, 0, 1)
                 .setProgressBar(GuiTextures.CIRCUIT_OVERLAY, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
