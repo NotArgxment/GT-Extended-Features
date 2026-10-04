@@ -25,7 +25,6 @@ public class Disassembler {
                 .outputItems(GTItems.NEUTRON_REFLECTOR)
                 .outputItems(GTItems.ELECTRIC_PUMP_LuV)
                 .outputItems(TagPrefix.plate, GTMaterials.TungstenSteel, 6)
-                .outputFluids(GTMaterials.Polybenzimidazole.getFluid(288))
                 .EUt(VA[LuV])
                 .duration(200)
                 .save(provider);
@@ -38,7 +37,6 @@ public class Disassembler {
                 .outputItems(GTItems.VOLTAGE_COIL_ZPM)
                 .outputItems(GTItems.FIELD_GENERATOR_LuV)
                 .outputItems(TagPrefix.plate, GTMaterials.Europium, 6)
-                .outputFluids(GTMaterials.Polybenzimidazole.getFluid(288))
                 .EUt(VA[ZPM])
                 .duration(200)
                 .save(provider);
@@ -51,7 +49,6 @@ public class Disassembler {
                 .outputItems(GTItems.VOLTAGE_COIL_UV)
                 .outputItems(GTItems.FIELD_GENERATOR_ZPM)
                 .outputItems(TagPrefix.plate, GTMaterials.Americium, 6)
-                .outputFluids(GTMaterials.Polybenzimidazole.getFluid(576))
                 .EUt(VA[UV])
                 .duration(200)
                 .save(provider);
@@ -66,7 +63,6 @@ public class Disassembler {
                 .outputItems(UniversalCircuits.UNIVERSAL_CIRCUITS[LuV], 4)
                 .outputItems(TagPrefix.pipeSmallFluid, GTMaterials.Naquadah, 4)
                 .outputItems(TagPrefix.plate, GTMaterials.Europium, 4)
-                .outputFluids(GTMaterials.VanadiumGallium.getFluid(576))
                 .EUt(VA[UV])
                 .duration(200)
                 .save(provider);
