@@ -67,6 +67,7 @@
   "extendedfeatures.jade.wireless_optical_hatch.receptors_entry": "    - Receptor %s: %s",
   "extendedfeatures.large_air_collector.tooltip.0": "§7A Bigger Gas Collector",
   "extendedfeatures.large_air_collector.tooltip.1": "§fAllows §3Parallel Hatches §fand has §9Batching §fenabled",
+  "extendedfeatures.large_cracking_machine.tooltip.0": "§fAllows §3Parallel Hatches §fand Has and §9Batching §fenabled",
   "extendedfeatures.large_pyrolysis_oven.tooltip.0": "§fAllows §3Parallel Hatches §fand Has and §9Batching §fenabled",
   "extendedfeatures.limited_energy": "§fAllows §bone §fenergy hatch",
   "extendedfeatures.machine.wireless_optical_hatch.linked_summary": "Linked %s new receptor(s) and %s new data hatch(es)",
