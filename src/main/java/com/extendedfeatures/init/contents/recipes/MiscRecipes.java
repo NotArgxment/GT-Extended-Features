@@ -2,12 +2,19 @@ package com.extendedfeatures.init.contents.recipes;
 
 import com.extendedfeatures.client.EFMachineRegistry;
 import com.extendedfeatures.init.contents.misc.UniversalCircuits;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.common.data.GTItems;
+import com.gregtechceu.gtceu.common.data.GTMachines;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+
 import com.tterrag.registrate.util.entry.ItemEntry;
+
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -19,9 +26,6 @@ import java.util.function.Consumer;
 
 import static com.extendedfeatures.client.EFRecipeTypes.*;
 import static com.gregtechceu.gtceu.api.GTValues.*;
-import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
-import static com.gregtechceu.gtceu.common.data.GTItems.*;
-import static com.gregtechceu.gtceu.common.data.GTMachines.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
@@ -34,82 +38,82 @@ public class MiscRecipes {
         // ===============
 
         final int rpfTime = 1200;
-        final int rpfEnergy = GTValues.VA[GTValues.HV];
+        final int rpfEnergy = GTValues.VA[GTValues.EV];
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("deepslate_processing")
                 .inputItems(new ItemStack(Blocks.DEEPSLATE), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .outputItems(dust, Potassium, 1)
-                .outputItems(dust, Magnesium, 1)
-                .outputItems(dust, Aluminium, 1)
-                .outputItems(dust, Silicon, 1)
-                .outputFluids(Fluorine.getFluid(L * 2))
-                .outputFluids(Oxygen.getFluid(L * 4))
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .outputItems(TagPrefix.dust, GTMaterials.Potassium, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Magnesium, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Aluminium, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Silicon, 1)
+                .outputFluids(GTMaterials.Fluorine.getFluid(L * 2))
+                .outputFluids(GTMaterials.Oxygen.getFluid(L * 4))
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("andesite_processing")
                 .inputItems(new ItemStack(Blocks.ANDESITE), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .outputItems(dust, Magnesium, 1)
-                .outputItems(dust, Silicon, 1)
-                .outputFluids(Hydrogen.getFluid(L * 2))
-                .outputFluids(Oxygen.getFluid(L * 4))
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .outputItems(TagPrefix.dust, GTMaterials.Magnesium, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Silicon, 1)
+                .outputFluids(GTMaterials.Hydrogen.getFluid(L * 2))
+                .outputFluids(GTMaterials.Oxygen.getFluid(L * 4))
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("diorite_processing")
                 .inputItems(new ItemStack(Blocks.DIORITE), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .outputItems(dust, Sodium, 1)
-                .outputItems(dust, Sulfur, 1)
-                .outputFluids(Water.getFluid(L * 4))
-                .outputFluids(Oxygen.getFluid(L * 2))
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .outputItems(TagPrefix.dust, Sodium, 1)
+                .outputItems(TagPrefix.dust, Sulfur, 1)
+                .outputFluids(GTMaterials.Water.getFluid(L * 4))
+                .outputFluids(GTMaterials.Oxygen.getFluid(L * 2))
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("granite_processing")
                 .inputItems(new ItemStack(Blocks.GRANITE), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .outputItems(dust, SiliconDioxide, 1)
-                .outputItems(dust, Calcite, 1)
-                .outputItems(dust, Flint, 1)
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .outputItems(TagPrefix.dust, GTMaterials.SiliconDioxide, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Calcite, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Flint, 1)
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("end_stone_processing")
                 .inputItems(new ItemStack(Blocks.END_STONE), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
                 .chancedOutput(new ItemStack(Blocks.SAND), 8000, 5)
-                .chancedOutput(dust, Tungstate, 1, 5000, 5)
-                .chancedOutput(dust, Platinum, 1, 2500, 5)
-                .outputFluids(Helium.getFluid(L))
+                .chancedOutput(TagPrefix.dust, GTMaterials.Tungstate, 1, 5000, 5)
+                .chancedOutput(TagPrefix.dust, GTMaterials.Platinum, 1, 2500, 5)
+                .outputFluids(GTMaterials.Helium.getFluid(L))
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("netherrack_processing")
                 .inputItems(new ItemStack(Blocks.NETHERRACK), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .chancedOutput(dust, Coal, 1, 6500, 25)
-                .chancedOutput(dust, Sulfur, 1, 8000, 50)
-                .chancedOutput(dust, Redstone, 1, 5000, 50)
-                .chancedOutput(dust, Gold, 1, 2000, 10)
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .chancedOutput(TagPrefix.dust, GTMaterials.Coal, 1, 6500, 25)
+                .chancedOutput(TagPrefix.dust, GTMaterials.Sulfur, 1, 8000, 50)
+                .chancedOutput(TagPrefix.dust, GTMaterials.Redstone, 1, 5000, 50)
+                .chancedOutput(TagPrefix.dust, GTMaterials.Gold, 1, 2000, 10)
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
 
         ROCK_PROCESSING_RECIPES.recipeBuilder("obsidian_processing")
                 .inputItems(new ItemStack(Blocks.OBSIDIAN), 1)
-                .inputFluids(Lubricant.getFluid(L * 4))
-                .outputItems(dust, Magnesium, 1)
-                .outputItems(dust, Iron, 1)
-                .outputItems(dust, Silicon, 1)
-                .outputFluids(Oxygen.getFluid(L * 3))
+                .inputFluids(GTMaterials.Lubricant.getFluid(L * 4))
+                .outputItems(TagPrefix.dust, GTMaterials.Magnesium, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Iron, 1)
+                .outputItems(TagPrefix.dust, GTMaterials.Silicon, 1)
+                .outputFluids(GTMaterials.Oxygen.getFluid(L * 3))
                 .duration(rpfTime)
                 .EUt(rpfEnergy)
                 .save(provider);
@@ -118,37 +122,38 @@ public class MiscRecipes {
         // Large Gas Collector
         // ===================
 
-        VanillaRecipeHelper.addShapedRecipe(provider, false,
-                "large_gas_collector", EFMachineRegistry.LARGE_GAS_COLLECTOR.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(
+                provider, false, "large_gas_collector",
+                EFMachineRegistry.LARGE_GAS_COLLECTOR.asStack(),
                 "MCM", 
                 "BXB",
                 "PKP",
-                    'C', CustomTags.IV_CIRCUITS,
-                    'P', new MaterialEntry(plate, CobaltBrass),
-                    'B', ELECTRIC_MOTOR_IV.asStack(),
-                    'M', ELECTRIC_PUMP_IV.asStack(),
-                    'X', GAS_COLLECTOR[IV].asStack(),
-                    'K', new MaterialEntry(cableGtSingle, Platinum));
+                'C', CustomTags.IV_CIRCUITS,
+                'P', new MaterialEntry(TagPrefix.plate, GTMaterials.CobaltBrass),
+                'B', GTItems.ELECTRIC_MOTOR_IV.asStack(),
+                'M', GTItems.ELECTRIC_PUMP_IV.asStack(),
+                'X', GTMachines.GAS_COLLECTOR[IV].asStack(),
+                'K', new MaterialEntry(TagPrefix.cableGtSingle, GTMaterials.Platinum));
 
-        AIR_COLLECTOR.recipeBuilder("air")
+        GAS_COLLECTOR.recipeBuilder("air")
                 .circuitMeta(1)
-                .outputFluids(Air.getFluid(4000))
+                .outputFluids(GTMaterials.Air.getFluid(4000))
                 .dimension(Level.OVERWORLD.location())
                 .duration(100)
                 .EUt(GTValues.VA[GTValues.MV])
                 .save(provider);
 
-        AIR_COLLECTOR.recipeBuilder("nether_air")
+        GAS_COLLECTOR.recipeBuilder("nether_air")
                 .circuitMeta(2)
-                .outputFluids(NetherAir.getFluid(4000))
+                .outputFluids(GTMaterials.NetherAir.getFluid(4000))
                 .dimension(Level.NETHER.location())
                 .duration(200)
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        AIR_COLLECTOR.recipeBuilder("ender_air")
+        GAS_COLLECTOR.recipeBuilder("ender_air")
                 .circuitMeta(3)
-                .outputFluids(EnderAir.getFluid(4000))
+                .outputFluids(GTMaterials.EnderAir.getFluid(4000))
                 .dimension(Level.END.location())
                 .duration(300)
                 .EUt(GTValues.VA[GTValues.LuV])
