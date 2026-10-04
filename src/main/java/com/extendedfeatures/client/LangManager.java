@@ -16,17 +16,17 @@ public class LangManager {
         // Multiblocks
         replace(provider, "block.extendedfeatures.robust_alloy_materializer", "Robust Alloy Materializer [RAM]");
         replace(provider, "block.extendedfeatures.large_cracking_machine", "Large Cracking Machine [LCM]");
-        replace(provider, "block.extendedfeatures.synthesis_vessel", "Synthesis Vessel [SyVe]");
+        replace(provider, "block.extendedfeatures.synthesis_vessel", "Synthesis Vessel [SyV]");
         replace(provider, "block.extendedfeatures.large_pyrolysis_oven", "Large Pyrolysis Oven [LPO]");
         replace(provider, "block.extendedfeatures.expanded_assembly_line", "Expanded Assembly Line [EAL]");
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
-        replace(provider, "block.extendedfeatures.industrial_greenhouse", "Industrial Greenhouse [IdGh]");
-        replace(provider, "block.extendedfeatures.articial_conservatory", "Artificial Conservatory [ArCt]");
+        replace(provider, "block.extendedfeatures.industrial_greenhouse", "Industrial Greenhouse [IG]");
+        replace(provider, "block.extendedfeatures.articial_conservatory", "Artificial Conservatory [AC]");
         replace(provider, "block.extendedfeatures.universal_disassembly_machine", "Universal Disassembly Machine [UDA]");
         replace(provider, "block.extendedfeatures.rock_processing_plant", "Rock Processing Plant [RPP]");
         replace(provider, "block.extendedfeatures.large_gas_collector", "Large Gas Collector [LGC]");
         replace(provider, "block.extendedfeatures.matrix_data_relay", "Matrix Data Relay [MDR]");
-        replace(provider, "block.extendedfeatures.power_transformer", "Power Transformer [PwTf]");
+        replace(provider, "block.extendedfeatures.power_transformer", "Power Transformer [PT]");
 
         // Expanded Data Hatches
         replace(provider, "block.extendedfeatures.zpm_data_access_hatch", "Elite Data Access Hatch");

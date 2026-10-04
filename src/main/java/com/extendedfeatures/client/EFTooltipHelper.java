@@ -45,7 +45,8 @@ public class EFTooltipHelper {
             Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.1"),
             Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.2"),
-            Component.translatable("extendedfeatures.limited_energy")
+            Component.translatable("extendedfeatures.limited_energy"),
+            Component.translatable("extendedfeatures.expanded_assembly_line.tooltip.4")
     );
 
     public static final List<Component> RPPTooltip = List.of(
