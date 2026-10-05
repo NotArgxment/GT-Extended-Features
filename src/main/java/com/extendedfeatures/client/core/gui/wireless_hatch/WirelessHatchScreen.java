@@ -9,6 +9,7 @@ import com.extendedfeatures.client.core.visual.PacketManager;
 import lombok.Getter;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -115,10 +116,7 @@ public class WirelessHatchScreen extends Screen {
         if (linksButton == null) return;
         boolean canToggle = hasScannedOnce || showLinksEnabled;
         linksButton.active = canToggle;
-        linksButton.setTooltip(canToggle
-                ? null
-                : net.minecraft.client.gui.components.Tooltip.create(
-                Component.translatable("gui.extendedfeatures.wireless_hatch.show_links_locked")));
+        linksButton.setTooltip(canToggle ? null : Tooltip.create(Component.translatable("gui.extendedfeatures.wireless_hatch.show_links_locked")));
     }
 
     private Component stateSuffix(boolean enabled) {

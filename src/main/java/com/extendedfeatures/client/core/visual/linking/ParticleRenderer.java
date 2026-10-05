@@ -7,7 +7,7 @@ import net.minecraft.world.phys.Vec3;
 
 public class ParticleRenderer {
 
-    private static final double DEFAULT_PARTICLES_PER_BLOCK = 2;
+    private static final double particlesPerBlock = 2;
 
     private ParticleRenderer() {}
 
@@ -30,8 +30,9 @@ public class ParticleRenderer {
     }
 
     // Draws a single straight line of particles between two points
-    public static void emitLine(ServerLevel level, Vec3 start, Vec3 end, ParticleOptions particle) {
-        emitLine(level, start, end, particle, DEFAULT_PARTICLES_PER_BLOCK);
+    public static void emitLine(ServerLevel level, Vec3 start,
+                                Vec3 end, ParticleOptions particle) {
+        emitLine(level, start, end, particle, particlesPerBlock);
     }
 
     public static void emitLine(ServerLevel level, Vec3 start, Vec3 end,
