@@ -6,11 +6,6 @@ Addon for GTCEu Modern 1.20.1 designed to provide quality of life changes for th
 
 **Curseforge (2.4.0):** https://www.curseforge.com/minecraft/mc-mods/gtm-extended-features
 
-## Developer Utilities
-[Tools for Modpacks/Addons](https://github.com/NotArgxment/GTM-Extended-Features/blob/main/src/main/java/com/extendedfeatures/init/Documentation.md)
-
-[KubeJS Examples](https://github.com/NotArgxment/GTM-Extended-Features/blob/main/src/main/java/com/extendedfeatures/init/KubeJSExamples.md)
-
 # Current list of features
 
 ### Multiblocks
@@ -24,8 +19,9 @@ Addon for GTCEu Modern 1.20.1 designed to provide quality of life changes for th
 - [x] 1-Step Rock Processing [RPP]
 - [x] GCYM Gas Collector (Multiblock)
 - [ ] Fisher multiblock
+- [ ] Rock Breaker Multiblock
 - [ ] Universal Computational Matrix Array (Expandable HPCA)
-- [ ] Energy Routing Hub (Expandable Active Transformer)
+- [X] Energy Routing Hub (Expandable Active Transformer)
 
 ### Machines
 - [x] Expanded Data Hatches [ZPM, UV, UHV]
