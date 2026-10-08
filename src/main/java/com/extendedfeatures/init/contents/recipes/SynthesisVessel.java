@@ -1,13 +1,13 @@
 package com.extendedfeatures.init.contents.recipes;
 
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 import static com.extendedfeatures.client.EFRecipeTypes.CHEMICAL_REDUCTION;
-import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
 public class SynthesisVessel {
 
@@ -15,31 +15,31 @@ public class SynthesisVessel {
 
         // Platline
         CHEMICAL_REDUCTION.recipeBuilder("platinum_processing_line")
-                .inputItems(dust, PlatinumGroupSludge, 12)
-                .inputFluids(AquaRegia.getFluid(1500))
-                .outputItems(dust, Platinum, 4)
-                .outputItems(dust, Palladium, 3)
-                .outputItems(dust, Ruthenium, 2)
-                .outputItems(dust, Rhodium, 3)
-                .outputItems(dust, Osmium, 2)
-                .outputItems(dust, Iridium, 2)
-                .outputFluids(NitricAcid.getFluid(2300))
-                .outputFluids(HydrochloricAcid.getFluid(1500))
+                .inputItems(TagPrefix.dust, GTMaterials.PlatinumGroupSludge, 12)
+                .inputFluids(GTMaterials.AquaRegia.getFluid(1500))
+                .outputItems(TagPrefix.dust, GTMaterials.Platinum, 4)
+                .outputItems(TagPrefix.dust, GTMaterials.Palladium, 3)
+                .outputItems(TagPrefix.dust, GTMaterials.Ruthenium, 2)
+                .outputItems(TagPrefix.dust, GTMaterials.Rhodium, 3)
+                .outputItems(TagPrefix.dust, GTMaterials.Osmium, 2)
+                .outputItems(TagPrefix.dust, GTMaterials.Iridium, 2)
+                .outputFluids(GTMaterials.NitricAcid.getFluid(2300))
+                .outputFluids(GTMaterials.HydrochloricAcid.getFluid(1500))
                 .EUt(GTValues.VA[GTValues.IV])
                 .duration(400)
                 .save(provider);
 
         // Naqline
         CHEMICAL_REDUCTION.recipeBuilder("naquadah_processing_line")
-                .inputItems(dust, Naquadah, 16)
-                .inputFluids(FluoroantimonicAcid.getFluid(4400))
-                .outputItems(dust, NaquadahEnriched, 4)
-                .outputItems(dust, Naquadria, 2)
-                .outputItems(dust, Trinium, 3)
-                .outputItems(dust, Antimony, 5)
-                .outputItems(dust, Indium, 4)
-                .outputFluids(Hydrogen.getFluid(2300))
-                .outputFluids(Fluorine.getFluid(8100))
+                .inputItems(TagPrefix.dust, GTMaterials.Naquadah, 16)
+                .inputFluids(GTMaterials.FluoroantimonicAcid.getFluid(4400))
+                .outputItems(TagPrefix.dust, GTMaterials.NaquadahEnriched, 4)
+                .outputItems(TagPrefix.dust, GTMaterials.Naquadria, 2)
+                .outputItems(TagPrefix.dust, GTMaterials.Trinium, 3)
+                .outputItems(TagPrefix.dust, GTMaterials.Antimony, 5)
+                .outputItems(TagPrefix.dust, GTMaterials.Indium, 4)
+                .outputFluids(GTMaterials.Hydrogen.getFluid(2300))
+                .outputFluids(GTMaterials.Fluorine.getFluid(8100))
                 .EUt(GTValues.VA[GTValues.LuV])
                 .duration(500)
                 .save(provider);
@@ -118,13 +118,9 @@ public class SynthesisVessel {
 
         // Iron III Chloride
 
-
-        //
-
-
         // Mutagen
 
-         */
+        */
 
     }
 }
