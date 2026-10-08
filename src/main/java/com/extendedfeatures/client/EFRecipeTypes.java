@@ -22,47 +22,53 @@ import static net.minecraft.core.registries.BuiltInRegistries.*;
 public class EFRecipeTypes {
 
     public static GTRecipeType ROCK_PROCESSING_RECIPES = RecipeTypeRegistry("rock_processing_plant", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(1, 6, 1, 3)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.MACERATOR);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(1, 6, 1, 3)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.MACERATOR);
 
     public static GTRecipeType GREENHOUSE_WOOD = RecipeTypeRegistry("greenhouse_wood_recipes", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(3, 3, 1, 0)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.MIXER);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(3, 3, 1, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.MIXER);
 
     public static GTRecipeType GREENHOUSE_CROPS = RecipeTypeRegistry("greenhouse_crop_recipes", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(3, 3, 1, 0)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.MIXER);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(3, 3, 1, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.MIXER);
 
     public static GTRecipeType DISASSEMBLER_MACHINES = RecipeTypeRegistry("machine_disassembly", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(1, 9, 0, 0)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.ASSEMBLER)
-                .addCustomRecipeLogic(DisassemblerRecipeLogic.INSTANCE);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(1, 9, 0, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER)
+            .addCustomRecipeLogic(DisassemblerRecipeLogic.INSTANCE);
 
     public static GTRecipeType DISASSEMBLER_COMPONENTS = RecipeTypeRegistry("component_disassembly", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(1, 9, 0, 0)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.ASSEMBLER);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(1, 9, 0, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER);
 
     public static GTRecipeType CHEMICAL_REDUCTION = RecipeTypeRegistry("chemical_skips", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(6, 6, 6, 6)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.CHEMICAL);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(6, 6, 6, 6)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.CHEMICAL);
 
     public static GTRecipeType GAS_COLLECTOR = RecipeTypeRegistry("gas_collection", MULTIBLOCK)
-                .setEUIO(IO.IN)
-                .setMaxIOSize(1, 0, 0, 1)
-                .setProgressBar(GuiTextures.CIRCUIT_OVERLAY, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.COOLING);
+            .setEUIO(IO.IN)
+            .setMaxIOSize(1, 0, 0, 1)
+            .setProgressBar(GuiTextures.CIRCUIT_OVERLAY, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.COOLING);
+
+    public static GTRecipeType FISH_CATCHING = RecipeTypeRegistry("fishing", MULTIBLOCK)
+            .setEUIO(IO.IN)
+            .setMaxIOSize(3, 3, 0, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.COOLING);
 
     // Addon's own RecipeType - otherwise they RecipeTypeRegistry under GTCEu Namespace
     public static GTRecipeType RecipeTypeRegistry(String name, String group, RecipeType<?>... proxyRecipes) {
@@ -76,7 +82,7 @@ public class EFRecipeTypes {
         return recipeType;
     }
 
-    public static void init(){
+    public static void init() {
         // yawn
     }
 
