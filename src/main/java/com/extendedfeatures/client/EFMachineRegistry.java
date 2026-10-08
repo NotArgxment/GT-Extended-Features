@@ -26,6 +26,7 @@ public class EFMachineRegistry {
     public static MultiblockMachineDefinition LARGE_GAS_COLLECTOR = null;
     public static MultiblockMachineDefinition MATRIX_DATA_RELAY = null;
     public static MultiblockMachineDefinition POWER_TRANSFORMER = null;
+    public static MultiblockMachineDefinition FISHER = null;
 
     // =====================================
     //        Singleblocks/Machines
