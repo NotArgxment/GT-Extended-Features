@@ -38,6 +38,8 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
         SynthesisVessel.init(provider);
         Disassembler.init(provider);
         MiscRecipes.init(provider);
+        RockProcessing.init(provider);
+        FishCatching.init(provider);
     }
 
 }

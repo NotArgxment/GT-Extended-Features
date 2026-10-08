@@ -563,6 +563,47 @@ public class Multiblocks {
         }
     }
 
+    static {
+        if (MultiblocksConfig.Fisher || GTCEu.isDataGen()) {
+            FISHER = ExtendedFeaturesRegister
+                    .multiblock("large_fisher", WorkableElectricMultiblockMachine::new)
+                    .rotationState(RotationState.ALL)
+                    .recipeType(EFRecipeTypes.FISH_CATCHING)
+                    .recipeModifiers(
+                            GTRecipeModifiers.PARALLEL_HATCH,
+                            GTRecipeModifiers.BATCH_MODE,
+                            GTRecipeModifiers.OC_NON_PERFECT
+                    )
+                    .appearanceBlock(GTBlocks.CASING_STAINLESS_TURBINE)
+                    .pattern(definition -> FactoryBlockPattern.start()
+                            .aisle("  DDDDD  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  DDDDD  ")
+                            .aisle(" DDDDDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDDDDD ")
+                            .aisle("DDDDDDDDD", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "DDDDDDDDD")
+                            .aisle("DDDDDDDDD", " DD###DD ", " DD###DD ", " DD###DD ", " DD###DD ", " DD###DD ", "DDDKKKDDD")
+                            .aisle("DDDDDDDDD", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", "DDDKKKDDD")
+                            .aisle("DDDDDDDDD", " DD###DD ", " DD###DD ", " DD###DD ", " DD###DD ", " DD###DD ", "DDDKKKDDD")
+                            .aisle("DDDDDDDDD", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "EDDDKDDDE", "DDDDDDDDD")
+                            .aisle(" DDDDDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDDDDD ")
+                            .aisle("  DD@DD  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  DDDDD  ")
+                            .where('@', controller(blocks(definition.get())))
+                            .where('D', blocks(GTBlocks.CASING_STAINLESS_TURBINE.get())
+                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
+                                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                            .where('K', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
+                            .where('E', frames(GTMaterials.BlackSteel))
+                            .where('#', blocks(Blocks.WATER).or(blocks(Blocks.KELP, Blocks.KELP_PLANT)))
+                            .build())
+                    .workableCasingModel(
+                            GTCEu.id("block/casings/mechanic/machine_casing_turbine_stainless_steel"),
+                            GTCEu.id("block/multiblock/gcym/large_assembler"))
+                    .register();
+        }
+    }
+
     public static void init() {
         // 3.0.0 took long enough huh
         // Anyway, hello stranger

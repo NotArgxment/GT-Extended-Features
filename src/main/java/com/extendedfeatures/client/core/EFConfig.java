@@ -115,6 +115,13 @@ public class EFConfig {
         })
         public boolean PowerTransformer = true;
 
+        @Configurable
+        @Configurable.Comment({
+                "Whether the Fisher Multiblock Center is Enabled",
+                "Default = True"
+        })
+        public boolean Fisher = true;
+
     }
 
     public static class MachineToggles {
