@@ -24,6 +24,18 @@ import static com.gregtechceu.gtceu.common.data.machines.GCYMMachines.*;
 @MethodsReturnNonnullByDefault
 public class EFShapeInfosHelper {
 
+    // New helper to avoid pasting the code inside the {} for every new multi that needs coils
+    public static void setCoilPredicate(char Predicate, List<MultiblockShapeInfo> shapeInfo, MultiblockShapeInfo.ShapeInfoBuilder builder) {
+        GTCEuAPI.HEATING_COILS.entrySet()
+                .stream()
+                .sorted(Comparator.comparingInt(entry -> entry.getKey().getTier()))
+                .forEach(coil -> shapeInfo.add(builder
+                        .shallowCopy()
+                        .where(Predicate, coil.getValue().get())
+                        .build()
+                ));
+    }
+
     public static List<MultiblockShapeInfo> RobustAlloyMaterializer(MultiblockMachineDefinition definition) {
         List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         var builder = MultiblockShapeInfo.builder()
@@ -48,17 +60,9 @@ public class EFShapeInfosHelper {
                 .where('B', CASING_HIGH_TEMPERATURE_SMELTING.getDefaultState())
                 .where('F', CASING_TUNGSTENSTEEL_PIPE.getDefaultState())
                 .where('E', HEAT_VENT.getDefaultState());
+                setCoilPredicate('X', shapeInfo, builder);
 
-        GTCEuAPI.HEATING_COILS
-                .entrySet()
-                .stream()
-                .sorted(Comparator.comparingInt(entry -> entry.getKey().getTier()))
-                .forEach(coil -> shapeInfo.add(builder
-                        .shallowCopy()
-                        .where('X', coil.getValue().get())
-                        .build()
-                ));
-        return shapeInfo;
+    return shapeInfo;
     }
 
     public static List<MultiblockShapeInfo> LargeCrackingMachine(MultiblockMachineDefinition definition) {
@@ -80,16 +84,8 @@ public class EFShapeInfosHelper {
                 .where('I', CASING_LAMINATED_GLASS.getDefaultState())
                 .where('F', CASING_TUNGSTENSTEEL_ROBUST.getDefaultState())
                 .where('D', CASING_TUNGSTENSTEEL_PIPE.getDefaultState());
+                setCoilPredicate('K', shapeInfo, builder);
 
-        GTCEuAPI.HEATING_COILS
-                .entrySet()
-                .stream()
-                .sorted(Comparator.comparingInt(entry -> entry.getKey().getTier()))
-                .forEach(coil -> shapeInfo.add(builder
-                        .shallowCopy()
-                        .where('K', coil.getValue().get())
-                        .build()
-                ));
         return shapeInfo;
     }
 
@@ -118,16 +114,7 @@ public class EFShapeInfosHelper {
                 .where('F', HEAT_VENT.getDefaultState())
                 .where('G', CASING_HIGH_TEMPERATURE_SMELTING.getDefaultState())
                 .where('O', CASING_TUNGSTENSTEEL_PIPE.getDefaultState());
-
-        GTCEuAPI.HEATING_COILS
-                .entrySet()
-                .stream()
-                .sorted(Comparator.comparingInt(entry -> entry.getKey().getTier()))
-                .forEach(coil -> shapeInfo.add(builder
-                        .shallowCopy()
-                        .where('K', coil.getValue().get())
-                        .build()
-                ));
+                setCoilPredicate('K', shapeInfo, builder);
         return shapeInfo;
     }
 
@@ -153,16 +140,8 @@ public class EFShapeInfosHelper {
                 .where('K', CASING_POLYTETRAFLUOROETHYLENE_PIPE.getDefaultState())
                 .where('D', CASING_PTFE_INERT.getDefaultState())
                 .where('F', ChemicalHelper.getBlock(TagPrefix.frameGt, Polytetrafluoroethylene));
+                setCoilPredicate('C', shapeInfo, builder);
 
-        GTCEuAPI.HEATING_COILS
-                .entrySet()
-                .stream()
-                .sorted(Comparator.comparingInt(entry -> entry.getKey().getTier()))
-                .forEach(coil -> shapeInfo.add(builder
-                        .shallowCopy()
-                        .where('C', coil.getValue().get())
-                        .build()
-                ));
         return shapeInfo;
     }
 
