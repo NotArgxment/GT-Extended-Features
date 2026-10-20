@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.recipes;
+package com.extendedfeatures.init.recipes;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;

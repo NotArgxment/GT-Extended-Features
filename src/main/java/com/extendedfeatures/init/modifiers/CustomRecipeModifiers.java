@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.modifiers;
+package com.extendedfeatures.init.modifiers;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;

@@ -1,7 +1,7 @@
-package com.extendedfeatures.init.contents.recipes;
+package com.extendedfeatures.init.recipes;
 
 import com.extendedfeatures.client.EFMachineRegistry;
-import com.extendedfeatures.init.contents.misc.UniversalCircuits;
+import com.extendedfeatures.init.misc.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;

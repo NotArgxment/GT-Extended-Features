@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.misc;
+package com.extendedfeatures.init.misc;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.client.core.EFConfig;

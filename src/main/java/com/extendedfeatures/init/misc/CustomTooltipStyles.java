@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.misc;
+package com.extendedfeatures.init.misc;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.utils.GradientUtil;

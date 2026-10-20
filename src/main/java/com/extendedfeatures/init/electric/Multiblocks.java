@@ -1,4 +1,4 @@
-package com.extendedfeatures.init.contents.electric;
+package com.extendedfeatures.init.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
@@ -8,7 +8,7 @@ import com.extendedfeatures.client.EFTooltipHelper;
 import com.extendedfeatures.client.core.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.core.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.client.EFShapeInfosHelper;
-import com.extendedfeatures.init.contents.misc.ExtendedAbilities;
+import com.extendedfeatures.init.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
