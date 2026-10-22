@@ -48,14 +48,12 @@
         runs {
 
             configureEach {
-                systemProperty 'forge.logging.markers', 'REGISTRIES'
-                logLevel = org.slf4j.event.Level.DEBUG
+                logLevel = org.slf4j.event.Level.INFO
             }
 
             client {
                 client()
                 sourceSet = sourceSets.main
-                programArguments.addAll('--refresh-dependencies')
                 systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
             }
 
@@ -69,8 +67,11 @@
             data {
                 data()
                 sourceSet = sourceSets.main
-                programArguments.addAll('--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath())
+                programArguments.addAll('--mod', project.mod_id, '--client',
+                        '--output', file('src/generated/resources/').getAbsolutePath(),
+                        '--existing', file('src/main/resources/').getAbsolutePath())
                 programArguments.addAll('--existing-mod', 'gtceu')
+                jvmArguments.addAll('-Xmx4G', '-XX:+UseG1GC', '-XX:TieredStopAtLevel=1')
             }
 
         }
@@ -85,7 +86,7 @@
 
     jar {
         manifest.attributes([
-                "MixinConfigs": "extendedfeatures.mixin.json"
+                "MixinConfigs": "${mod_id}.mixin.json"
         ])
     }
 
@@ -119,12 +120,4 @@
         options.encoding = "UTF-8"
         options.release.set(17)
         options.compilerArgs << "-Aquiet=true"
-    }
-
-    tasks.named('runClient') {
-        dependsOn 'runData'
-    }
-
-    tasks.named('runData') {
-        outputs.upToDateWhen { false }
     }
