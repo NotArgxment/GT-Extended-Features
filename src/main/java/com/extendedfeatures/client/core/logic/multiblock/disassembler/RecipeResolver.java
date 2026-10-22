@@ -1,7 +1,7 @@
 package com.extendedfeatures.client.core.logic.multiblock.disassembler;
 
 import com.extendedfeatures.client.core.EFConfig;
-import com.extendedfeatures.init.contents.misc.UniversalCircuits;
+import com.extendedfeatures.init.misc.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.*;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;

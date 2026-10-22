@@ -15,7 +15,7 @@ import java.util.List;
 public class CreativeTabVisibilityMixin {
 
     @Inject(method = "getSortedCreativeModeTabs", at = @At("RETURN"), cancellable = true)
-    private static void extendedfeatures$hideEmptyTabs(CallbackInfoReturnable<List<CreativeModeTab>> cir) {
+    private static void hideEmptyTabs(CallbackInfoReturnable<List<CreativeModeTab>> cir) {
 
         List<CreativeModeTab> tabs = new ArrayList<>(cir.getReturnValue());
 

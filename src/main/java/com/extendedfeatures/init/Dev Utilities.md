@@ -6,14 +6,13 @@ duration is multiplied ×2 for each parallel achieved.
 
 ```java
 // Java
-import com.extendedfeatures.init.contents.modifiers.CustomRecipeModifiers;
 
-.recipeModifiers(MACHINE_PARALLEL(n), GTRecipeModifiers.[...])
+.recipeModifiers(MACHINE_PARALLEL(n),GTRecipeModifiers.[...])
 ```
 
 ```javascript
 // KubeJS
-const CustomModifier = Java.loadClass('com.extendedfeatures.init.contents.modifiers')
+const CustomModifier = Java.loadClass('com.extendedfeatures.init.modifiers')
 
 .recipeModifiers(CustomModifier.MACHINE_PARALLEL(n))
 ```

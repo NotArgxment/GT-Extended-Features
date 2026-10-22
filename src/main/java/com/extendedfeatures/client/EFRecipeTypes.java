@@ -30,13 +30,11 @@ public class EFRecipeTypes {
     public static GTRecipeType GREENHOUSE_WOOD = RecipeTypeRegistry("greenhouse_wood_recipes", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(3, 3, 1, 0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MIXER);
 
     public static GTRecipeType GREENHOUSE_CROPS = RecipeTypeRegistry("greenhouse_crop_recipes", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(3, 3, 1, 0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MIXER);
 
     public static GTRecipeType DISASSEMBLER_MACHINES = RecipeTypeRegistry("machine_disassembly", MULTIBLOCK)
@@ -66,8 +64,7 @@ public class EFRecipeTypes {
 
     public static GTRecipeType FISH_CATCHING = RecipeTypeRegistry("fishing", MULTIBLOCK)
             .setEUIO(IO.IN)
-            .setMaxIOSize(3, 3, 0, 0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+            .setMaxIOSize(4, 4, 1, 0)
             .setSound(GTSoundEntries.COOLING);
 
     // Addon's own RecipeType - otherwise they RecipeTypeRegistry under GTCEu Namespace
