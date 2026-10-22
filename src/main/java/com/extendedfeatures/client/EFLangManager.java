@@ -4,7 +4,7 @@ import com.tterrag.registrate.providers.RegistrateLangProvider;
 
 import static com.gregtechceu.gtceu.data.lang.LangHandler.replace;
 
-public class LangManager {
+public class EFLangManager {
 
     public static void init(RegistrateLangProvider provider) {
         Common(provider);
@@ -41,6 +41,7 @@ public class LangManager {
         replace(provider, "extendedfeatures.rock_processing_plant", "Rock Processing");
         replace(provider, "extendedfeatures.chemical_skips", "Chemical Reduction");
         replace(provider, "extendedfeatures.gas_collection", "Gas Collection");
+        replace(provider, "extendedfeatures.fishing", "Fishing");
 
         // Configuration lang
         replace(provider, "config.screen.extendedfeatures", "§7Mod Configuration §c(Restart to Apply Changes)");

@@ -8,7 +8,7 @@ import java.util.function.BiConsumer;
 
 import static com.gregtechceu.gtceu.client.util.TooltipHelper.RAINBOW_HSL_SLOW;
 
-public class EFTooltipHelper {
+public class EFTooltipStorage {
 
     // Regular Tooltips
     public static final List<Component> RAMTooltip = List.of(
@@ -103,6 +103,11 @@ public class EFTooltipHelper {
             Component.translatable("extendedfeatures.power_transformer.tooltip.1"),
             Component.translatable("extendedfeatures.separator_line"),
             Component.translatable("gtceu.machine.active_transformer.tooltip.1")
+    );
+
+    public static final List<Component> LF_Tooltoip = List.of(
+            Component.translatable("extendedfeatures.large_fisher.tooltip.0"),
+            Component.translatable("extendedfeatures.large_fisher.tooltip.1")
     );
 
     public static final BiConsumer<ItemStack, List<Component>> PW_TooltipBuilder =
