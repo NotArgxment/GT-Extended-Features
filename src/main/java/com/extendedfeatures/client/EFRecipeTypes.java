@@ -40,14 +40,12 @@ public class EFRecipeTypes {
     public static GTRecipeType DISASSEMBLER_MACHINES = RecipeTypeRegistry("machine_disassembly", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(1, 9, 0, 0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER)
             .addCustomRecipeLogic(DisassemblerRecipeLogic.INSTANCE);
 
     public static GTRecipeType DISASSEMBLER_COMPONENTS = RecipeTypeRegistry("component_disassembly", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(1, 9, 0, 0)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER);
 
     public static GTRecipeType CHEMICAL_REDUCTION = RecipeTypeRegistry("chemical_skips", MULTIBLOCK)
