@@ -48,12 +48,14 @@
         runs {
 
             configureEach {
-                logLevel = org.slf4j.event.Level.INFO
+                systemProperty 'forge.logging.markers', 'REGISTRIES'
+                logLevel = org.slf4j.event.Level.DEBUG
             }
 
             client {
                 client()
                 sourceSet = sourceSets.main
+                programArguments.addAll('--refresh-dependencies')
                 systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
             }
 
@@ -67,11 +69,8 @@
             data {
                 data()
                 sourceSet = sourceSets.main
-                programArguments.addAll('--mod', project.mod_id, '--client',
-                        '--output', file('src/generated/resources/').getAbsolutePath(),
-                        '--existing', file('src/main/resources/').getAbsolutePath())
+                programArguments.addAll('--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath())
                 programArguments.addAll('--existing-mod', 'gtceu')
-                jvmArguments.addAll('-Xmx4G', '-XX:+UseG1GC', '-XX:TieredStopAtLevel=1')
             }
 
         }
