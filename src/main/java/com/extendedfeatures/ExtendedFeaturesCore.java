@@ -5,15 +5,18 @@ import com.extendedfeatures.client.core.EFConfig;
 import com.extendedfeatures.client.core.visual.PacketManager;
 import com.extendedfeatures.init.electric.Machines;
 import com.extendedfeatures.init.electric.Multiblocks;
-import com.extendedfeatures.init.misc.UniversalCircuits;
+import com.extendedfeatures.init.misc.MultiversalCircuits;
 
+import com.extendedfeatures.init.misc.UniversalCircuits;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
+import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.resources.ResourceLocation;
 
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +27,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Mod(ExtendedFeaturesCore.MOD_ID)
 @SuppressWarnings("removal")
@@ -39,6 +45,7 @@ public class ExtendedFeaturesCore {
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        MultiversalCircuits.register(modEventBus);
         UniversalCircuits.register(modEventBus);
 
         ExtendedFeaturesRegister.registerRegistrate();
@@ -65,7 +72,11 @@ public class ExtendedFeaturesCore {
     private void onBuildCreativeTab(BuildCreativeModeTabContentsEvent event) {
         if (!event.getTabKey().location().getNamespace().equals(ExtendedFeaturesCore.MOD_ID)) return;
         if (GTCEuAPI.isHighTier()) return;
-        UniversalCircuits.getHighTierCircuits().forEach(entry -> event.getEntries().remove(entry.asStack()));
+
+        List<ItemEntry<Item>> hideHighTier = new ArrayList<>();
+        hideHighTier.addAll(MultiversalCircuits.getMultiversalHighTierCircuits());
+        hideHighTier.addAll(UniversalCircuits.getUniversalHighTierCircuits());
+        hideHighTier.forEach(entry -> event.getEntries().remove(entry.asStack()));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -24,7 +24,9 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-        ExtendedFeaturesCore.ExtendedFeaturesRegister.addDataGenerator(ProviderType.LANG, EFLangManager::init);
+        ExtendedFeaturesCore.ExtendedFeaturesRegister.addDataGenerator(
+                ProviderType.LANG, EFLangManager::init
+        );
     }
 
     @Override
@@ -35,11 +37,12 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         Greenhouse.init(provider);
-        SynthesisVessel.init(provider);
+        ChemicalSkips.init(provider);
         Disassembler.init(provider);
-        MiscRecipes.init(provider);
+        GasCollector.init(provider);
         RockProcessing.init(provider);
-        FishCatching.init(provider);
+        Fisher.init(provider);
+        Multiversal.init(provider);
     }
 
 }

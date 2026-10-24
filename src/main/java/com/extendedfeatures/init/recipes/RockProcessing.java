@@ -9,14 +9,14 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.ROCK_PROCESSING_RECIPES;
+import static com.extendedfeatures.client.EFRecipeTypes.ROCK_PROCESSING;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class RockProcessing {
 
     public static void init(Consumer<FinishedRecipe> provider){
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("deepslate_processing")
+        ROCK_PROCESSING.recipeBuilder("deepslate_processing")
                 .inputItems(new ItemStack(Blocks.DEEPSLATE), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .outputItems(TagPrefix.dust, GTMaterials.Potassium, 1)
@@ -29,7 +29,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("andesite_processing")
+        ROCK_PROCESSING.recipeBuilder("andesite_processing")
                 .inputItems(new ItemStack(Blocks.ANDESITE), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .outputItems(TagPrefix.dust, GTMaterials.Magnesium, 1)
@@ -40,7 +40,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("diorite_processing")
+        ROCK_PROCESSING.recipeBuilder("diorite_processing")
                 .inputItems(new ItemStack(Blocks.DIORITE), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .outputItems(TagPrefix.dust, GTMaterials.Sodium, 1)
@@ -51,7 +51,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("granite_processing")
+        ROCK_PROCESSING.recipeBuilder("granite_processing")
                 .inputItems(new ItemStack(Blocks.GRANITE), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .outputItems(TagPrefix.dust, GTMaterials.SiliconDioxide, 1)
@@ -61,7 +61,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("end_stone_processing")
+        ROCK_PROCESSING.recipeBuilder("end_stone_processing")
                 .inputItems(new ItemStack(Blocks.END_STONE), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .chancedOutput(new ItemStack(Blocks.SAND), 8000, 5)
@@ -72,7 +72,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("netherrack_processing")
+        ROCK_PROCESSING.recipeBuilder("netherrack_processing")
                 .inputItems(new ItemStack(Blocks.NETHERRACK), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .chancedOutput(TagPrefix.dust, GTMaterials.Coal, 1, 6500, 25)
@@ -83,7 +83,7 @@ public class RockProcessing {
                 .EUt(GTValues.VA[GTValues.EV])
                 .save(provider);
 
-        ROCK_PROCESSING_RECIPES.recipeBuilder("obsidian_processing")
+        ROCK_PROCESSING.recipeBuilder("obsidian_processing")
                 .inputItems(new ItemStack(Blocks.OBSIDIAN), 1)
                 .inputFluids(GTMaterials.Lubricant.getFluid(144 * 4))
                 .outputItems(TagPrefix.dust, GTMaterials.Magnesium, 1)

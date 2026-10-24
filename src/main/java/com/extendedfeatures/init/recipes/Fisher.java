@@ -9,7 +9,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.FISH_CATCHING;
+import static com.extendedfeatures.client.EFRecipeTypes.FISHER;
 
 //            FISHKISSFISHKIS
 //        SFISHKISSFISHKISSFISH            F
@@ -24,11 +24,11 @@ import static com.extendedfeatures.client.EFRecipeTypes.FISH_CATCHING;
 //     HKISSFISHKISSFISHKISSFISHK         IS
 //        SFISHKISSFISHKISSFISH            K
 //          ISSFISHKISSFISHK
-public class FishCatching {
+public class Fisher {
 
     public static void init(Consumer<FinishedRecipe> provider) {
 
-        FISH_CATCHING.recipeBuilder("mince_meat_c1")
+        FISHER.recipeBuilder("mince_meat_c1")
                 .inputItems(TagPrefix.dustSmall, GTMaterials.Meat, 2)
                 .inputItems(Items.STRING, 32)
                 .inputFluids(GTMaterials.Biomass.getFluid(144))
@@ -41,7 +41,7 @@ public class FishCatching {
                 .EUt(GTValues.VA[GTValues.HV])
                 .save(provider);
 
-        FISH_CATCHING.recipeBuilder("mince_meat_c2")
+        FISHER.recipeBuilder("mince_meat_c2")
                 .inputItems(TagPrefix.dustSmall, GTMaterials.Meat, 2)
                 .inputItems(Items.STRING, 32)
                 .inputFluids(GTMaterials.FermentedBiomass.getFluid(144))
@@ -54,7 +54,7 @@ public class FishCatching {
                 .EUt(GTValues.VA[GTValues.HV])
                 .save(provider);
 
-        FISH_CATCHING.recipeBuilder("collagen")
+        FISHER.recipeBuilder("collagen")
                 .inputItems(TagPrefix.dustSmall, GTMaterials.Collagen, 2)
                 .inputItems(Items.STRING, 32)
                 .inputFluids(GTMaterials.SeedOil.getFluid(288))

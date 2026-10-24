@@ -67,8 +67,16 @@ public class UniversalCircuits {
     }
 
     // "isHighTier" filter
-    public static List<ItemEntry<Item>> getHighTierCircuits() {
-        int[] highTiers = { GTValues.UHV, GTValues.UEV, GTValues.UIV, GTValues.UXV, GTValues.OpV };
+    public static List<ItemEntry<Item>> getUniversalHighTierCircuits() {
+
+        int[] highTiers = {
+                GTValues.UHV,
+                GTValues.UEV,
+                GTValues.UIV,
+                GTValues.UXV,
+                GTValues.OpV
+        };
+
         List<ItemEntry<Item>> result = new ArrayList<>();
 
         for (int tier : highTiers) {

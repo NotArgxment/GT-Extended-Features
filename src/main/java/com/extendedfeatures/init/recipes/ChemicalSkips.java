@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 import static com.extendedfeatures.client.EFRecipeTypes.CHEMICAL_REDUCTION;
 
-public class SynthesisVessel {
+public class ChemicalSkips {
 
     public static void init(Consumer<FinishedRecipe> provider) {
 
