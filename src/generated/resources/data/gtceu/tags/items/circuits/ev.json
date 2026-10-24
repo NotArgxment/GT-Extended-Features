@@ -1,5 +1,8 @@
 {
   "values": [
+    "extendedfeatures:ev_multiversal_circuit",
+    "extendedfeatures:iv_multiversal_circuit",
+    "extendedfeatures:luv_multiversal_circuit",
     "extendedfeatures:ev_universal_circuit"
   ]
 }

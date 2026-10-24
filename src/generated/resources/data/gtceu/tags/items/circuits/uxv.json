@@ -1,5 +1,8 @@
 {
   "values": [
+    "extendedfeatures:uxv_multiversal_circuit",
+    "extendedfeatures:opv_multiversal_circuit",
+    "extendedfeatures:max_multiversal_circuit",
     "extendedfeatures:uxv_universal_circuit"
   ]
 }
