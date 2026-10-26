@@ -28,7 +28,7 @@ public class UniversalCircuits {
     // Credits to witherschat for allowing me to use the universal circuits textures
     public static final ItemEntry<Item>[] UNIVERSAL_CIRCUITS = new ItemEntry[GTValues.TIER_COUNT];
 
-    private static final Object[][] CIRCUIT_DATA = {
+    private static final Object[][] UNIVERSAL_CIRCUITS_DATA = {
             { GTValues.ULV, "ulv_universal_circuit", "§8ULV §rUniversal Circuit", CustomTags.ULV_CIRCUITS },
             { GTValues.LV, "lv_universal_circuit", "§7LV §rUniversal Circuit", CustomTags.LV_CIRCUITS },
             { GTValues.MV, "mv_universal_circuit", "§bMV §rUniversal Circuit", CustomTags.MV_CIRCUITS },
@@ -48,7 +48,7 @@ public class UniversalCircuits {
     static {
         if (EFConfig.INSTANCE.UniversalCircuits || GTCEu.isDataGen()) {
 
-            for (Object[] data : CIRCUIT_DATA) {
+            for (Object[] data : UNIVERSAL_CIRCUITS_DATA) {
                 int tier = (int) data[0];
 
                 String registryName = (String) data[1];

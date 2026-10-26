@@ -43,6 +43,7 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
         RockProcessing.init(provider);
         Fisher.init(provider);
         Multiversal.init(provider);
+        Universal.init(provider);
     }
 
 }

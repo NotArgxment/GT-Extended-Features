@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extendedfeatures:item/multiversal/max_multiversal_circuit"
+  }
+}

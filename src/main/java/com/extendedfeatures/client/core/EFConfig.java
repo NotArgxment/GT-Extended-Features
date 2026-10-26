@@ -161,4 +161,10 @@ public class EFConfig {
     })
     public boolean DataHatchLinkingBehavior = true;
 
+    @Configurable
+    @Configurable.Comment({
+            ""
+    })
+    public boolean MultiversalFeatures = false;
+
 }
