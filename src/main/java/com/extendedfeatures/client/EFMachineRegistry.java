@@ -1,6 +1,6 @@
 package com.extendedfeatures.client;
 
-import com.extendedfeatures.client.core.EFConfig;
+import com.extendedfeatures.client.internal.EFConfig;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 
