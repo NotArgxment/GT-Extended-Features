@@ -1,13 +1,13 @@
 package com.extendedfeatures;
 
 import com.extendedfeatures.client.EFRecipeTypes;
-import com.extendedfeatures.client.core.EFConfig;
-import com.extendedfeatures.client.core.visual.PacketManager;
-import com.extendedfeatures.init.electric.Machines;
-import com.extendedfeatures.init.electric.Multiblocks;
-import com.extendedfeatures.init.misc.MultiversalCircuits;
+import com.extendedfeatures.client.internal.EFConfig;
+import com.extendedfeatures.client.internal.visual.PacketManager;
+import com.extendedfeatures.gtef.electric.Machines;
+import com.extendedfeatures.gtef.electric.Multiblocks;
+import com.extendedfeatures.gtef.misc.MultiversalCircuits;
 
-import com.extendedfeatures.init.misc.UniversalCircuits;
+import com.extendedfeatures.gtef.misc.UniversalCircuits;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;

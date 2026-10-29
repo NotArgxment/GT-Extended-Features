@@ -1,7 +1,7 @@
 package com.extendedfeatures;
 
 import com.extendedfeatures.client.EFLangManager;
-import com.extendedfeatures.init.recipes.*;
+import com.extendedfeatures.gtef.recipes.*;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
