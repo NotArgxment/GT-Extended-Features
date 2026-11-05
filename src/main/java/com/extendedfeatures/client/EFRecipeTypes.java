@@ -21,7 +21,7 @@ import static net.minecraft.core.registries.BuiltInRegistries.*;
 @SuppressWarnings("deprecated")
 public class EFRecipeTypes {
 
-    public static GTRecipeType ROCK_PROCESSING_RECIPES = RecipeTypeRegistry("rock_processing_plant", MULTIBLOCK)
+    public static GTRecipeType ROCK_PROCESSING = RecipeTypeRegistry("rock_processing_plant", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(1, 6, 1, 3)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
@@ -60,7 +60,7 @@ public class EFRecipeTypes {
             .setProgressBar(GuiTextures.CIRCUIT_OVERLAY, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.COOLING);
 
-    public static GTRecipeType FISH_CATCHING = RecipeTypeRegistry("fishing", MULTIBLOCK)
+    public static GTRecipeType FISHER = RecipeTypeRegistry("fishing", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(4, 4, 1, 0)
             .setSound(GTSoundEntries.COOLING);
