@@ -42,7 +42,6 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
         GasCollector.init(provider);
         RockProcessing.init(provider);
         Fisher.init(provider);
-        Multiversal.init(provider);
         Universal.init(provider);
     }
 

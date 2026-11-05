@@ -606,31 +606,6 @@ public class Multiblocks {
         }
     }
 
-    /* WIP (3.1.0)
-    static {
-        if (EFConfig.INSTANCE.MultiversalCircuits || GTCEu.isDataGen()) {
-            MULTIVERSAL_CIRCUIT_PRESS = ExtendedFeaturesRegister
-                    .multiblock("multiversal_circuit_press", WorkableElectricMultiblockMachine::new)
-                    .rotationState(RotationState.ALL)
-                    .recipeType(EFRecipeTypes.MULTIVERSAL_PRESS_BASIC)
-                    .recipeModifiers(
-                            CustomRecipeModifiers.MACHINE_PARALLEL(4),
-                            GTRecipeModifiers.OC_NON_PERFECT
-                    )
-                    .appearanceBlock(GTBlocks.CASING_STAINLESS_TURBINE)
-                    .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("  DDDDD  ")
-                            .where('@', controller(blocks(definition.get())))
-                            .build())
-                    .workableCasingModel(
-                            GTCEu.id("block/casings/mechanic/"),
-                            GTCEu.id("block/multiblock/"))
-                    .register();
-        }
-    }
-
-     */
-
     public static void init() {
         // 3.0.0 took long enough huh
         // Anyway, hello stranger

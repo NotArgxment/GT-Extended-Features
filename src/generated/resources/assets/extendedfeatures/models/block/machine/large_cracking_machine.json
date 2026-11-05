@@ -1,10 +1,5 @@
 {
   "parent": "minecraft:block/block",
-  "dynamic_renders": [
-    {
-      "type": "extendedfeatures:item_above_controller"
-    }
-  ],
   "loader": "gtceu:machine",
   "machine": "extendedfeatures:large_cracking_machine",
   "texture_overrides": {

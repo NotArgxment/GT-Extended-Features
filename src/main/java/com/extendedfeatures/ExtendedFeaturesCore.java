@@ -5,9 +5,8 @@ import com.extendedfeatures.client.internal.EFConfig;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 import com.extendedfeatures.gtef.electric.Machines;
 import com.extendedfeatures.gtef.electric.Multiblocks;
-import com.extendedfeatures.gtef.misc.MultiversalCircuits;
-
 import com.extendedfeatures.gtef.misc.UniversalCircuits;
+
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -44,8 +43,6 @@ public class ExtendedFeaturesCore {
         EFConfig.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        MultiversalCircuits.register(modEventBus);
         UniversalCircuits.register(modEventBus);
 
         ExtendedFeaturesRegister.registerRegistrate();
@@ -74,7 +71,6 @@ public class ExtendedFeaturesCore {
         if (GTCEuAPI.isHighTier()) return;
 
         List<ItemEntry<Item>> hideHighTier = new ArrayList<>();
-        hideHighTier.addAll(MultiversalCircuits.getMultiversalHighTierCircuits());
         hideHighTier.addAll(UniversalCircuits.getUniversalHighTierCircuits());
         hideHighTier.forEach(entry -> event.getEntries().remove(entry.asStack()));
     }
