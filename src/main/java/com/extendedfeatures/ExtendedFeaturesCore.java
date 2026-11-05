@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Mod(ExtendedFeaturesCore.MOD_ID)
-@SuppressWarnings("removal")
+@SuppressWarnings("all")
 public class ExtendedFeaturesCore {
 
     public static final String MOD_ID = "extendedfeatures";
