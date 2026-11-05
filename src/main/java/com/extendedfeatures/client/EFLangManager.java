@@ -27,6 +27,7 @@ public class EFLangManager {
         replace(provider, "block.extendedfeatures.large_gas_collector", "Large Gas Collector [LGC]");
         replace(provider, "block.extendedfeatures.matrix_data_relay", "Matrix Data Relay [MDR]");
         replace(provider, "block.extendedfeatures.power_transformer", "Power Transformer [PT]");
+        replace(provider, "block.extendedfeatures.large_fisher", "Large Fisher Tank [LFT]");
 
         // Expanded Data Hatches
         replace(provider, "block.extendedfeatures.zpm_data_access_hatch", "Elite Data Access Hatch");
