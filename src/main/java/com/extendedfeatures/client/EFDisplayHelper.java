@@ -14,7 +14,7 @@ import java.util.function.BiConsumer;
 
 public class EFDisplayHelper {
 
-    public static final BiConsumer<IMultiController, List<Component>> EBFDisplay =
+    public static final BiConsumer<IMultiController, List<Component>> ElectricBlastFurnace =
             (controller, components) -> {
                 if (controller instanceof CoilWorkableElectricMultiblockMachine coilMachine && controller.isFormed()) {
                     components.add(
@@ -26,7 +26,7 @@ public class EFDisplayHelper {
                 }
             };
 
-    public static final BiConsumer<IMultiController, List<Component>> CrackerDisplay =
+    public static final BiConsumer<IMultiController, List<Component>> Cracker =
             (controller, components) -> {
                 if (controller instanceof CoilWorkableElectricMultiblockMachine coilMachine && controller.isFormed()) {
                     components.add(Component.translatable("gtceu.multiblock.cracking_unit.energy",
@@ -34,7 +34,7 @@ public class EFDisplayHelper {
                 }
             };
 
-    public static final BiConsumer<IMultiController, List<Component>> PyroDisplay =
+    public static final BiConsumer<IMultiController, List<Component>> PyrolyseOven =
             (controller, components) -> {
                 if (controller instanceof CoilWorkableElectricMultiblockMachine coilMachine && controller.isFormed()) {
                     components.add(Component.translatable("gtceu.multiblock.pyrolyse_oven.speed",
