@@ -4,7 +4,6 @@ Allows any multiblock to run parallels **without a parallel hatch part in its st
 
 ```java
 // Java
-
 import com.extendedfeatures.gtef.modifiers.MachineParallel;
 
 .recipeModifiers(
@@ -41,12 +40,11 @@ Try playing around the values to get good Machine Parallels
 import com.extendedfeatures.gtef.misc.ElectricTiersGradientStyles;
 
 // Basic tooltip builder
-    .tooltipBuilder((stack, list) -> list.add(
-            Component.translatable("extendedfeatures.regular.tooltip.0")
-                .append(Component.translatable("extendedfeatures.styled.tooltip.1")
-                    .withStyle(ElectricTiersGradientStyles.HV_GRADIENT))
-        // Where "HV_GRADIENT" can be replaced with other styles from ElectricTiersGradientStyles or TooltipHelper from GTCEu
+.tooltipBuilder((stack, list) -> list.add(
+        Component.translatable("extendedfeatures.regular.tooltip.0")
+            .append(Component.translatable("extendedfeatures.styled.tooltip.1")
+                .withStyle(ElectricTiersGradientStyles.HV_GRADIENT_FAST))
+        // Where "HV_GRADIENT_FAST" can be replaced with other styles from ElectricTiersGradientStyles or TooltipHelper from GTCEu
         // Check ElectricTiersGradientStyles.java for the tier you want to use as tooltip
-        );
-    )
+        ))
 ```

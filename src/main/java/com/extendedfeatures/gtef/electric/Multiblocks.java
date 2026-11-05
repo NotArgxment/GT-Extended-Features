@@ -8,6 +8,7 @@ import com.extendedfeatures.client.Tooltips;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.client.ShapeInfos;
+import com.extendedfeatures.gtef.misc.ElectricTiersGradientStyles;
 import com.extendedfeatures.gtef.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -21,6 +22,7 @@ import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.ActiveTransformerMachine;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
