@@ -75,5 +75,7 @@ public class UniversalCircuits {
         return result;
     }
 
-    public static void register(IEventBus eventBus) {}
+    public static void register(IEventBus eventBus) {
+        // goodbye withers textures.
+    }
 }
