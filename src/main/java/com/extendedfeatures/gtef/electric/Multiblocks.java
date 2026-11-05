@@ -2,12 +2,12 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.client.EFDisplayHelper;
-import com.extendedfeatures.client.EFRecipeTypes;
-import com.extendedfeatures.client.EFTooltipStorage;
+import com.extendedfeatures.client.AdditionalDisplays;
+import com.extendedfeatures.client.RecipeTypes;
+import com.extendedfeatures.client.Tooltips;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
-import com.extendedfeatures.client.EFShapeInfosHelper;
+import com.extendedfeatures.client.ShapeInfos;
 import com.extendedfeatures.gtef.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -25,7 +25,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
-import static com.extendedfeatures.client.EFMachineRegistry.*;
+import static com.extendedfeatures.client.MachineRegistry.*;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dustTiny;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
@@ -43,7 +43,7 @@ public class Multiblocks {
         if (MultiblocksConfig.RobustAlloyMaterializer || GTCEu.isDataGen()) {
             ROBUST_ALLOY_MATERIALIZER = ExtendedFeaturesRegister
                     .multiblock("robust_alloy_materializer", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.RAMTooltip)
+                    .tooltips(Tooltips.RAMTooltip)
                     .rotationState(RotationState.ALL)
                     .recipeType(GCYMRecipeTypes.ALLOY_BLAST_RECIPES)
                     .recipeModifiers(
@@ -84,8 +84,8 @@ public class Multiblocks {
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
                             ExtendedFeaturesCore.id("block/multiblock/furnace")
                     )
-                    .additionalDisplay(EFDisplayHelper.ElectricBlastFurnace)
-                    .shapeInfos(EFShapeInfosHelper::RobustAlloyMaterializer)
+                    .additionalDisplay(AdditionalDisplays.ElectricBlastFurnace)
+                    .shapeInfos(ShapeInfos::RobustAlloyMaterializer)
                     .register();
         }
     }
@@ -94,7 +94,7 @@ public class Multiblocks {
         if (MultiblocksConfig.LargeCrackingMachine || GTCEu.isDataGen()) {
             LARGE_CRACKING_MACHINE = ExtendedFeaturesRegister
                     .multiblock("large_cracking_machine", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.LCMTooltip)
+                    .tooltips(Tooltips.LCMTooltip)
                     .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.CRACKING_RECIPES)
                     .recipeModifiers(
@@ -131,8 +131,8 @@ public class Multiblocks {
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
                             ExtendedFeaturesCore.id("block/multiblock/large_cracking_machine")
                     )
-                    .additionalDisplay(EFDisplayHelper.Cracker)
-                    .shapeInfos(EFShapeInfosHelper::LargeCrackingMachine)
+                    .additionalDisplay(AdditionalDisplays.Cracker)
+                    .shapeInfos(ShapeInfos::LargeCrackingMachine)
                     .register();
         }
     }
@@ -141,9 +141,9 @@ public class Multiblocks {
         if (MultiblocksConfig.SynthesisVessel || GTCEu.isDataGen()) {
             SYNTHESIS_VESSEL = ExtendedFeaturesRegister
                     .multiblock("synthesis_vessel", WorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.SVTooltip)
+                    .tooltips(Tooltips.SVTooltip)
                     .rotationState(RotationState.ALL)
-                    .recipeTypes(EFRecipeTypes.CHEMICAL_REDUCTION)
+                    .recipeTypes(RecipeTypes.CHEMICAL_REDUCTION)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
                             GTRecipeModifiers.BATCH_MODE)
@@ -174,7 +174,7 @@ public class Multiblocks {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_inert_ptfe"),
                             GTCEu.id("block/multiblock/large_chemical_reactor"))
-                    .shapeInfos(EFShapeInfosHelper::SynthesisVessel)
+                    .shapeInfos(ShapeInfos::SynthesisVessel)
                     .register();
         }
     }
@@ -183,7 +183,7 @@ public class Multiblocks {
         if (MultiblocksConfig.LargePyrolysisOven || GTCEu.isDataGen()) {
             LARGE_PYROLYSE_OVEN = ExtendedFeaturesRegister
                     .multiblock("large_pyrolysis_oven", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.LPOTooltip)
+                    .tooltips(Tooltips.LPOTooltip)
                     .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.PYROLYSE_RECIPES)
                     .recipeModifiers(
@@ -225,8 +225,8 @@ public class Multiblocks {
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
                             ExtendedFeaturesCore.id("block/multiblock/furnace")
                     )
-                    .additionalDisplay(EFDisplayHelper.PyrolyseOven)
-                    .shapeInfos(EFShapeInfosHelper::LargePyrolysisOven)
+                    .additionalDisplay(AdditionalDisplays.PyrolyseOven)
+                    .shapeInfos(ShapeInfos::LargePyrolysisOven)
                     .register();
         }
     }
@@ -236,7 +236,7 @@ public class Multiblocks {
             EXPANDED_ASSEMBLY_LINE = ExtendedFeaturesRegister
                     .multiblock("expanded_assembly_line", ExpandedAssemblyLineMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(EFTooltipStorage.EALTooltip)
+                    .tooltips(Tooltips.EALTooltip)
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_NON_PERFECT_SUBTICK,
@@ -272,9 +272,9 @@ public class Multiblocks {
         if (MultiblocksConfig.RockProcessingPlant || GTCEu.isDataGen()) {
             ROCK_PROCESSING_PLANT = ExtendedFeaturesRegister
                     .multiblock("rock_processing_plant", WorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.RPPTooltip)
+                    .tooltips(Tooltips.RPPTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .recipeTypes(EFRecipeTypes.ROCK_PROCESSING)
+                    .recipeTypes(RecipeTypes.ROCK_PROCESSING)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.BATCH_MODE,
@@ -326,11 +326,11 @@ public class Multiblocks {
         if (MultiblocksConfig.IndustrialGreenhouse || GTCEu.isDataGen()) {
             INDUSTRIAL_GREENHOUSE = ExtendedFeaturesRegister
                     .multiblock("industrial_greenhouse", WorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.IGTooltip)
+                    .tooltips(Tooltips.IGTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(
-                            EFRecipeTypes.GREENHOUSE_CROPS,
-                            EFRecipeTypes.GREENHOUSE_WOOD)
+                            RecipeTypes.GENERAL_FARMING,
+                            RecipeTypes.ARBOREAL_FARM)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
                             GTRecipeModifiers.BATCH_MODE)
@@ -376,10 +376,10 @@ public class Multiblocks {
             ARTIFICIAL_CONSERVATORY = ExtendedFeaturesRegister
                     .multiblock("advanced_conservatory", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .tooltips(EFTooltipStorage.ArCtTooltip)
+                    .tooltips(Tooltips.ArCtTooltip)
                     .recipeTypes(
-                            EFRecipeTypes.GREENHOUSE_CROPS,
-                            EFRecipeTypes.GREENHOUSE_WOOD)
+                            RecipeTypes.GENERAL_FARMING,
+                            RecipeTypes.ARBOREAL_FARM)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.OC_NON_PERFECT,
@@ -425,11 +425,11 @@ public class Multiblocks {
         if (MultiblocksConfig.Disassembler || GTCEu.isDataGen()) {
             DISASSEMBLER = ExtendedFeaturesRegister
                     .multiblock("universal_disassembly_machine", WorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.UDMTooltip)
+                    .tooltips(Tooltips.UDMTooltip)
                     .rotationState(RotationState.ALL)
                     .recipeTypes(
-                            EFRecipeTypes.DISASSEMBLER_MACHINES,
-                            EFRecipeTypes.DISASSEMBLER_COMPONENTS)
+                            RecipeTypes.DISASSEMBLER_MACHINES,
+                            RecipeTypes.DISASSEMBLER_COMPONENTS)
                     .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
                     .appearanceBlock(GCYMBlocks.CASING_LARGE_SCALE_ASSEMBLING)
                     .pattern(definition -> FactoryBlockPattern.start()
@@ -460,9 +460,9 @@ public class Multiblocks {
         if (MultiblocksConfig.LargeGasCollector || GTCEu.isDataGen()) {
             LARGE_GAS_COLLECTOR = ExtendedFeaturesRegister
                     .multiblock("large_gas_collector", WorkableElectricMultiblockMachine::new)
-                    .tooltips(EFTooltipStorage.LGCTooltip)
+                    .tooltips(Tooltips.LGCTooltip)
                     .rotationState(RotationState.ALL)
-                    .recipeType(EFRecipeTypes.GAS_COLLECTOR)
+                    .recipeType(RecipeTypes.GAS_COLLECTOR)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.BATCH_MODE,
@@ -499,7 +499,7 @@ public class Multiblocks {
         if (MultiblocksConfig.MatrixDataRelay || GTCEu.isDataGen()) {
             MATRIX_DATA_RELAY = ExtendedFeaturesRegister
                     .multiblock("matrix_data_relay", MatrixDataRelayMachine::new)
-                    .tooltips(EFTooltipStorage.MDRTooltip)
+                    .tooltips(Tooltips.MDRTooltip)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
@@ -542,8 +542,8 @@ public class Multiblocks {
             POWER_TRANSFORMER = ExtendedFeaturesRegister
                     .multiblock("power_transformer", ActiveTransformerMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(EFTooltipStorage.PT_Tooltip)
-                    .tooltipBuilder(EFTooltipStorage.PW_TooltipBuilder)
+                    .tooltips(Tooltips.PT_Tooltip)
+                    .tooltipBuilder(Tooltips.PW_TooltipBuilder)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
@@ -568,8 +568,8 @@ public class Multiblocks {
             FISHER = ExtendedFeaturesRegister
                     .multiblock("large_fisher", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(EFTooltipStorage.LF_Tooltoip)
-                    .recipeType(EFRecipeTypes.FISHER)
+                    .tooltips(Tooltips.LF_Tooltoip)
+                    .recipeType(RecipeTypes.FISHER)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.BATCH_MODE,

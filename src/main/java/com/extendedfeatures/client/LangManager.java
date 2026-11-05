@@ -4,7 +4,7 @@ import com.tterrag.registrate.providers.RegistrateLangProvider;
 
 import static com.gregtechceu.gtceu.data.lang.LangHandler.replace;
 
-public class EFLangManager {
+public class LangManager {
 
     public static void init(RegistrateLangProvider provider) {
         Common(provider);

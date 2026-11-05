@@ -1,6 +1,6 @@
 package com.extendedfeatures;
 
-import com.extendedfeatures.client.EFRecipeTypes;
+import com.extendedfeatures.client.RecipeTypes;
 import com.extendedfeatures.client.internal.EFConfig;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 import com.extendedfeatures.gtef.electric.Machines;
@@ -84,7 +84,7 @@ public class ExtendedFeaturesCore {
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        EFRecipeTypes.init();
+        RecipeTypes.init();
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {

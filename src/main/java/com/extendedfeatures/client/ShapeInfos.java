@@ -22,7 +22,7 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.machines.GCYMMachines.*;
 
 @MethodsReturnNonnullByDefault
-public class EFShapeInfosHelper {
+public class ShapeInfos {
 
     // New helper to avoid pasting the code inside the {} for every new multi that needs coils
     public static void setCoilPredicate(char Predicate, List<MultiblockShapeInfo> shapeInfo, MultiblockShapeInfo.ShapeInfoBuilder builder) {

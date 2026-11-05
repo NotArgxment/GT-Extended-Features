@@ -1,6 +1,6 @@
 package com.extendedfeatures.gtef.recipes;
 
-import com.extendedfeatures.client.EFMachineRegistry;
+import com.extendedfeatures.client.MachineRegistry;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.*;
+import static com.extendedfeatures.client.RecipeTypes.*;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class GasCollector {
@@ -24,7 +24,7 @@ public class GasCollector {
 
         VanillaRecipeHelper.addShapedRecipe(
                 provider, false, "large_gas_collector",
-                EFMachineRegistry.LARGE_GAS_COLLECTOR.asStack(),
+                MachineRegistry.LARGE_GAS_COLLECTOR.asStack(),
                 "MCM",
                 "BXB",
                 "PKP",

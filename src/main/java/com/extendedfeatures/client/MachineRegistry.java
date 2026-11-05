@@ -4,7 +4,9 @@ import com.extendedfeatures.client.internal.EFConfig;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 
-public class EFMachineRegistry {
+import java.util.List;
+
+public class MachineRegistry {
 
     // Shortened call to config
     public static final EFConfig.MultiblocksToggles MultiblocksConfig = EFConfig.INSTANCE.MultiblocksConfig;
@@ -13,20 +15,25 @@ public class EFMachineRegistry {
     // =========================
     //        Multiblocks
     // =========================
-    
-    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = null;
-    public static MultiblockMachineDefinition LARGE_CRACKING_MACHINE = null;
-    public static MultiblockMachineDefinition SYNTHESIS_VESSEL = null;
-    public static MultiblockMachineDefinition LARGE_PYROLYSE_OVEN = null;
-    public static MultiblockMachineDefinition EXPANDED_ASSEMBLY_LINE = null;
-    public static MultiblockMachineDefinition ROCK_PROCESSING_PLANT = null;
-    public static MultiblockMachineDefinition INDUSTRIAL_GREENHOUSE = null;
-    public static MultiblockMachineDefinition ARTIFICIAL_CONSERVATORY = null;
-    public static MultiblockMachineDefinition DISASSEMBLER = null;
-    public static MultiblockMachineDefinition LARGE_GAS_COLLECTOR = null;
-    public static MultiblockMachineDefinition MATRIX_DATA_RELAY = null;
-    public static MultiblockMachineDefinition POWER_TRANSFORMER = null;
-    public static MultiblockMachineDefinition FISHER = null;
+
+    public static List<MultiblockMachineDefinition> MULTIBLOCK_REGISTRY = List.of(
+
+    );
+
+    public static MultiblockMachineDefinition
+            ROBUST_ALLOY_MATERIALIZER,
+            LARGE_CRACKING_MACHINE,
+            SYNTHESIS_VESSEL,
+            LARGE_PYROLYSE_OVEN,
+            EXPANDED_ASSEMBLY_LINE,
+            ROCK_PROCESSING_PLANT,
+            INDUSTRIAL_GREENHOUSE,
+            ARTIFICIAL_CONSERVATORY,
+            DISASSEMBLER,
+            LARGE_GAS_COLLECTOR,
+            MATRIX_DATA_RELAY,
+            POWER_TRANSFORMER,
+            FISHER;
 
     // =====================================
     //        Singleblocks/Machines

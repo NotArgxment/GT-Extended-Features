@@ -7,7 +7,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.CHEMICAL_REDUCTION;
+import static com.extendedfeatures.client.RecipeTypes.CHEMICAL_REDUCTION;
 
 public class ChemicalSkips {
 

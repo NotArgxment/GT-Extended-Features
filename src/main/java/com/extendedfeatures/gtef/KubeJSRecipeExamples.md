@@ -4,9 +4,10 @@
 2. All available tiers: LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX
 3. Duration must be written in ticks, 1t = 50ms
 4. Most multiblocks inside the mod re-use the same recipe types as GTCEu, so any recipe added for those GTCEu multiblocks are mirrored into the main multiblocks
-5. Avoid making recipes for the disassembler, its logic automatically takes any existing machine to decompose that into the crafting/processing recipe that made it. BUT! feel free to make recipes with the CASING_DISASSEMBLY mode
+5. Try to not make new recipes for the machine disassembly (for the disassembler), its logic automatically takes any existing machine to decompose that into the crafting/processing recipe that made it
+6. Given the previous point, you can add your recipes into ""
 
-### Wood Recipes (Greenhouse)
+### Greenhouse
 ```javascript
     ServerEvents.recipes(event => {
         event.recipes.extendedfeatures.greenhouse_wood_recipes('recipe_name')
@@ -20,7 +21,6 @@
     });
 ```
 
-### Crop Recipes (Greenhouse)
 ```javascript
     ServerEvents.recipes(event => {
         event.recipes.extendedfeatures.greenhouse_crop_recipes('recipe_name')
@@ -75,7 +75,7 @@
 ### Casing Disassembly
 ```javascript
     ServerEvents.recipes(event => {
-        event.recipes.extendedfeatures.components_disassembly('recipe_name')
+        event.recipes.extendedfeatures.component_disassembly('recipe_name')
             .itemInputs()
             .itemOutputs()
             .outputFluids()

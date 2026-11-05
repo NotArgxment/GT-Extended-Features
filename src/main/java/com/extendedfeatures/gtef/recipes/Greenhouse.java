@@ -9,8 +9,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.GREENHOUSE_CROPS;
-import static com.extendedfeatures.client.EFRecipeTypes.GREENHOUSE_WOOD;
+import static com.extendedfeatures.client.RecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.GTItems.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
@@ -217,7 +216,7 @@ public class Greenhouse {
                                       boolean boosted,
                                       ItemStack sapling,
                                       ItemStack... outputsWood) {
-        var builder = GREENHOUSE_WOOD.recipeBuilder(id)
+        var builder = ARBOREAL_FARM.recipeBuilder(id)
                 .circuitMeta(boosted ? 2 : 1) // If boosted, use 2, else 1
                 .notConsumable(sapling)
                 .inputFluids(Water.getFluid(1000))
@@ -236,7 +235,7 @@ public class Greenhouse {
                                       String id, boolean boosted,
                                       ItemStack input, int waterMb,
                                       ItemStack output) {
-        var builder = GREENHOUSE_CROPS.recipeBuilder(id)
+        var builder = GENERAL_FARMING.recipeBuilder(id)
                 .circuitMeta(boosted ? 2 : 1)
                 .notConsumable(input)
                 .inputFluids(Water.getFluid(waterMb))

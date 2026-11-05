@@ -8,7 +8,7 @@ import java.util.function.BiConsumer;
 
 import static com.gregtechceu.gtceu.client.util.TooltipHelper.RAINBOW_HSL_SLOW;
 
-public class EFTooltipStorage {
+public class Tooltips {
 
     // Regular Tooltips
     public static final List<Component> RAMTooltip = List.of(

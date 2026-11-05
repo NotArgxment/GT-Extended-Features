@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.ROCK_PROCESSING;
+import static com.extendedfeatures.client.RecipeTypes.ROCK_PROCESSING;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class RockProcessing {

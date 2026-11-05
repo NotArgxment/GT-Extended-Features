@@ -18,8 +18,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
 import static net.minecraft.core.registries.BuiltInRegistries.*;
 
-@SuppressWarnings("deprecated")
-public class EFRecipeTypes {
+@SuppressWarnings("all")
+public class RecipeTypes {
 
     public static GTRecipeType ROCK_PROCESSING = RecipeTypeRegistry("rock_processing_plant", MULTIBLOCK)
             .setEUIO(IO.IN)
@@ -27,12 +27,12 @@ public class EFRecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MACERATOR);
 
-    public static GTRecipeType GREENHOUSE_WOOD = RecipeTypeRegistry("greenhouse_wood_recipes", MULTIBLOCK)
+    public static GTRecipeType ARBOREAL_FARM = RecipeTypeRegistry("arboreal_farm", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(3, 3, 1, 0)
             .setSound(GTSoundEntries.MIXER);
 
-    public static GTRecipeType GREENHOUSE_CROPS = RecipeTypeRegistry("greenhouse_crop_recipes", MULTIBLOCK)
+    public static GTRecipeType GENERAL_FARMING = RecipeTypeRegistry("general_farming", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(3, 3, 1, 0)
             .setSound(GTSoundEntries.MIXER);

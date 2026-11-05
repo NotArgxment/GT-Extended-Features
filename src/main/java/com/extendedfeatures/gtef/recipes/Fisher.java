@@ -9,7 +9,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.EFRecipeTypes.FISHER;
+import static com.extendedfeatures.client.RecipeTypes.FISHER;
 
 //            FISHKISSFISHKIS
 //        SFISHKISSFISHKISSFISH            F

@@ -12,7 +12,7 @@ import net.minecraft.network.chat.Style;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public class EFDisplayHelper {
+public class AdditionalDisplays {
 
     public static final BiConsumer<IMultiController, List<Component>> ElectricBlastFurnace =
             (controller, components) -> {
