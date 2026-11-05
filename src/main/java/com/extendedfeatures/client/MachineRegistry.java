@@ -16,10 +16,6 @@ public class MachineRegistry {
     //        Multiblocks
     // =========================
 
-    public static List<MultiblockMachineDefinition> MULTIBLOCK_REGISTRY = List.of(
-
-    );
-
     public static MultiblockMachineDefinition
             ROBUST_ALLOY_MATERIALIZER,
             LARGE_CRACKING_MACHINE,
