@@ -4,8 +4,8 @@
 2. All available tiers: LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX
 3. Duration must be written in ticks, 1t = 50ms
 4. Most multiblocks inside the mod re-use the same recipe types as GTCEu, so any recipe added for those GTCEu multiblocks are mirrored into the main multiblocks
-5. Try to not make new recipes for the machine disassembly (for the disassembler), its logic automatically takes any existing machine to decompose that into the crafting/processing recipe that made it
-6. Given the previous point, you can add your recipes into ""
+5. Try to not make new recipes for the "machine disassembly", its logic automatically takes any existing machine to decompose that into the crafting/processing recipe that made it
+6. Given the previous point, you can add your recipes into "component_disassembly" freely 
 
 ### Greenhouse
 ```javascript

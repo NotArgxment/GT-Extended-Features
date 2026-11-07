@@ -63,8 +63,9 @@ public class LangManager {
         replace(provider, "config.extendedfeatures.option.LargeGasCollector", "§7Large Gas Collector");
         replace(provider, "config.extendedfeatures.option.MatrixDataRelay", "§7Matrix Data Relay");
         replace(provider, "config.extendedfeatures.option.PowerTransformer", "§7Power Transformer");
-        replace(provider, "config.extendedfeatures.option.DataHatchLinkingBehavior", "§7Restrict Data Hatch Linking Behavior");
+        replace(provider, "config.extendedfeatures.option.Fisher", "§7Large Fisher");
 
+        replace(provider, "config.extendedfeatures.option.DataHatchLinkingBehavior", "§7Restrict Data Hatch Linking Behavior");
         replace(provider, "config.extendedfeatures.option.ExpandedDataAccessHatches", "§7Expanded Data Access Hatches");
         replace(provider, "config.extendedfeatures.option.WirelessOpticalHatches", "§7Wireless Optical Tranmisssors/Receptors");
         replace(provider, "config.extendedfeatures.option.CCMHatch", "§7Configurable Cleaning Maintenance Hatch");

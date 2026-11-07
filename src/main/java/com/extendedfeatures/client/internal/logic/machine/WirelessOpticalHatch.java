@@ -23,7 +23,6 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
 import lombok.Getter;
 
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -41,11 +40,9 @@ import net.minecraft.world.phys.*;
 import net.minecraftforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.*;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
+@SuppressWarnings("all")
 public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMachineLife, IInteractedMachine {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
@@ -503,7 +500,7 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
         return found;
     }
 
-    // Behavior Switch (See ConfigClass#159)
+    // Behavior Switch
     private List<DataAccessHatchMachine> findCandidateDataHatches(ServerLevel level, BlockPos center, int range) {
 
         List<DataAccessHatchMachine> found = new ArrayList<>();
