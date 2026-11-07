@@ -17,9 +17,8 @@ Addon for GTCEu Modern 1.20.1 designed to provide quality of life changes for th
 - [x] Ways to make wood [IGh & AC]
 - [x] 1-Step Rock Processing [RPP]
 - [x] GCYM Gas Collector [LGC]
-- [ ] Fisher multiblock [PFCT]
+- [X] Fisher multiblock [PFCT]
 - [ ] Rock Breaker Multiblock [SM]
-- [ ] Universal Computational Matrix Array [Bigger HPCA]
 - [X] Expandable Active Transformer [PT]
 
 ### Machines
