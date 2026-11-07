@@ -1,6 +1,6 @@
 package com.extendedfeatures.gtef.recipes;
 
-import com.extendedfeatures.client.UniversalCircuits;
+import com.extendedfeatures.gtef.misc.UniversalCircuits;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;

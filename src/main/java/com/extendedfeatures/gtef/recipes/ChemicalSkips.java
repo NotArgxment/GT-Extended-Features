@@ -1,6 +1,6 @@
 package com.extendedfeatures.gtef.recipes;
 
-import com.extendedfeatures.client.MachineRegistry;
+import com.extendedfeatures.gtef.misc.MachineRegistry;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
@@ -8,7 +8,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.RecipeTypes.CHEMICAL_REDUCTION;
+import static com.extendedfeatures.gtef.misc.RecipeTypes.CHEMICAL_REDUCTION;
 
 public class ChemicalSkips {
 

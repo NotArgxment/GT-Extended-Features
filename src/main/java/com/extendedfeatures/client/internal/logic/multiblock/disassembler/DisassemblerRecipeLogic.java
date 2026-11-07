@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.logic.multiblock.disassembler;
 
-import com.extendedfeatures.client.RecipeTypes;
+import com.extendedfeatures.gtef.misc.RecipeTypes;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeCapabilityHolder;

@@ -1,7 +1,6 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.CreativeTabs;
-import com.extendedfeatures.client.internal.EFConfig;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;

@@ -1,6 +1,6 @@
 package com.extendedfeatures;
 
-import com.extendedfeatures.client.LangManager;
+import com.extendedfeatures.gtef.misc.LangManager;
 import com.extendedfeatures.gtef.recipes.*;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;

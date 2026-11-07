@@ -1,4 +1,4 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 

@@ -1,7 +1,7 @@
 package com.extendedfeatures.client.internal.logic.machine;
 
 import com.extendedfeatures.client.internal.gui.wireless_hatch.WirelessHatchScreen;
-import com.extendedfeatures.client.internal.EFConfig;
+import com.extendedfeatures.gtef.misc.EFConfig;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.client.internal.visual.network.StateSync;
 import com.extendedfeatures.client.internal.visual.linking.ParticleAnimator;

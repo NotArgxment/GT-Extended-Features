@@ -16,7 +16,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
-import static com.extendedfeatures.client.MachineRegistry.*;
+import static com.extendedfeatures.gtef.misc.MachineRegistry.*;
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;

@@ -1,7 +1,7 @@
 package com.extendedfeatures.gtef.recipes;
 
-import com.extendedfeatures.client.MachineRegistry;
-import com.extendedfeatures.client.UniversalCircuits;
+import com.extendedfeatures.gtef.misc.MachineRegistry;
+import com.extendedfeatures.gtef.misc.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
@@ -11,7 +11,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.client.RecipeTypes.DISASSEMBLER_COMPONENTS;
+import static com.extendedfeatures.gtef.misc.RecipeTypes.DISASSEMBLER_COMPONENTS;
 import static com.gregtechceu.gtceu.api.GTValues.*;
 
 public class Disassembler {

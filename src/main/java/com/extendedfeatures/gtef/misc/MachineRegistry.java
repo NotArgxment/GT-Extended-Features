@@ -1,10 +1,7 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
-import com.extendedfeatures.client.internal.EFConfig;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
-
-import java.util.List;
 
 public class MachineRegistry {
 

@@ -3,7 +3,7 @@ package com.extendedfeatures.gtef.electric;
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.gtef.misc.AdditionalDisplays;
-import com.extendedfeatures.client.RecipeTypes;
+import com.extendedfeatures.gtef.misc.RecipeTypes;
 import com.extendedfeatures.gtef.misc.Tooltips;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
@@ -25,7 +25,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;
-import static com.extendedfeatures.client.MachineRegistry.*;
+import static com.extendedfeatures.gtef.misc.MachineRegistry.*;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dustTiny;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;

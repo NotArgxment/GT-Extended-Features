@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import snownee.jade.api.*;
 
 @WailaPlugin
-public class JadeWidgetLoader implements IWailaPlugin {
+public class EFJadePlugin implements IWailaPlugin {
 
     @Override
     public void register(IWailaCommonRegistration registration) {

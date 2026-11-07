@@ -1,4 +1,4 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.internal.logic.multiblock.disassembler.DisassemblerRecipeLogic;

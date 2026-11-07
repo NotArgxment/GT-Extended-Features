@@ -1,4 +1,4 @@
-package com.extendedfeatures.client.internal;
+package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
 import dev.toma.configuration.Configuration;
