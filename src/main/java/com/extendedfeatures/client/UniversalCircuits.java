@@ -1,4 +1,4 @@
-package com.extendedfeatures.gtef.misc;
+package com.extendedfeatures.client;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.client.internal.EFConfig;

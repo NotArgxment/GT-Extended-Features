@@ -5,7 +5,7 @@ import com.extendedfeatures.client.internal.EFConfig;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 import com.extendedfeatures.gtef.electric.Machines;
 import com.extendedfeatures.gtef.electric.Multiblocks;
-import com.extendedfeatures.gtef.misc.UniversalCircuits;
+import com.extendedfeatures.client.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;

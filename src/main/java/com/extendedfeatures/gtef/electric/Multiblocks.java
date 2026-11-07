@@ -2,13 +2,12 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.client.AdditionalDisplays;
+import com.extendedfeatures.gtef.misc.AdditionalDisplays;
 import com.extendedfeatures.client.RecipeTypes;
-import com.extendedfeatures.client.Tooltips;
+import com.extendedfeatures.gtef.misc.Tooltips;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
-import com.extendedfeatures.client.ShapeInfos;
-import com.extendedfeatures.gtef.misc.ElectricTiersGradientStyles;
+import com.extendedfeatures.gtef.misc.ShapeInfos;
 import com.extendedfeatures.gtef.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
@@ -22,7 +21,6 @@ import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.ActiveTransformerMachine;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 

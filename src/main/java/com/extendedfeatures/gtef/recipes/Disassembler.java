@@ -1,7 +1,7 @@
 package com.extendedfeatures.gtef.recipes;
 
 import com.extendedfeatures.client.MachineRegistry;
-import com.extendedfeatures.gtef.misc.UniversalCircuits;
+import com.extendedfeatures.client.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTBlocks;

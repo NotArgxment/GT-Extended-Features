@@ -23,7 +23,9 @@ import org.joml.Matrix4f;
 import java.util.*;
 
 @Mod.EventBusSubscriber(
-        modid = ExtendedFeaturesCore.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT
+        modid = ExtendedFeaturesCore.MOD_ID,
+        bus = Mod.EventBusSubscriber.Bus.FORGE,
+        value = Dist.CLIENT
 )
 @OnlyIn(Dist.CLIENT)
 public class RangeRenderer {

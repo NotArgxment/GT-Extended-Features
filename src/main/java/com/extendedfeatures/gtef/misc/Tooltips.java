@@ -1,4 +1,4 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;

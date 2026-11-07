@@ -1,4 +1,4 @@
-package com.extendedfeatures.client;
+package com.extendedfeatures.gtef.misc;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController;
