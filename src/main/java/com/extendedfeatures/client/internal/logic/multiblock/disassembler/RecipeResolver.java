@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.logic.multiblock.disassembler;
 
-import com.extendedfeatures.gtef.misc.Config;
+import com.extendedfeatures.gtef.misc.ConfigClass;
 import com.extendedfeatures.gtef.misc.UniversalCircuits;
 
 import com.gregtechceu.gtceu.api.*;
@@ -51,7 +51,7 @@ public class RecipeResolver {
     private static Map<TagKey<Item>, ItemStack> buildCircuitTagMap() {
         Map<TagKey<Item>, ItemStack> map = new HashMap<>();
 
-        if (!Config.INSTANCE.UniversalCircuits) {
+        if (!ConfigClass.INSTANCE.UniversalCircuits) {
             return Map.of();
         }
 

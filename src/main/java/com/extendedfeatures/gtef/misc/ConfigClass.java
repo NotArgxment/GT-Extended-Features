@@ -1,28 +1,27 @@
 package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
-import dev.toma.configuration.Configuration;
 import dev.toma.configuration.config.ConfigHolder;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
 @dev.toma.configuration.config.Config(id = ExtendedFeaturesCore.MOD_ID)
-public class Config {
+public class ConfigClass {
 
-    public static Config INSTANCE;
-    public static ConfigHolder<Config> CONFIG_HOLDER;
+    public static ConfigClass INSTANCE;
+    public static ConfigHolder<ConfigClass> CONFIG_HOLDER;
 
     public static void init() {
-        CONFIG_HOLDER = Configuration.registerConfig(Config.class, ConfigFormats.yaml());
+        CONFIG_HOLDER = dev.toma.configuration.Configuration.registerConfig(ConfigClass.class, ConfigFormats.yaml());
         INSTANCE = CONFIG_HOLDER.getConfigInstance();
     }
 
     @Configurable
-    @Configurable.Comment("Configuration Toggles for MultiblocksConfig")
+    @Configurable.Comment("ConfigClass Toggles for MultiblocksConfig")
     public MultiblocksToggles MultiblocksConfig = new MultiblocksToggles();
 
     @Configurable
-    @Configurable.Comment("Configuration Toggles for Normal Machines")
+    @Configurable.Comment("ConfigClass Toggles for Normal Machines")
     public MachineToggles MachinesConfig = new MachineToggles();
 
     public static class MultiblocksToggles {

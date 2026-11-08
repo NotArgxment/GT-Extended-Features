@@ -45,7 +45,7 @@
   "config.extendedfeatures.option.WirelessOpticalHatches": "§7Wireless Optical Tranmisssors/Receptors",
   "config.jade.plugin_extendedfeatures.matrix_data_relay": "Matrix Data Relay Info",
   "config.jade.plugin_extendedfeatures.wireless_optical_hatch": "Wireless Optical Info",
-  "config.screen.extendedfeatures": "§7Mod Configuration §c(Restart to Apply Changes)",
+  "config.screen.extendedfeatures": "§7Mod ConfigClass §c(Restart to Apply Changes)",
   "extendedfeatures.advanced_conservatory.tooltip.0": "§fAllows §3Parallel Hatches §fand has §9Batching §fenabled",
   "extendedfeatures.chemical_skips": "Chemical Reduction",
   "extendedfeatures.component_disassembly": "Component Disassembly",
