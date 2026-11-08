@@ -1,5 +1,183 @@
 {
   "parent": "minecraft:block/block",
+  "dynamic_renders": [
+    {
+      "type": "extendedfeatures:region_block",
+      "entries": [
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": -1,
+            "max_up": 3,
+            "min_front": -5,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": 0,
+            "max_up": 2,
+            "min_front": -5,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": 1,
+            "max_up": 4,
+            "min_front": -5,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": -1,
+            "max_up": 6,
+            "min_front": -4,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": 0,
+            "max_up": 7,
+            "min_front": -4,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": 1,
+            "max_up": 3,
+            "min_front": -4,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": -1,
+            "max_up": 5,
+            "min_front": -3,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": 0,
+            "max_up": 4,
+            "min_front": -3,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": 1,
+            "max_up": 6,
+            "min_front": -3,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        }
+      ]
+    }
+  ],
   "loader": "gtceu:machine",
   "machine": "extendedfeatures:large_fisher",
   "texture_overrides": {
