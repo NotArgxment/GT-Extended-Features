@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "extendedfeatures:item/universal/ev_universal_circuit"
+    "layer0": "extendedfeatures:item/universal/base",
+    "layer1": "extendedfeatures:item/universal/ev_universal_circuit"
   }
 }

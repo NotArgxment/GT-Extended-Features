@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extendedfeatures:item/universal/base",
+    "layer1": "extendedfeatures:item/universal/zpm_universal_circuit"
+  }
+}
