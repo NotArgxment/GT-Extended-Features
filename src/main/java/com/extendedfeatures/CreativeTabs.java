@@ -4,7 +4,9 @@ import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.gregtechceu.gtceu.common.data.GTItems;
 import com.gregtechceu.gtceu.common.data.GTMachines;
 import com.gregtechceu.gtceu.common.data.machines.GCYMMachines;
+
 import com.tterrag.registrate.util.entry.RegistryEntry;
+
 import net.minecraft.world.item.CreativeModeTab;
 
 import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister;

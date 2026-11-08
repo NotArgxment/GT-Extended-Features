@@ -10,8 +10,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
-import static com.extendedfeatures.gtef.misc.RecipeTypes.ARBOREAL_FARM;
-import static com.extendedfeatures.gtef.misc.RecipeTypes.GENERAL_FARMING;
+import static com.extendedfeatures.gtef.misc.RecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.GTItems.FERTILIZER;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.Water;
 
@@ -220,7 +219,7 @@ public class Greenhouse {
                                       boolean boosted,
                                       ItemStack sapling,
                                       ItemStack... outputsWood) {
-        var builder = ARBOREAL_FARM.recipeBuilder(id)
+        var builder = ARBOREAL_FARMING.recipeBuilder(id)
                 .circuitMeta(boosted ? 2 : 1) // If boosted, use 2, else 1
                 .notConsumable(sapling)
                 .inputFluids(Water.getFluid(1000))

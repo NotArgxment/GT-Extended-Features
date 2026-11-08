@@ -33,23 +33,20 @@ public class Universal {
             circuitBuilder(provider, "uiv_universal_circuit", CustomTags.UIV_CIRCUITS, GTValues.UIV);
             circuitBuilder(provider, "uxv_universal_circuit", CustomTags.UXV_CIRCUITS, GTValues.UXV);
             circuitBuilder(provider, "opv_universal_circuit", CustomTags.OpV_CIRCUITS, GTValues.OpV);
+            circuitBuilder(provider, "max_universal_circuit", CustomTags.MAX_CIRCUITS, GTValues.MAX);
         }
     }
 
-    private static void circuitBuilder(Consumer<FinishedRecipe> provider,
-                                       String recipeName,
-                                       TagKey<Item> inputAnyCircuit,
-                                       int circuitTier) {
+    private static void circuitBuilder(Consumer<FinishedRecipe> provider, String recipeName,
+                                       TagKey<Item> inputAnyCircuit, int circuitTier) {
         ItemEntry<Item> circuitOutput = UniversalCircuits.UNIVERSAL_CIRCUITS[circuitTier];
         if (circuitOutput == null) return;
-
         var builder = ASSEMBLER_RECIPES.recipeBuilder(recipeName)
                 .inputItems(inputAnyCircuit)
                 .outputItems(circuitOutput)
                 .duration(10)
                 .EUt(GTValues.VA[GTValues.LV])
                 .circuitMeta(16);
-                builder.save(provider);
-
+        builder.save(provider);
     }
 }

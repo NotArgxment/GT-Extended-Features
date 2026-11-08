@@ -330,7 +330,7 @@ public class Multiblocks {
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(
                             RecipeTypes.GENERAL_FARMING,
-                            RecipeTypes.ARBOREAL_FARM)
+                            RecipeTypes.ARBOREAL_FARMING)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
                             GTRecipeModifiers.BATCH_MODE)
@@ -379,7 +379,7 @@ public class Multiblocks {
                     .tooltips(Tooltips.ArCtTooltip)
                     .recipeTypes(
                             RecipeTypes.GENERAL_FARMING,
-                            RecipeTypes.ARBOREAL_FARM)
+                            RecipeTypes.ARBOREAL_FARMING)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,
                             GTRecipeModifiers.OC_NON_PERFECT,

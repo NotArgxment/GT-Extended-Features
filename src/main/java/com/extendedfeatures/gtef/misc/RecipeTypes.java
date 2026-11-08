@@ -27,7 +27,7 @@ public class RecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.MACERATOR);
 
-    public static GTRecipeType ARBOREAL_FARM = RecipeTypeRegistry("arboreal_farm", MULTIBLOCK)
+    public static GTRecipeType ARBOREAL_FARMING = RecipeTypeRegistry("arboreal_farming", MULTIBLOCK)
             .setEUIO(IO.IN)
             .setMaxIOSize(3, 3, 1, 0)
             .setSound(GTSoundEntries.MIXER);
