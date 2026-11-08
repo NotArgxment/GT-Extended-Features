@@ -6,8 +6,8 @@ import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 public class MachineRegistry {
 
     // Shortened call to config
-    public static final EFConfig.MultiblocksToggles MultiblocksConfig = EFConfig.INSTANCE.MultiblocksConfig;
-    public static final EFConfig.MachineToggles MachineConfig = EFConfig.INSTANCE.MachinesConfig;
+    public static final Config.MultiblocksToggles MultiblocksConfig = Config.INSTANCE.MultiblocksConfig;
+    public static final Config.MachineToggles MachineConfig = Config.INSTANCE.MachinesConfig;
 
     // =========================
     //        Multiblocks

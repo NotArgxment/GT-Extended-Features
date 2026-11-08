@@ -1,7 +1,7 @@
 package com.extendedfeatures;
 
 import com.extendedfeatures.gtef.misc.RecipeTypes;
-import com.extendedfeatures.gtef.misc.EFConfig;
+import com.extendedfeatures.gtef.misc.Config;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 import com.extendedfeatures.gtef.electric.Machines;
 import com.extendedfeatures.gtef.electric.Multiblocks;
@@ -40,7 +40,7 @@ public class ExtendedFeaturesCore {
 
     public ExtendedFeaturesCore() {
 
-        EFConfig.init();
+        Config.init();
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         UniversalCircuits.register(modEventBus);

@@ -28,7 +28,7 @@ public class UniversalCircuits {
     public static final ItemEntry<Item>[] UNIVERSAL_CIRCUITS = new ItemEntry[GTValues.TIER_COUNT];
 
     static {
-        if (EFConfig.INSTANCE.UniversalCircuits || GTCEu.isDataGen()) {
+        if (Config.INSTANCE.UniversalCircuits || GTCEu.isDataGen()) {
             circuitBuilder("ulv_universal_circuit", "§8ULV §rUniversal Circuit", CustomTags.ULV_CIRCUITS, GTValues.ULV);
             circuitBuilder("lv_universal_circuit", "§7LV §rUniversal Circuit", CustomTags.LV_CIRCUITS, GTValues.LV);
             circuitBuilder("mv_universal_circuit", "§bMV §rUniversal Circuit", CustomTags.MV_CIRCUITS, GTValues.MV);

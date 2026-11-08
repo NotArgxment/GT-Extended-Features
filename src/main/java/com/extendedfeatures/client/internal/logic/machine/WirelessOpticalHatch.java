@@ -1,7 +1,7 @@
 package com.extendedfeatures.client.internal.logic.machine;
 
 import com.extendedfeatures.client.internal.gui.wireless_hatch.WirelessHatchScreen;
-import com.extendedfeatures.gtef.misc.EFConfig;
+import com.extendedfeatures.gtef.misc.Config;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 import com.extendedfeatures.client.internal.visual.network.StateSync;
 import com.extendedfeatures.client.internal.visual.linking.ParticleAnimator;
@@ -515,7 +515,7 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
     }
 
     private boolean validTarget(DataAccessHatchMachine dataHatch) {
-        if (!EFConfig.INSTANCE.DataHatchLinkingBehavior) return true;
+        if (!Config.INSTANCE.DataHatchLinkingBehavior) return true;
         return ((IMultiPart) dataHatch).getControllers().stream()
                 .anyMatch(controller -> controller instanceof MatrixDataRelayMachine);
     }

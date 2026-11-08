@@ -2,19 +2,18 @@ package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
 import dev.toma.configuration.Configuration;
-import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.ConfigHolder;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
-@Config(id = ExtendedFeaturesCore.MOD_ID)
-public class EFConfig {
+@dev.toma.configuration.config.Config(id = ExtendedFeaturesCore.MOD_ID)
+public class Config {
 
-    public static EFConfig INSTANCE;
-    public static ConfigHolder<EFConfig> CONFIG_HOLDER;
+    public static Config INSTANCE;
+    public static ConfigHolder<Config> CONFIG_HOLDER;
 
     public static void init() {
-        CONFIG_HOLDER = Configuration.registerConfig(EFConfig.class, ConfigFormats.yaml());
+        CONFIG_HOLDER = Configuration.registerConfig(Config.class, ConfigFormats.yaml());
         INSTANCE = CONFIG_HOLDER.getConfigInstance();
     }
 
