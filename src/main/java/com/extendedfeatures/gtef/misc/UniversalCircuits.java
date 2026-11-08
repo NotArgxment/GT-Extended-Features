@@ -42,7 +42,8 @@ public class UniversalCircuits {
             circuitBuilder("uev_universal_circuit", "§2UEV §rUniversal Circuit", CustomTags.UEV_CIRCUITS, GTValues.UEV);
             circuitBuilder("uiv_universal_circuit", "§aUIV §rUniversal Circuit", CustomTags.UIV_CIRCUITS, GTValues.UIV);
             circuitBuilder("uxv_universal_circuit", "§eUXV §rUniversal Circuit", CustomTags.UXV_CIRCUITS, GTValues.UXV);
-            circuitBuilder("opv_universal_circuit", "§9OpV §rUniversal Circuit", CustomTags.OpV_CIRCUITS, GTValues.OpV);
+            circuitBuilder("opv_universal_circuit", "§9§lOpV §rUniversal Circuit", CustomTags.OpV_CIRCUITS, GTValues.OpV);
+            circuitBuilder("max_universal_circuit", "§c§lMAX §rUniversal Circuit", CustomTags.MAX_CIRCUITS, GTValues.MAX);
         }
     }
 
@@ -53,7 +54,9 @@ public class UniversalCircuits {
         UNIVERSAL_CIRCUITS[tier] = ExtendedFeaturesRegister
                 .item(registryName, Item::new)
                 .lang(displayName)
-                .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/universal/" + registryName)))
+                .model((ctx, prov) -> prov.generated(ctx,
+                        prov.modLoc("item/universal/base"),
+                        prov.modLoc("item/universal/" + registryName)))
                 .tag(tag)
                 .register();
     }
@@ -66,7 +69,8 @@ public class UniversalCircuits {
                 GTValues.UEV,
                 GTValues.UIV,
                 GTValues.UXV,
-                GTValues.OpV }
+                GTValues.OpV,
+                GTValues.MAX }
         ) {
             ItemEntry<Item> entry = UNIVERSAL_CIRCUITS[tier];
             if (entry != null) result.add(entry);
