@@ -8,6 +8,7 @@ import net.minecraft.network.chat.TextColor;
 
 import java.util.function.UnaryOperator;
 
+@SuppressWarnings("unused")
 public class ElectricTiersGradientStyles {
 
     private static final int WHITE = 0xFFFFFFFF;
