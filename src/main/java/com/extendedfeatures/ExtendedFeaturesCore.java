@@ -1,5 +1,6 @@
 package com.extendedfeatures;
 
+import com.extendedfeatures.client.integration.GTCEuTerminalsPlugin;
 import com.extendedfeatures.gtef.misc.RecipeTypes;
 import com.extendedfeatures.gtef.misc.ConfigClass;
 import com.extendedfeatures.client.internal.visual.PacketManager;
@@ -21,6 +22,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -84,6 +86,9 @@ public class ExtendedFeaturesCore {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> LOGGER.info("Hello from FMLCommonSetupEvent!"));
+        if ((ModList.get().isLoaded("gtceuterminal")) && ConfigClass.INSTANCE.MachinesConfig.WirelessOpticalHatches != false)  {
+            GTCEuTerminalsPlugin.init();
+        }
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {

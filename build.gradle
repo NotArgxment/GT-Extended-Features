@@ -105,7 +105,7 @@
                 "forge_version": forge_version.split("\\.")[0],
                 "minecraft_version": minecraft_version,
                 "gtceu_version": gtceu_version,
-                "jade_version": jade_version
+                "gt_terminals_version": gt_terminals_version
         ]
         inputs.properties(properties)
 

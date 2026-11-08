@@ -65,8 +65,10 @@ dependencies {
     annotationProcessor('org.spongepowered:mixin:0.8.5:processor')
 
     // Jade
-    modCompileOnly("curse.maven:jade-324717:6855440")
     modRuntimeOnly("curse.maven:jade-324717:6855440")
+
+    // GTCEu Terminals (integration)
+    modCompileOnly("curse.maven:gtceu-terminals-1423461:8315854")
 
     // GregTech and dependencies
     modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
