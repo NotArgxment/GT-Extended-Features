@@ -2,7 +2,9 @@ package com.extendedfeatures.client.internal.visual;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
 
-import com.extendedfeatures.client.internal.visual.network.*;
+import com.extendedfeatures.client.internal.visual.network.RelayActionPacket;
+import com.extendedfeatures.client.internal.visual.network.RelayRequestPacket;
+import com.extendedfeatures.client.internal.visual.network.RelayStatePacket;
 import com.extendedfeatures.client.internal.visual.range.RangePackets;
 
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +14,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 @SuppressWarnings("all")
 public class PacketManager {
 
-    private static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "2";
 
     public static final SimpleChannel CHANNEL = NetworkRegistry
             .newSimpleChannel(new ResourceLocation(ExtendedFeaturesCore.MOD_ID, "main"),
@@ -28,23 +30,15 @@ public class PacketManager {
                 RangePackets.class, RangePackets::encode, RangePackets::decode, RangePackets::handle);
 
         CHANNEL.registerMessage(nextId++,
-                RequestState.class, RequestState::encode,
-                RequestState::decode, RequestState::handle);
+                RelayRequestPacket.class, RelayRequestPacket::encode,
+                RelayRequestPacket::decode, RelayRequestPacket::handle);
 
         CHANNEL.registerMessage(nextId++,
-                RangeTogglePacket.class, RangeTogglePacket::encode,
-                RangeTogglePacket::decode, RangeTogglePacket::handle);
+                RelayActionPacket.class, RelayActionPacket::encode,
+                RelayActionPacket::decode, RelayActionPacket::handle);
 
         CHANNEL.registerMessage(nextId++,
-                LinksTogglePacket.class, LinksTogglePacket::encode,
-                LinksTogglePacket::decode, LinksTogglePacket::handle);
-
-        CHANNEL.registerMessage(nextId++,
-                ScanPacket.class, ScanPacket::encode,
-                ScanPacket::decode, ScanPacket::handle);
-
-        CHANNEL.registerMessage(nextId++,
-                StateSync.class, StateSync::encode,
-                StateSync::decode, StateSync::handle);
+                RelayStatePacket.class, RelayStatePacket::encode,
+                RelayStatePacket::decode, RelayStatePacket::handle);
     }
 }

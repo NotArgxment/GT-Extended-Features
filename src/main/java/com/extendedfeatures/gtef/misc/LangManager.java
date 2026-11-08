@@ -70,45 +70,51 @@ public class LangManager {
         replace(provider, "config.extendedfeatures.option.WirelessOpticalHatches", "§7Wireless Optical Tranmisssors/Receptors");
         replace(provider, "config.extendedfeatures.option.CCMHatch", "§7Configurable Cleaning Maintenance Hatch");
 
-        // Optical
-        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.range", "§fScan range:§f %s blocks §8(right-click with an empty hand)");
-        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.connections", "§7Max links allowed:§f %s");
-        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.scan", "§7Links to nearby Wireless Receptors and Data Access Hatches across its range");
-        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor", "§7Gets linked automatically when scanned by a Wireless Transmissor of the same tier");
+        // Matrix Data Relay screen
+        replace(provider, "gui.extendedfeatures.matrix_relay.show_range", "Show Max Distance:");
+        replace(provider, "gui.extendedfeatures.matrix_relay.show_links", "Show Current Links:");
+        replace(provider, "gui.extendedfeatures.matrix_relay.scan_link", "Link Receptors & Data Hatches");
+        replace(provider, "gui.extendedfeatures.matrix_relay.state_on", "§aON");
+        replace(provider, "gui.extendedfeatures.matrix_relay.state_off", "§cOFF");
+        replace(provider, "gui.extendedfeatures.matrix_relay.cooldown", "§fAvailable in %ss");
+        replace(provider, "gui.extendedfeatures.matrix_relay.show_links_locked", "§7Run a scan first");
+        replace(provider, "gui.extendedfeatures.matrix_relay.power_on", "Turn on");
+        replace(provider, "gui.extendedfeatures.matrix_relay.power_off", "Turn off");
+        replace(provider, "gui.extendedfeatures.matrix_relay.syncing", "Syncing...");
+
+        replace(provider, "gui.extendedfeatures.matrix_relay.status", "Status");
+        replace(provider, "gui.extendedfeatures.matrix_relay.maintenance", "Maintenance");
+        replace(provider, "gui.extendedfeatures.matrix_relay.consuming", "Consuming");
+        replace(provider, "gui.extendedfeatures.matrix_relay.coolant", "PCB Coolant");
+        replace(provider, "gui.extendedfeatures.matrix_relay.active_hatches", "Active Data Hatches");
+        replace(provider, "gui.extendedfeatures.matrix_relay.transmissor", "Wireless Transmissor");
+        replace(provider, "gui.extendedfeatures.matrix_relay.linked_hatches", "Linked Data Hatches");
+        replace(provider, "gui.extendedfeatures.matrix_relay.linked_receptors", "Linked Receptors");
+        replace(provider, "gui.extendedfeatures.matrix_relay.no_receptors", "No linked receptors");
+        replace(provider, "gui.extendedfeatures.matrix_relay.no_transmissor", "None");
+        replace(provider, "gui.extendedfeatures.matrix_relay.maintenance_fine", "Fine");
+        replace(provider, "gui.extendedfeatures.matrix_relay.maintenance_problems", "%s problems");
+
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.unformed", "Not formed");
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.disabled", "Disabled");
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.no_pcb_coolant", "No PCB Coolant");
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.no_power", "No power");
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.active", "Active");
+        replace(provider, "gui.extendedfeatures.matrix_relay.status.idle", "Idle");
+
+        replace(provider, "extendedfeatures.machine.matrix_data_relay.no_transmissor", "§cThis Matrix Data Relay has no Wireless Transmissor");
+
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.linked_summary", "Linked %s new receptor(s) and %s new data hatch(es)");
-        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.range_shown", "Displaying current range of connections: %s blocks");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.no_receptors_found", "§cNo new receptors or data hatches were found in range");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.not_formed", "§cThe hatch is not placed on a valid strucure!");
+        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.range_shown", "Displaying current range of connections: %s blocks");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.scan_cooldown", "§cLink scan is on cooldown, try again shortly");
+
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.scan_required", "§cRun a scan first before showing current links");
-
-        // Wireless Hatch GUI
-        replace(provider, "gui.extendedfeatures.wireless_hatch.title", "Wireless Optical Transmissor");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.show_range", "Show Max Distance:");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.show_links", "Show current links:");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.scan_link", "Link nearby Receptors & Data Hatches");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.state_on", "§aON");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.state_off", "§cOFF");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.cooldown", "§fAvailable in %ss");
-        replace(provider, "gui.extendedfeatures.wireless_hatch.show_links_locked", "§7Run a scan first");
-
-        // ========================
-        //     Jade integration
-        // ========================
-
-        // Hatches
-        replace(provider, "config.jade.plugin_extendedfeatures.wireless_optical_hatch", "Wireless Optical Info");
-        replace(provider, "extendedfeatures.jade.wireless_optical_hatch.linked_data_hatches", "§fLinked Data Access Hatches: §6%s");
-        replace(provider, "extendedfeatures.jade.wireless_optical_hatch.linked_receptors_header", "§fLinked Wireless Optical Receptors:");
-        replace(provider, "extendedfeatures.jade.wireless_optical_hatch.receptors_entry", "    - Receptor %s: %s");
-        replace(provider, "extendedfeatures.jade.wireless_optical_hatch.no_receptors", "§c    - No receptors found");
-
-        // MDR
-        replace(provider, "config.jade.plugin_extendedfeatures.matrix_data_relay", "Matrix Data Relay Info");
-        replace(provider, "extendedfeatures.jade.matrix_data_relay.coolant_usage", "§fPCB Coolant Upkeep: §b%s mB/s");
-        replace(provider, "extendedfeatures.jade.matrix_data_relay.coolant_supplied", "§a    - Currently supplying PCB Coolant");
-        replace(provider, "extendedfeatures.jade.matrix_data_relay.coolant_starved", "§c    - Insufficient PCB Coolant");
-        replace(provider, "extendedfeatures.jade.matrix_data_relay.wireless_hatch_tier", "§fWireless Hatch Tier: §b%s");
+        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.connections", "§7Max links allowed:§f %s");
+        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.range", "§fScan range:§f %s blocks §8(right-click with an empty hand)");
+        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor", "§7Gets linked automatically when scanned by a Wireless Transmissor of the same tier");
+        replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.scan", "§7Links to nearby Wireless Receptors and Data Access Hatches across its range");
 
     }
 
