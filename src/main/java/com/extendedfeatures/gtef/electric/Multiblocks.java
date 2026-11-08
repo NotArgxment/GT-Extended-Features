@@ -2,23 +2,23 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.gtef.misc.AdditionalDisplays;
-import com.extendedfeatures.gtef.misc.RecipeTypes;
-import com.extendedfeatures.gtef.misc.Tooltips;
+import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherRenderHelper;
+import com.extendedfeatures.gtef.misc.*;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
-import com.extendedfeatures.gtef.misc.ShapeInfos;
-import com.extendedfeatures.gtef.misc.ExtendedAbilities;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
+import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.common.data.*;
+import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.ActiveTransformerMachine;
 
 import net.minecraft.world.level.ItemLike;
@@ -599,9 +599,12 @@ public class Multiblocks {
                             .where('E', frames(GTMaterials.BlackSteel))
                             .where('#', blocks(Blocks.WATER).or(blocks(Blocks.KELP, Blocks.KELP_PLANT)))
                             .build())
-                    .workableCasingModel(
-                            GTCEu.id("block/casings/mechanic/machine_casing_turbine_stainless_steel"),
-                            GTCEu.id("block/multiblock/gcym/large_assembler"))
+                    .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
+                    .model(GTMachineModels.createWorkableCasingMachineModel(
+                                    GTCEu.id("block/casings/mechanic/machine_casing_turbine_stainless_steel"),
+                                    GTCEu.id("block/multiblock/gcym/large_assembler"))
+                            .andThen(b -> b.addDynamicRenderer(FisherRenderHelper::kelpTankRender)))
+                    .hasBER(true)
                     .register();
         }
     }
