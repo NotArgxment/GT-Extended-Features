@@ -35,8 +35,8 @@ public class LangManager {
         replace(provider, "block.extendedfeatures.uhv_data_access_hatch", "Epic Data Access Hatch");
 
         // RecipeTypes lang keys
-        replace(provider, "extendedfeatures.greenhouse_wood_recipes", "Greenhouse: Trees");
-        replace(provider, "extendedfeatures.greenhouse_crop_recipes", "Greenhouse: Crops");
+        replace(provider, "extendedfeatures.arboreal_farming", "Arboreal Farming");
+        replace(provider, "extendedfeatures.general_farming", "General Farming");
         replace(provider, "extendedfeatures.component_disassembly", "Component Disassembly");
         replace(provider, "extendedfeatures.machine_disassembly", "Machine Disassembly");
         replace(provider, "extendedfeatures.rock_processing_plant", "Rock Processing");
@@ -104,6 +104,7 @@ public class LangManager {
 
         replace(provider, "extendedfeatures.machine.matrix_data_relay.no_transmissor", "§cThis Matrix Data Relay has no Wireless Transmissor");
 
+        // Wireless Optical Hatches
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.linked_summary", "Linked %s new receptor(s) and %s new data hatch(es)");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.no_receptors_found", "§cNo new receptors or data hatches were found in range");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.not_formed", "§cThe hatch is not placed on a valid strucure!");

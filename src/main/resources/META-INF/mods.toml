@@ -19,18 +19,21 @@ issueTrackerURL = "https://github.com/NotArgxment/GTM-Extended-Features/issues"
         versionRange = "[${forge_version},)"
         ordering = "NONE"
         side = "BOTH"
+
     [[dependencies.${mod_id}]]
         modId = "minecraft"
         mandatory = true
         versionRange = "[${minecraft_version},)"
         ordering = "NONE"
         side = "BOTH"
+
     [[dependencies.${mod_id}]]
         modId = "gtceu"
         mandatory = true
         versionRange = "[${gtceu_version},)"
         ordering = "AFTER"
         side = "BOTH"
+
     [[dependencies.${mod_id}]]
         modId = "gtceuterminal"
         mandatory = false

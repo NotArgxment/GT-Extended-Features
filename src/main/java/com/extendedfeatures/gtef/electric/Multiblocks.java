@@ -43,7 +43,7 @@ public class Multiblocks {
         if (MultiblocksConfig.RobustAlloyMaterializer || GTCEu.isDataGen()) {
             ROBUST_ALLOY_MATERIALIZER = ExtendedFeaturesRegister
                     .multiblock("robust_alloy_materializer", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.RAMTooltip)
+                    .tooltips(Tooltips.RobustAlloyMaterializer)
                     .rotationState(RotationState.ALL)
                     .recipeType(GCYMRecipeTypes.ALLOY_BLAST_RECIPES)
                     .recipeModifiers(
@@ -94,7 +94,7 @@ public class Multiblocks {
         if (MultiblocksConfig.LargeCrackingMachine || GTCEu.isDataGen()) {
             LARGE_CRACKING_MACHINE = ExtendedFeaturesRegister
                     .multiblock("large_cracking_machine", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.LCMTooltip)
+                    .tooltips(Tooltips.LargeCrackingMachine)
                     .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.CRACKING_RECIPES)
                     .recipeModifiers(
@@ -141,7 +141,7 @@ public class Multiblocks {
         if (MultiblocksConfig.SynthesisVessel || GTCEu.isDataGen()) {
             SYNTHESIS_VESSEL = ExtendedFeaturesRegister
                     .multiblock("synthesis_vessel", WorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.SVTooltip)
+                    .tooltips(Tooltips.SynthesisVessel)
                     .rotationState(RotationState.ALL)
                     .recipeTypes(RecipeTypes.CHEMICAL_REDUCTION)
                     .recipeModifiers(
@@ -183,7 +183,7 @@ public class Multiblocks {
         if (MultiblocksConfig.LargePyrolysisOven || GTCEu.isDataGen()) {
             LARGE_PYROLYSE_OVEN = ExtendedFeaturesRegister
                     .multiblock("large_pyrolysis_oven", CoilWorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.LPOTooltip)
+                    .tooltips(Tooltips.LargePyrolysisOven)
                     .rotationState(RotationState.ALL)
                     .recipeType(GTRecipeTypes.PYROLYSE_RECIPES)
                     .recipeModifiers(
@@ -236,7 +236,7 @@ public class Multiblocks {
             EXPANDED_ASSEMBLY_LINE = ExtendedFeaturesRegister
                     .multiblock("expanded_assembly_line", ExpandedAssemblyLineMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(Tooltips.EALTooltip)
+                    .tooltips(Tooltips.ExpandedAssemblyLine)
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
                     .recipeModifiers(
                             GTRecipeModifiers.OC_NON_PERFECT_SUBTICK,
@@ -272,7 +272,7 @@ public class Multiblocks {
         if (MultiblocksConfig.RockProcessingPlant || GTCEu.isDataGen()) {
             ROCK_PROCESSING_PLANT = ExtendedFeaturesRegister
                     .multiblock("rock_processing_plant", WorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.RPPTooltip)
+                    .tooltips(Tooltips.RockProcessingPlant)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(RecipeTypes.ROCK_PROCESSING)
                     .recipeModifiers(
@@ -326,7 +326,7 @@ public class Multiblocks {
         if (MultiblocksConfig.IndustrialGreenhouse || GTCEu.isDataGen()) {
             INDUSTRIAL_GREENHOUSE = ExtendedFeaturesRegister
                     .multiblock("industrial_greenhouse", WorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.IGTooltip)
+                    .tooltips(Tooltips.IndustrialGreenhouse)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeTypes(
                             RecipeTypes.GENERAL_FARMING,
@@ -376,7 +376,7 @@ public class Multiblocks {
             ARTIFICIAL_CONSERVATORY = ExtendedFeaturesRegister
                     .multiblock("advanced_conservatory", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.NON_Y_AXIS)
-                    .tooltips(Tooltips.ArCtTooltip)
+                    .tooltips(Tooltips.ArtificialConservatory)
                     .recipeTypes(
                             RecipeTypes.GENERAL_FARMING,
                             RecipeTypes.ARBOREAL_FARMING)
@@ -425,7 +425,7 @@ public class Multiblocks {
         if (MultiblocksConfig.Disassembler || GTCEu.isDataGen()) {
             DISASSEMBLER = ExtendedFeaturesRegister
                     .multiblock("universal_disassembly_machine", WorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.UDMTooltip)
+                    .tooltips(Tooltips.UniversalDisassemblyMachine)
                     .rotationState(RotationState.ALL)
                     .recipeTypes(
                             RecipeTypes.DISASSEMBLER_MACHINES,
@@ -460,7 +460,7 @@ public class Multiblocks {
         if (MultiblocksConfig.LargeGasCollector || GTCEu.isDataGen()) {
             LARGE_GAS_COLLECTOR = ExtendedFeaturesRegister
                     .multiblock("large_gas_collector", WorkableElectricMultiblockMachine::new)
-                    .tooltips(Tooltips.LGCTooltip)
+                    .tooltips(Tooltips.LargeGasCollector)
                     .rotationState(RotationState.ALL)
                     .recipeType(RecipeTypes.GAS_COLLECTOR)
                     .recipeModifiers(
@@ -499,7 +499,7 @@ public class Multiblocks {
         if (MultiblocksConfig.MatrixDataRelay || GTCEu.isDataGen()) {
             MATRIX_DATA_RELAY = ExtendedFeaturesRegister
                     .multiblock("matrix_data_relay", MatrixDataRelayMachine::new)
-                    .tooltips(Tooltips.MDRTooltip)
+                    .tooltips(Tooltips.MatrixDataRelay)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
@@ -542,8 +542,8 @@ public class Multiblocks {
             POWER_TRANSFORMER = ExtendedFeaturesRegister
                     .multiblock("power_transformer", ActiveTransformerMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(Tooltips.PT_Tooltip)
-                    .tooltipBuilder(Tooltips.PW_TooltipBuilder)
+                    .tooltips(Tooltips.PowerTooltip)
+                    .tooltipBuilder(Tooltips.ActiveTransformer)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
                     .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
                     // RIGHT, UP and BACK are required to allow terminal to build the multiblock in the correct way
@@ -568,7 +568,7 @@ public class Multiblocks {
             FISHER = ExtendedFeaturesRegister
                     .multiblock("large_fisher", WorkableElectricMultiblockMachine::new)
                     .rotationState(RotationState.ALL)
-                    .tooltips(Tooltips.LF_Tooltoip)
+                    .tooltips(Tooltips.LargeFisher)
                     .recipeType(RecipeTypes.FISHER)
                     .recipeModifiers(
                             GTRecipeModifiers.PARALLEL_HATCH,

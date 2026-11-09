@@ -159,10 +159,4 @@ public class ConfigClass {
     })
     public boolean DataHatchLinkingBehavior = true;
 
-    @Configurable
-    @Configurable.Comment({
-            "Whether to enable Multiversal Circuit Press and Multiversal Circuits"
-    })
-    public boolean MultiversalFeatures = false;
-
 }
