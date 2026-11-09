@@ -1,5 +1,7 @@
 package com.extendedfeatures.client.internal.logic.multiblock.fisher;
 
+import com.extendedfeatures.ExtendedFeaturesCore;
+
 import com.google.common.collect.MapMaker;
 
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IWorkableMultiController;
@@ -7,6 +9,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
 import com.gregtechceu.gtceu.api.pattern.util.RelativeDirection;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRender;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderType;
+import com.gregtechceu.gtceu.client.util.RenderUtil;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.serialization.Codec;
@@ -100,6 +103,44 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
         if (p <= 0f) return;
         float eased = p * p * (3 - 2 * p);
 
+        try {
+            for (Entry e : entries) {
+                Region r = e.region();
+                int layers = r.maxUp() - r.minUp() + 1;
+                float visible = eased * layers;
+                int headLayer = (int) Math.ceil(visible) - 1;
+
+                for (int front = r.minFront(); front <= r.maxFront(); front++) {
+                    for (int left = r.minLeft(); left <= r.maxLeft(); left++) {
+                        for (int k = 0; k < layers; k++) {
+                            float vs = Math.min(1f, visible - k);
+                            if (vs <= 0f) break;
+
+                            BlockState state = (e.top() != null && k == headLayer) ? e.top() : e.body();
+                            BlockPos off = toWorldOffset(m, front, left, r.minUp() + k);
+
+                            poseStack.pushPose();
+                            poseStack.translate(off.getX(), off.getY(), off.getZ());
+                            if (vs < 1f) {
+                                poseStack.scale(1f, vs, 1f);
+                            }
+                            if (e.scale() != 1.0f) {
+                                poseStack.translate(0.5, 0.5, 0.5);
+                                poseStack.scale(e.scale(), e.scale(), e.scale());
+                                poseStack.translate(-0.5, -0.5, -0.5);
+                            }
+                            RenderUtil.drawBlock(level, m.getPos().offset(off), state, buffer, poseStack);
+                            poseStack.popPose();
+                        }
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            if (!warned) {
+                warned = true;
+                ExtendedFeaturesCore.LOGGER.error("FisherKelpRenderer failed", ex);
+            }
+        }
     }
 
     @Override
