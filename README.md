@@ -44,4 +44,10 @@ Stuff that was already made by another addons, See:
 - GTM Things (Most wireless related features)
 - GTM Utils (Sterile hatch, Spraycan, etc)
 - GT--
-- New Materials or Custom Casings, everything is Base GTCEu Stuff
+- "MEGA" Multis from GTNH
+- New Materials or Custom Casings, everything is Base GTCEu stuff
+
+### Scrapped/Removed
+- Multiversal Circuits (Uses the previous tier and its own tier)
+- +64A Converters/Laser Hatches/Energy Hatches/Dynamos
+- Parallel Fusion Reactors (Present in <2.4.0 versions)
