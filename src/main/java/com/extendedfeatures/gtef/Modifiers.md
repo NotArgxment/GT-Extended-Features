@@ -1,32 +1,52 @@
-## Machine Parallels
+### MACHINE_PARALLEL
 
-Allows any multiblock to run parallels **without a parallel hatch part in its structure**.
-New modifiers were added to extend how parallels behave
+Allows parallels without a proper parallel hatch, has configurable duration and energy
 
 ```java
 // Java
-import com.extendedfeatures.gtef.modifiers.MachineParallel;
+import static com.extendedfeatures.gtef.modifiers.ExtendedModifiers.*;
 
 .recipeModifiers(
-        MACHINE_PARALLEL(
-                8, // Parallels
-                0.5, // Duration Multiplier
-                0, // Energy Multiplier
-        )
+    MACHINE_PARALLEL(
+        maxParallels: 8, durationMultiplier: 0.5, energyMultiplier: 0
+    )
 )
 ```
 
 ```javascript
 // KubeJS
-const $MACHINE_PARALLEL = Java.loadClass('com.extendedfeatures.gtef.modifiers.MachineParallel');
+const $ExtendedModifiers = Java.loadClass('com.extendedfeatures.gtef.modifiers.ExtendedModifiers');
 
 .recipeModifiers(
-    $MACHINE_PARALLEL(
-        8, // Parallels
-        0.5, // Duration Multiplier
-        0 // Energy Multiplier
+    $ExtendedModifiers.MACHINE_PARALLEL(
+        maxParallels: 8, durationMultiplier: 0.5, energyMultiplier: 0
     )
 )
 ```
 
-Try playing around the values to get balanced Machine Parallels
+### SCALING_PARALLEL
+
+Parallels and duration increase every time a recipe cycle finishes, **EUt is not modified**
+The cycle count resets when the machine goes idle
+
+```java
+// Java
+import com.extendedfeatures.gtef.modifiers.ExtendedModifiers;
+
+.recipeModifiers(
+    ExtendedModifiers.SCALING_PARALLEL(
+        baseParallels: 1, maxParallels: 64, parallelsPerCycle: 2, durationPerCycle: 0.25 /* +25% */
+    )
+)
+```
+
+```javascript
+// KubeJS
+const $ExtendedModifiers = Java.loadClass('com.extendedfeatures.gtef.modifiers.ExtendedModifiers');
+
+.recipeModifiers(
+    $ExtendedModifiers.SCALING_PARALLEL(
+        baseParallels: 1, maxParallels: 64, parallelsPerCycle: 2, durationPerCycle: 0.25 /* +25% */
+    )
+)
+```
