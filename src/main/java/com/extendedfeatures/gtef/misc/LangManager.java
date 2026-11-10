@@ -161,7 +161,7 @@ public class LangManager {
         provider.add("extendedfeatures.universal_disassembly_machine.tooltip.1", "§7If is set to §fMachine Disassembly§7, every recipe requires the respective §benergy hatch §7of that tier");
 
         provider.add("extendedfeatures.large_fisher.tooltip.0", "§7Get the fih's out of the water!");
-        provider.add("extendedfeatures.large_fisher.tooltip.1", "§fAllows §3Parallel Hatches");
+        provider.add("extendedfeatures.large_fisher.tooltip.1", "§fAllows §3Parallel Hatches §fand has §9Batching §fenabled");
 
         provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Databank");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Access Hatches");
