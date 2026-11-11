@@ -142,7 +142,7 @@ public class LangManager {
 
         provider.add("extendedfeatures.synthesis_vessel.tooltip.0", "§7A §3Chemical Plant §7variant based on the Large Chemical Reactor");
         provider.add("extendedfeatures.synthesis_vessel.tooltip.1", "§7Performs entire chemical processing lines in 1 cycle");
-        provider.add("extendedfeatures.synthesis_vessel.tooltip.2", "§fAllows §3Parallel Hatches§f, Has §6Perfect Overclocks §fand §9Batching §fenabled");
+        provider.add("extendedfeatures.synthesis_vessel.tooltip.2", "§fHas §6Perfect Overclocks §fand §9Batching §fenabled");
 
         provider.add("extendedfeatures.rock_processing_plant.tooltip.0", "§7All in One Processing Machine!");
         provider.add("extendedfeatures.rock_processing_plant.tooltip.1", "§7Turns the rocks you normally get from the rock breaker into more useful resources");
