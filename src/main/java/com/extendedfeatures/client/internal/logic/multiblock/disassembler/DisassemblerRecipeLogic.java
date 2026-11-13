@@ -15,12 +15,11 @@ import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 
-import javax.annotation.ParametersAreNullableByDefault;
 import java.util.List;
 
 import static com.gregtechceu.gtceu.GTCEu.getMinecraftServer;
 
-@ParametersAreNullableByDefault
+@SuppressWarnings("all")
 public enum DisassemblerRecipeLogic implements GTRecipeType.ICustomRecipeLogic {
 
     INSTANCE;
