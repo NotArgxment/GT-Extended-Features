@@ -1,11 +1,12 @@
 package com.extendedfeatures.gtef.misc;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
+import dev.toma.configuration.config.Config;
 import dev.toma.configuration.config.ConfigHolder;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
-@dev.toma.configuration.config.Config(id = ExtendedFeaturesCore.MOD_ID)
+@Config(id = ExtendedFeaturesCore.MOD_ID)
 public class ConfigClass {
 
     public static ConfigClass INSTANCE;
