@@ -6,6 +6,8 @@ import dev.toma.configuration.config.ConfigHolder;
 import dev.toma.configuration.config.Configurable;
 import dev.toma.configuration.config.format.ConfigFormats;
 
+import static dev.toma.configuration.Configuration.registerConfig;
+
 @Config(id = ExtendedFeaturesCore.MOD_ID)
 public class ConfigClass {
 
@@ -13,7 +15,7 @@ public class ConfigClass {
     public static ConfigHolder<ConfigClass> CONFIG_HOLDER;
 
     public static void init() {
-        CONFIG_HOLDER = dev.toma.configuration.Configuration.registerConfig(ConfigClass.class, ConfigFormats.yaml());
+        CONFIG_HOLDER = registerConfig(ConfigClass.class, ConfigFormats.yaml());
         INSTANCE = CONFIG_HOLDER.getConfigInstance();
     }
 
