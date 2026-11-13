@@ -14,7 +14,7 @@ public class FisherRenderer {
 
     private static final RenderPatternControl Pattern = new RenderPatternControl(13, 0, 7);
 
-    public static DynamicRender<?, ?> kelpTankRender() {
+    public static DynamicRender<?, ?> kelpAndMossRender() {
 
         var kelp = Blocks.KELP_PLANT.defaultBlockState();
         var kelpHead = Blocks.KELP.defaultBlockState();

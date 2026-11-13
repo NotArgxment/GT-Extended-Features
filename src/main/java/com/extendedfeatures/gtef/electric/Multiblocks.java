@@ -2,7 +2,7 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherRenderHelper;
+import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherRenderer;
 import com.extendedfeatures.gtef.misc.*;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
@@ -611,7 +611,7 @@ public class Multiblocks {
                     .model(GTMachineModels.createWorkableCasingMachineModel(
                                     GTCEu.id("block/casings/gcym/watertight_casing"),
                                     GTCEu.id("block/multiblock/gcym/large_assembler"))
-                            .andThen(b -> b.addDynamicRenderer(FisherRenderHelper::kelpTankRender)))
+                            .andThen(b -> b.addDynamicRenderer(FisherRenderer::kelpAndMossRender)))
                     .hasBER(true)
                     .allowExtendedFacing(false)
                     .register();
