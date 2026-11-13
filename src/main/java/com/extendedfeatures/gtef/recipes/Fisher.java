@@ -25,6 +25,7 @@ import static com.extendedfeatures.gtef.misc.RecipeTypes.FISHER;
 //     HKISSFISHKISSFISHKISSFISHK         IS
 //        SFISHKISSFISHKISSFISH            K
 //          ISSFISHKISSFISHK
+// Powered by P-Corp Fishing Cards
 public class Fisher {
 
     public static void init(Consumer<FinishedRecipe> provider) {

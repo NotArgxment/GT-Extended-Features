@@ -567,7 +567,7 @@ public class Multiblocks {
         if (MultiblocksConfig.Fisher || GTCEu.isDataGen()) {
             FISHER = ExtendedFeaturesRegister
                     .multiblock("large_fisher", WorkableElectricMultiblockMachine::new)
-                    .rotationState(RotationState.ALL)
+                    .rotationState(RotationState.NON_Y_AXIS)
                     .tooltips(Tooltips.LargeFisher)
                     .recipeType(RecipeTypes.FISHER)
                     .recipeModifiers(
@@ -575,36 +575,45 @@ public class Multiblocks {
                             GTRecipeModifiers.BATCH_MODE,
                             GTRecipeModifiers.OC_NON_PERFECT
                     )
-                    .appearanceBlock(GTBlocks.CASING_STAINLESS_TURBINE)
+                    .appearanceBlock(GCYMBlocks.CASING_WATERTIGHT)
                     .pattern(definition -> FactoryBlockPattern.start()
-                            .aisle("  DDDDD  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  DDDDD  ")
-                            .aisle(" DDDDDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDDDDD ")
-                            .aisle("DDDDDDDDD", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "DDDDDDDDD")
-                            .aisle("DDDDDDDDD", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", "DDDKKKDDD")
-                            .aisle("DDDDDDDDD", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", " KK###KK ", "DDDKKKDDD")
-                            .aisle("DDDDDDDDD", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", " DN###ND ", "DDDKKKDDD")
-                            .aisle("DDDDDDDDD", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "EDNNKNNDE", "DDDDDDDDD")
-                            .aisle(" DDDDDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDKDDD ", " DDDDDDD ")
-                            .aisle("  DD@DD  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  E   E  ", "  DDDDD  ")
+                            .aisle("     AAAAA     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     AAAAA     ")
+                            .aisle("   AAAAAAAAA   ", "   AAAAAAAAA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   AAAAAAAAA   ", "   AAAAAAAAA   ")
+                            .aisle("  AAAAAAAAAAA  ", "  AAAAAAAAAAA  ", "  AAYDDDDAYAA  ", "  AAYADDDAYAA  ", "  AAYADDDAYAA  ", "  AAYADDDAYAA  ", "  AAAAAAAAAAA  ", "  AAAAAAAAAAA  ")
+                            .aisle(" AAAAAAAAAAAAA ", " AAAAAEEEAAAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAAAA###AAAAA ", " AAAAAAAAAAAAA ")
+                            .aisle(" AAAAAAAAAAAAA ", " AAAEEEEEEEAAA ", " DYD#######DYD ", " DYD#######DYD ", " DYD#######DYD ", " DYD#######DYD ", " AAA#######AAA ", " AAAADDDDDAAAA ")
+                            .aisle("AAAAAAAAAAAAAAA", "CAAAEEEEEEEAAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "AAAADDDDDDDAAAA")
+                            .aisle("AAAAAAAAAAAAAAA", " AAEEEEEEEEEAA ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " AA#########AA ", "AAAADDDDDDDAAAA")
+                            .aisle("AAAAAAAAAAAAAAA", " AAEEEEEEEEEAA ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " AA#########AA ", "AAAADDDDDDDAAAA")
+                            .aisle("AAAAAAAAAAAAAAA", " AAEEEEEEEEEAA ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " DD#########DD ", " AA#########AA ", "AAAADDDDDDDAAAA")
+                            .aisle("AAAAAAAAAAAAAAA", "CAAAEEEEEEEAAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "CAAA#######AAAC", "AAAADDDDDDDAAAA")
+                            .aisle(" AAAAAAAAAAAAA ", " AAAEEEEEEEAAA ", " DYD#######DYD ", " DYD#######DYD ", " DYD#######DYD ", " DYD#######DYD ", " AAA#######AAA ", " AAAADDDDDAAAA ")
+                            .aisle(" AAAAAAAAAAAAA ", " AAAAAEEEAAAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAADA###ADAAA ", " AAAAA###AAAAA ", " AAAAAAAAAAAAA ")
+                            .aisle("  AAAAAAAAAAA  ", "  AAAAAAAAAAA  ", "  AAYADDDAYAA  ", "  AAYADDDAYAA  ", "  AAYADDDAYAA  ", "  AAYADDDAYAA  ", "  AAAAAAAAAAA  ", "  AAAAAAAAAAA  ")
+                            .aisle("   AAAAAAAAA   ", "   AAAA@AAAA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   ADADDDADA   ", "   AAAAAAAAA   ", "   AAAAAAAAA   ")
+                            .aisle("     AAAAA     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     C   C     ", "     AAAAA     ")
                             .where('@', controller(blocks(definition.get())))
-                            .where('N', blocks(GTBlocks.CASING_STAINLESS_TURBINE.get())) // Forced predicate to not put multiparts inside
-                            .where('D', blocks(GTBlocks.CASING_STAINLESS_TURBINE.get())
+                            .where('A', blocks(GCYMBlocks.CASING_WATERTIGHT.get())
                                     .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
                                     .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
                                     .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
                                     .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
                                     .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
                                     .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
-                            .where('K', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
-                            .where('E', frames(GTMaterials.BlackSteel))
-                            .where('#', blocks(Blocks.WATER).or(blocks(Blocks.KELP, Blocks.KELP_PLANT)))
+                            .where('D', blocks(GTBlocks.CASING_LAMINATED_GLASS.get()))
+                            .where('C', frames(GTMaterials.BlackSteel))
+                            .where('E', blocks(Blocks.MOSS_BLOCK))
+                            .where('#', blocks(Blocks.WATER))
+                            .where('Y', blocks(Blocks.SEA_LANTERN))
+                            .where(' ', any())
                             .build())
                     .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
                     .model(GTMachineModels.createWorkableCasingMachineModel(
-                                    GTCEu.id("block/casings/mechanic/machine_casing_turbine_stainless_steel"),
+                                    GTCEu.id("block/casings/gcym/watertight_casing"),
                                     GTCEu.id("block/multiblock/gcym/large_assembler"))
                             .andThen(b -> b.addDynamicRenderer(FisherRenderHelper::kelpTankRender)))
                     .hasBER(true)
+                    .allowExtendedFacing(false)
                     .register();
         }
     }

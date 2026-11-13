@@ -107,7 +107,8 @@ public class Tooltips {
 
     public static final List<Component> LargeFisher = List.of(
             Component.translatable("extendedfeatures.large_fisher.tooltip.0"),
-            Component.translatable("extendedfeatures.large_fisher.tooltip.1")
+            Component.translatable("extendedfeatures.large_fisher.tooltip.1"),
+            Component.translatable("extendedfeatures.large_fisher.tooltip.2")
     );
 
     public static final BiConsumer<ItemStack, List<Component>> ActiveTransformer =

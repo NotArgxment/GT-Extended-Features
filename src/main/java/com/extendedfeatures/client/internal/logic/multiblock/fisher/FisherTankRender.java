@@ -20,33 +20,71 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@SuppressWarnings("unused")
-public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, FisherKelpRenderer> {
+@SuppressWarnings("all")
+public class FisherTankRender extends DynamicRender<IWorkableMultiController, FisherTankRender> {
 
-    public static final Codec<FisherKelpRenderer> CODEC = RecordCodecBuilder.create(i -> i.group(
+    public static final Codec<FisherTankRender> CODEC = RecordCodecBuilder.create(i -> i.group(
             Entry.CODEC.listOf().fieldOf("entries").forGetter(r -> r.entries),
             Codec.BOOL.optionalFieldOf("only_when_active", false).forGetter(r -> r.onlyWhenActive),
             Codec.FLOAT.optionalFieldOf("grow_seconds", 2.0f).forGetter(r -> r.growSeconds)
-    ).apply(i, FisherKelpRenderer::new));
+    ).apply(i, FisherTankRender::new));
 
-    public static final DynamicRenderType<IWorkableMultiController, FisherKelpRenderer> TYPE = new DynamicRenderType<>(CODEC);
+    public static final DynamicRenderType<IWorkableMultiController, FisherTankRender> TYPE = new DynamicRenderType<>(CODEC);
     private static final Map<MultiblockControllerMachine, Anim> ANIMS = new MapMaker().weakKeys().makeMap();
     private static boolean warned = false;
     private final List<Entry> entries;
     private final boolean onlyWhenActive;
     private final float growSeconds;
 
-    public FisherKelpRenderer(List<Entry> entries, boolean onlyWhenActive) {
+    private static final class Anim {
+        boolean initialized;
+        float progress;
+        long lastNanos;
+    }
+
+    public record Entry(Region region,
+                        BlockState body,
+                        BlockState top,
+                        float scale,
+                        float offsetY,
+                        boolean sampleLightAbove) {
+
+        public static final Codec<Entry> CODEC = RecordCodecBuilder.create(i -> i.group(
+                        Region.CODEC.fieldOf("region").forGetter(Entry::region),
+                        BlockState.CODEC.fieldOf("body").forGetter(Entry::body),
+                        BlockState.CODEC.optionalFieldOf("top").forGetter(e -> Optional.ofNullable(e.top)),
+                        Codec.FLOAT.optionalFieldOf("scale", 1.0f).forGetter(Entry::scale),
+                        Codec.FLOAT.optionalFieldOf("offset_y", 0.0f).forGetter(Entry::offsetY),
+                        Codec.BOOL.optionalFieldOf("sample_light_above", false).forGetter(Entry::sampleLightAbove))
+                .apply(i, (region, body, top, scale, offsetY, sampleLightAbove) -> new Entry(region, body, top.orElse(null), scale, offsetY, sampleLightAbove)));
+
+        public Entry(Region region, BlockState body) {
+            this(region, body, null, 1.0f, 0.0f, false);
+        }
+
+        public Entry(Region region, BlockState body, BlockState top) {
+            this(region, body, top, 1.0f, 0.0f, false);
+        }
+
+        public Entry(Region region, BlockState body, BlockState top, float scale) {
+            this(region, body, top, scale, 0.0f, false);
+        }
+
+        public Entry(Region region, BlockState body, BlockState top, float scale, float offsetY) {
+            this(region, body, top, scale, offsetY, false);
+        }
+    }
+
+    public FisherTankRender(List<Entry> entries, boolean onlyWhenActive) {
         this(entries, onlyWhenActive, 2.0f);
     }
 
-    public FisherKelpRenderer(List<Entry> entries, boolean onlyWhenActive, float growSeconds) {
+    public FisherTankRender(List<Entry> entries, boolean onlyWhenActive, float growSeconds) {
         this.entries = List.copyOf(entries);
         this.onlyWhenActive = onlyWhenActive;
         this.growSeconds = growSeconds;
@@ -79,7 +117,7 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
     }
 
     @Override
-    public @NotNull DynamicRenderType<IWorkableMultiController, FisherKelpRenderer> getType() {
+    public DynamicRenderType<IWorkableMultiController, FisherTankRender> getType() {
         return TYPE;
     }
 
@@ -89,13 +127,13 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
     }
 
     @Override
-    public boolean shouldRenderOffScreen(@NotNull IWorkableMultiController machine) {
+    public boolean shouldRenderOffScreen(IWorkableMultiController machine) {
         return true;
     }
 
     @Override
-    public void render(IWorkableMultiController machine, float partialTick, @NotNull PoseStack poseStack,
-                       @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay) {
+    public void render(IWorkableMultiController machine, float partialTick, PoseStack poseStack,
+                       MultiBufferSource buffer, int packedLight, int packedOverlay) {
         MultiblockControllerMachine machineController = machine.self();
         var level = machineController.getLevel();
         if (level == null) return;
@@ -111,7 +149,6 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
                 int layers = reg.maxUp() - reg.minUp() + 1;
                 float visible = eased * layers;
                 int headLayer = (int) Math.ceil(visible) - 1;
-
                 for (int front = reg.minFront(); front <= reg.maxFront(); front++) {
                     for (int left = reg.minLeft(); left <= reg.maxLeft(); left++) {
                         for (int var = 0; var < layers; var++) {
@@ -120,7 +157,7 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
                             BlockState state = (ent.top() != null && var == headLayer) ? ent.top() : ent.body();
                             BlockPos off = toWorldOffset(machineController, front, left, reg.minUp() + var);
                             poseStack.pushPose();
-                            poseStack.translate(off.getX(), off.getY(), off.getZ());
+                            poseStack.translate(off.getX(), off.getY() + ent.offsetY(), off.getZ());
                             if (vis < 1f) {
                                 poseStack.scale(1f, vis, 1f);
                             }
@@ -129,7 +166,11 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
                                 poseStack.scale(ent.scale(), ent.scale(), ent.scale());
                                 poseStack.translate(-0.5, -0.5, -0.5);
                             }
-                            RenderUtil.drawBlock(level, machineController.getPos().offset(off), state, buffer, poseStack);
+                            BlockPos basePos = machineController.getPos().offset(off);
+                            BlockPos lightPos = ent.sampleLightAbove()
+                                    ? basePos.above()
+                                    : basePos;
+                            RenderUtil.drawBlock(level, lightPos, state, buffer, poseStack);
                             poseStack.popPose();
                         }
                     }
@@ -138,13 +179,13 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
         } catch (Exception ex) {
             if (!warned) {
                 warned = true;
-                ExtendedFeaturesCore.LOGGER.error("FisherKelpRenderer failed", ex);
+                ExtendedFeaturesCore.LOGGER.error("FisherTankRender failed", ex);
             }
         }
     }
 
     @Override
-    public @NotNull AABB getRenderBoundingBox(IWorkableMultiController machine) {
+    public AABB getRenderBoundingBox(IWorkableMultiController machine) {
         MultiblockControllerMachine m = machine.self();
         BlockPos bPos = m.getPos();
         AABB box = new AABB(bPos);
@@ -175,28 +216,4 @@ public class FisherKelpRenderer extends DynamicRender<IWorkableMultiController, 
                 Codec.INT.fieldOf("max_up").forGetter(Region::maxUp)).apply(i, Region::new));
     }
 
-    public record Entry(Region region, BlockState body, BlockState top, float scale) {
-
-        public static final Codec<Entry> CODEC = RecordCodecBuilder.create(i -> i.group(
-                        Region.CODEC.fieldOf("region").forGetter(Entry::region),
-                        BlockState.CODEC.fieldOf("body").forGetter(Entry::body),
-                        BlockState.CODEC.optionalFieldOf("top").forGetter(e -> Optional.ofNullable(e.top)),
-                        Codec.FLOAT.optionalFieldOf("scale", 1.0f).forGetter(Entry::scale))
-                .apply(i, (region, body, top, scale) -> new Entry(region, body, top.orElse(null), scale)));
-
-        public Entry(Region region, BlockState body) {
-            this(region, body, null, 1.0f);
-        }
-
-        public Entry(Region region, BlockState body, BlockState top) {
-            this(region, body, top, 1.0f);
-        }
-    }
-
-    private static final class Anim {
-
-        boolean initialized;
-        float progress;
-        long lastNanos;
-    }
 }

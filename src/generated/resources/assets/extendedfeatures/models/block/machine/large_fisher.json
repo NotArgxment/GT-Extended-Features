@@ -9,10 +9,10 @@
             "Name": "minecraft:kelp_plant"
           },
           "region": {
-            "max_front": -5,
+            "max_front": -10,
             "max_left": -1,
-            "max_up": 3,
-            "min_front": -5,
+            "max_up": 1,
+            "min_front": -10,
             "min_left": -1,
             "min_up": 1
           },
@@ -28,9 +28,731 @@
             "Name": "minecraft:kelp_plant"
           },
           "region": {
-            "max_front": -5,
+            "max_front": -10,
+            "max_left": 0,
+            "max_up": 1,
+            "min_front": -10,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -10,
+            "max_left": 1,
+            "max_up": 1,
+            "min_front": -10,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": -3,
+            "max_up": 1,
+            "min_front": -9,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": -2,
+            "max_up": 1,
+            "min_front": -9,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": -1,
+            "max_up": 2,
+            "min_front": -9,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
             "max_left": 0,
             "max_up": 2,
+            "min_front": -9,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": 1,
+            "max_up": 2,
+            "min_front": -9,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": 2,
+            "max_up": 1,
+            "min_front": -9,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -9,
+            "max_left": 3,
+            "max_up": 1,
+            "min_front": -9,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": -3,
+            "max_up": 1,
+            "min_front": -8,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": -2,
+            "max_up": 2,
+            "min_front": -8,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": -1,
+            "max_up": 3,
+            "min_front": -8,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": 0,
+            "max_up": 3,
+            "min_front": -8,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": 1,
+            "max_up": 3,
+            "min_front": -8,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": 2,
+            "max_up": 2,
+            "min_front": -8,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -8,
+            "max_left": 3,
+            "max_up": 1,
+            "min_front": -8,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": -4,
+            "max_up": 1,
+            "min_front": -7,
+            "min_left": -4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": -3,
+            "max_up": 2,
+            "min_front": -7,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": -2,
+            "max_up": 3,
+            "min_front": -7,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": -1,
+            "max_up": 3,
+            "min_front": -7,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": 0,
+            "max_up": 4,
+            "min_front": -7,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": 1,
+            "max_up": 3,
+            "min_front": -7,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": 2,
+            "max_up": 3,
+            "min_front": -7,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": 3,
+            "max_up": 2,
+            "min_front": -7,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -7,
+            "max_left": 4,
+            "max_up": 1,
+            "min_front": -7,
+            "min_left": 4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": -4,
+            "max_up": 1,
+            "min_front": -6,
+            "min_left": -4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": -3,
+            "max_up": 2,
+            "min_front": -6,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": -2,
+            "max_up": 3,
+            "min_front": -6,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": -1,
+            "max_up": 4,
+            "min_front": -6,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": 0,
+            "max_up": 5,
+            "min_front": -6,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": 1,
+            "max_up": 4,
+            "min_front": -6,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": 2,
+            "max_up": 3,
+            "min_front": -6,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": 3,
+            "max_up": 2,
+            "min_front": -6,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -6,
+            "max_left": 4,
+            "max_up": 1,
+            "min_front": -6,
+            "min_left": 4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": -4,
+            "max_up": 1,
+            "min_front": -5,
+            "min_left": -4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": -3,
+            "max_up": 2,
+            "min_front": -5,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": -2,
+            "max_up": 3,
+            "min_front": -5,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": -1,
+            "max_up": 3,
+            "min_front": -5,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": 0,
+            "max_up": 4,
             "min_front": -5,
             "min_left": 0,
             "min_up": 1
@@ -49,7 +771,7 @@
           "region": {
             "max_front": -5,
             "max_left": 1,
-            "max_up": 4,
+            "max_up": 3,
             "min_front": -5,
             "min_left": 1,
             "min_up": 1
@@ -66,9 +788,104 @@
             "Name": "minecraft:kelp_plant"
           },
           "region": {
+            "max_front": -5,
+            "max_left": 2,
+            "max_up": 3,
+            "min_front": -5,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": 3,
+            "max_up": 2,
+            "min_front": -5,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -5,
+            "max_left": 4,
+            "max_up": 1,
+            "min_front": -5,
+            "min_left": 4,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": -3,
+            "max_up": 1,
+            "min_front": -4,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": -2,
+            "max_up": 2,
+            "min_front": -4,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
             "max_front": -4,
             "max_left": -1,
-            "max_up": 6,
+            "max_up": 3,
             "min_front": -4,
             "min_left": -1,
             "min_up": 1
@@ -87,7 +904,7 @@
           "region": {
             "max_front": -4,
             "max_left": 0,
-            "max_up": 7,
+            "max_up": 3,
             "min_front": -4,
             "min_left": 0,
             "min_up": 1
@@ -123,9 +940,85 @@
             "Name": "minecraft:kelp_plant"
           },
           "region": {
+            "max_front": -4,
+            "max_left": 2,
+            "max_up": 2,
+            "min_front": -4,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -4,
+            "max_left": 3,
+            "max_up": 1,
+            "min_front": -4,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": -3,
+            "max_up": 1,
+            "min_front": -3,
+            "min_left": -3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": -2,
+            "max_up": 1,
+            "min_front": -3,
+            "min_left": -2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
             "max_front": -3,
             "max_left": -1,
-            "max_up": 5,
+            "max_up": 2,
             "min_front": -3,
             "min_left": -1,
             "min_up": 1
@@ -144,7 +1037,7 @@
           "region": {
             "max_front": -3,
             "max_left": 0,
-            "max_up": 4,
+            "max_up": 2,
             "min_front": -3,
             "min_left": 0,
             "min_up": 1
@@ -163,7 +1056,7 @@
           "region": {
             "max_front": -3,
             "max_left": 1,
-            "max_up": 6,
+            "max_up": 2,
             "min_front": -3,
             "min_left": 1,
             "min_up": 1
@@ -174,6 +1067,1016 @@
               "age": "0"
             }
           }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": 2,
+            "max_up": 1,
+            "min_front": -3,
+            "min_left": 2,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -3,
+            "max_left": 3,
+            "max_up": 1,
+            "min_front": -3,
+            "min_left": 3,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -2,
+            "max_left": -1,
+            "max_up": 1,
+            "min_front": -2,
+            "min_left": -1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -2,
+            "max_left": 0,
+            "max_up": 1,
+            "min_front": -2,
+            "min_left": 0,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:kelp_plant"
+          },
+          "region": {
+            "max_front": -2,
+            "max_left": 1,
+            "max_up": 1,
+            "min_front": -2,
+            "min_left": 1,
+            "min_up": 1
+          },
+          "top": {
+            "Name": "minecraft:kelp",
+            "Properties": {
+              "age": "0"
+            }
+          }
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -10,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -10,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -10,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -10,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -10,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -10,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -9,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -9,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -9,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -8,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -8,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -8,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -8,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -8,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -8,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -8,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -8,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -7,
+            "max_left": -4,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": -4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -7,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -7,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -7,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.75,
+          "region": {
+            "max_front": -7,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -7,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -7,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -7,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -7,
+            "max_left": 4,
+            "max_up": 0,
+            "min_front": -7,
+            "min_left": 4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -6,
+            "max_left": -4,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": -4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -6,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -6,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.75,
+          "region": {
+            "max_front": -6,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.85,
+          "region": {
+            "max_front": -6,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.75,
+          "region": {
+            "max_front": -6,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -6,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -6,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -6,
+            "max_left": 4,
+            "max_up": 0,
+            "min_front": -6,
+            "min_left": 4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -5,
+            "max_left": -4,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": -4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -5,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -5,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -5,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.75,
+          "region": {
+            "max_front": -5,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -5,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -5,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -5,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -5,
+            "max_left": 4,
+            "max_up": 0,
+            "min_front": -5,
+            "min_left": 4,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -4,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -4,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -4,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -4,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -4,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -4,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -4,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -4,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": -3,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": -3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": -2,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": -2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.5,
+          "region": {
+            "max_front": -3,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": 2,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": 2,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -3,
+            "max_left": 3,
+            "max_up": 0,
+            "min_front": -3,
+            "min_left": 3,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -2,
+            "max_left": -1,
+            "max_up": 0,
+            "min_front": -2,
+            "min_left": -1,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -2,
+            "max_left": 0,
+            "max_up": 0,
+            "min_front": -2,
+            "min_left": 0,
+            "min_up": 0
+          },
+          "sample_light_above": true
+        },
+        {
+          "body": {
+            "Name": "minecraft:moss_block"
+          },
+          "offset_y": 0.25,
+          "region": {
+            "max_front": -2,
+            "max_left": 1,
+            "max_up": 0,
+            "min_front": -2,
+            "min_left": 1,
+            "min_up": 0
+          },
+          "sample_light_above": true
         }
       ]
     }
@@ -181,14 +2084,14 @@
   "loader": "gtceu:machine",
   "machine": "extendedfeatures:large_fisher",
   "texture_overrides": {
-    "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel"
+    "all": "gtceu:block/casings/gcym/watertight_casing"
   },
   "variants": {
     "is_formed=false,recipe_logic_status=idle": {
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_emissive"
         }
@@ -198,7 +2101,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_paused",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_paused_emissive"
         }
@@ -208,7 +2111,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active_emissive"
         }
@@ -218,7 +2121,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active_emissive"
         }
@@ -228,7 +2131,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_emissive"
         }
@@ -238,7 +2141,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_paused",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_paused_emissive"
         }
@@ -248,7 +2151,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active_emissive"
         }
@@ -258,7 +2161,7 @@
       "model": {
         "parent": "gtceu:block/machine/template/cube_all/sided",
         "textures": {
-          "all": "gtceu:block/casings/mechanic/machine_casing_turbine_stainless_steel",
+          "all": "gtceu:block/casings/gcym/watertight_casing",
           "overlay_front": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active",
           "overlay_front_emissive": "gtceu:block/multiblock/gcym/large_assembler/overlay_front_active_emissive"
         }

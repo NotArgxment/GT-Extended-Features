@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.logic.multiblock.fisher;
 
-import static com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherKelpRenderer.Region;
+import static com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherTankRender.Region;
 
 public class RenderPatternControl {
 
