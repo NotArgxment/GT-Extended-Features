@@ -56,6 +56,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.PacketDistributor;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -66,35 +68,28 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.*;
 
 public class MatrixDataRelayMachine extends DataBankMachine implements IInteractedMachine {
 
-    public static final int hatchAmpUsage = 1;
-    public static final int expandedDataHatchUsage = 8192;
-    public static final int coolantAmount = 144;
-    public static final int consuptionInterval = 20;
+    public static final int hatchAmpUsage = 1, expandedDataHatchUsage = 8192, coolantAmount = 144, consuptionInterval = 20;
+    private static final int durationTicks = 200, intervalTicks = 4, scanCooldown = 100, resyncInterval = 100;
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
-            MatrixDataRelayMachine.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
-
-    private static final int durationTicks = 200;
-    private static final int intervalTicks = 4;
-    private static final int scanCooldown = 100;
-    private static final int resyncInterval = 100;
+            MatrixDataRelayMachine.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER
+    );
 
     private final List<ParticleAnimator> particleAnimators = new ArrayList<>();
-
     private IFluidHandler coolantHandler = new FluidHandlerList(new ArrayList<>());
-
     private int coolantTickCounter = 0;
 
-    @Getter private boolean coolantStarved = false;
-    @Persisted private long lastScanGameTime = Long.MIN_VALUE / 2;
+    @Getter
+    private boolean coolantStarved = false;
 
-    private boolean showRangeEnabled = false;
-    private boolean showLinksEnabled = false;
+    @Persisted
+    private long lastScanGameTime = Long.MIN_VALUE / 2;
+
+    private boolean showRangeEnabled = false, showLinksEnabled = false;
 
     private ParticleAnimator linksLoopAnimator;
     private TickableSubscription rangeResyncSubscription;
     private int rangeResyncCounter = 0;
-
     private BlockPos rangeShownAt;
 
     public MatrixDataRelayMachine(IMachineBlockEntity holder) {
@@ -102,21 +97,16 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     }
 
     @Override
-    public ManagedFieldHolder getFieldHolder() {
+    public @NotNull ManagedFieldHolder getFieldHolder() {
         return MANAGED_FIELD_HOLDER;
     }
 
     @Override
     public void onStructureFormed() {
         super.onStructureFormed();
-
-        if (!isFormed())
-            return;
-
+        if (!isFormed()) return;
         List<IFluidHandler> coolantContainers = new ArrayList<>();
-
         Long2ObjectMap<IO> ioMap = getMultiblockState().getMatchContext().getOrCreate("ioMap", Long2ObjectMaps::emptyMap);
-
         for (IMultiPart part : getParts()) {
             IO io = ioMap.getOrDefault(part.self().getPos().asLong(), IO.BOTH);
             if (io == IO.NONE || io == IO.OUT) continue;
@@ -158,7 +148,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
 
     @Override
     public void tick() {
-
         if (!isFormed()) {
             super.tick();
             if (!isRemote() && getRecipeLogic().getStatus() != RecipeLogic.Status.IDLE) {
@@ -196,8 +185,7 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     private boolean consumeCoolant() {
         FluidStack required = PCBCoolant.getFluid(coolantAmount);
         FluidStack simulated = drainFluidAccountNotifiableList(coolantHandler, required, SIMULATE);
-        if (simulated.getAmount() < coolantAmount)
-            return false;
+        if (simulated.getAmount() < coolantAmount) return false;
         drainFluidAccountNotifiableList(coolantHandler, required, EXECUTE);
         return true;
     }
@@ -264,7 +252,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     private long currentConsumption() {
         RelaySnapshot.Status status = currentStatus();
         if (status != RelaySnapshot.Status.ACTIVE && status != RelaySnapshot.Status.IDLE) return 0;
-
         long usage = getEnergyUsage();
         return usage + maintenanceProblems() * usage / 10;
     }
@@ -272,7 +259,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     public RelaySnapshot createSnapshot() {
         WirelessOpticalHatch transmissor = findTransmissor();
         List<BlockPos> receptors = transmissor == null ? List.of() : transmissor.getLinkedReceptorPositions();
-
         return new RelaySnapshot(
                 getPos(), currentStatus(), isWorkingEnabled(), maintenanceProblems(),
                 currentConsumption(), coolantAmount * 20 / consuptionInterval, activeDataHatches(),
@@ -311,7 +297,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     public void toggleShowRange(ServerPlayer player) {
         WirelessOpticalHatch transmissor = requireTransmissor(player);
         if (transmissor == null) return;
-
         showRangeEnabled = !showRangeEnabled;
         updateRangeLoop();
     }
@@ -365,17 +350,14 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
             animator.stop();
         }
         particleAnimators.clear();
-
         if (linksLoopAnimator != null) {
             linksLoopAnimator.stop();
             linksLoopAnimator = null;
         }
-
         if (rangeResyncSubscription != null) {
             rangeResyncSubscription.unsubscribe();
             rangeResyncSubscription = null;
         }
-
         broadcastRangeState(false);
         showRangeEnabled = false;
         showLinksEnabled = false;
@@ -404,7 +386,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
 
     private void broadcastRangeState(boolean show) {
         if (!(getLevel() instanceof ServerLevel serverLevel)) return;
-
         if (show) {
             WirelessOpticalHatch transmissor = findTransmissor();
             if (transmissor == null) return;
@@ -435,9 +416,7 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
         WirelessOpticalHatch transmissor = findTransmissor();
         if (!isFormed() || transmissor == null) return;
         if (!(getLevel() instanceof ServerLevel serverLevel)) return;
-
         BlockPos center = transmissor.getPos();
-
         for (BlockPos receptorPos : transmissor.getLinkedReceptorPositions()) {
             if (!serverLevel.isLoaded(receptorPos)) continue;
             emitBeam(serverLevel, center, receptorPos, ParticleTypes.END_ROD);
@@ -457,20 +436,53 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     private void spawnLinkBeam(ServerLevel level, BlockPos from, BlockPos to, ParticleOptions particle) {
         Vec3 start = ParticleRenderer.faceCenterTowards(from, to);
         Vec3 end = ParticleRenderer.faceCenterTowards(to, from);
-
-        ParticleAnimator animator = new ParticleAnimator(durationTicks, intervalTicks,
-                () -> ParticleRenderer.emitLine(level, start, end, particle));
+        ParticleAnimator animator = new ParticleAnimator(durationTicks, intervalTicks, () -> ParticleRenderer.emitLine(level, start, end, particle));
         particleAnimators.add(animator);
         animator.start(this::subscribeServerTick, () -> particleAnimators.remove(animator));
     }
 
+    // Cleans residual conections + particle links
+    private void pruneStaleLinks(ServerLevel level, WirelessOpticalHatch transmissor) {
+        for (BlockPos receptorPos : List.copyOf(transmissor.getLinkedReceptorPositions())) {
+            boolean valid = false;
+            if (level.isLoaded(receptorPos)) {
+                if (MetaMachine.getMachine(level, receptorPos) instanceof WirelessOpticalHatch hatch &&
+                        !hatch.isTransmitter() &&
+                        hatch.getWirelessTier() == transmissor.getWirelessTier() &&
+                        hatch.isFormed()) {
+                    valid = true;
+                }
+            }
+            if (!valid) {
+                transmissor.removeLinkedReceptor(receptorPos);
+                if (level.isLoaded(receptorPos) && MetaMachine.getMachine(level, receptorPos) instanceof WirelessOpticalHatch other) {
+                    if (receptorPos.equals(other.getLinkedTransmissorPos())) {
+                        other.setLinkedTransmissorPos(null);
+                    }
+                }
+            }
+        }
+        // Same applies for Data hatches
+        for (BlockPos dataHatchPos : List.copyOf(transmissor.getLinkedDataHatchPositions())) {
+            boolean valid = false;
+            if (level.isLoaded(dataHatchPos)) {
+                if (MetaMachine.getMachine(level, dataHatchPos) instanceof DataAccessHatchMachine dataHatch &&
+                        dataHatch.isFormed() && validTarget(dataHatch)) {
+                    valid = true;
+                }
+            }
+            if (!valid) {
+                transmissor.removeLinkedDataHatch(dataHatchPos);
+            }
+        }
+    }
+
     private void scanAndLink(ServerPlayer player, ServerLevel level, WirelessOpticalHatch transmissor) {
+        pruneStaleLinks(level, transmissor);
         BlockPos center = transmissor.getPos();
         int range = transmissor.getWirelessTier().range;
-
         int newReceiverLinks = linkReceivers(level, transmissor, center, range);
         int newDataHatchLinks = linkDataHatches(level, transmissor, center, range);
-
         if (newReceiverLinks > 0 || newDataHatchLinks > 0) {
             player.sendSystemMessage(
                     Component.translatable(
@@ -483,19 +495,14 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     }
 
     private int linkReceivers(ServerLevel level, WirelessOpticalHatch transmissor, BlockPos center, int range) {
-        int remainingSlots = transmissor.getWirelessTier().maxConnections -
-                transmissor.getLinkedReceptorPositions().size();
+        int remainingSlots = transmissor.getWirelessTier().maxConnections - transmissor.getLinkedReceptorPositions().size();
         if (remainingSlots <= 0) return 0;
-
         List<WirelessOpticalHatch> candidates = findCandidateReceptors(level, transmissor, center, range);
         candidates.sort(Comparator.comparingDouble(a -> a.getPos().distSqr(center)));
-
         int newLinks = 0;
         for (WirelessOpticalHatch receiver : candidates) {
             if (remainingSlots <= 0) break;
-
             if (!transmissor.addLinkedReceptor(receiver.getPos())) continue;
-
             receiver.setLinkedTransmissorPos(center);
             spawnLinkBeam(level, center, receiver.getPos(), ParticleTypes.END_ROD);
             remainingSlots--;
@@ -508,19 +515,15 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
         int newLinks = 0;
         for (DataAccessHatchMachine dataHatch : findCandidateDataHatches(level, center, range)) {
             BlockPos dataHatchPos = dataHatch.getPos();
-
             if (!transmissor.addLinkedDataHatch(dataHatchPos)) continue;
-
             spawnLinkBeam(level, center, dataHatchPos, ParticleTypes.FLAME);
             newLinks++;
         }
         return newLinks;
     }
 
-    private List<WirelessOpticalHatch> findCandidateReceptors(ServerLevel level, WirelessOpticalHatch transmissor,
-                                                              BlockPos center, int range) {
+    private List<WirelessOpticalHatch> findCandidateReceptors(ServerLevel level, WirelessOpticalHatch transmissor, BlockPos center, int range) {
         List<WirelessOpticalHatch> found = new ArrayList<>();
-
         forEachBlockEntityInRange(level, center, range, candidatePos -> {
             if (MetaMachine.getMachine(level, candidatePos) instanceof WirelessOpticalHatch other &&
                     !other.isTransmitter() &&
@@ -535,7 +538,6 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     // Behavior Switch
     private List<DataAccessHatchMachine> findCandidateDataHatches(ServerLevel level, BlockPos center, int range) {
         List<DataAccessHatchMachine> found = new ArrayList<>();
-
         forEachBlockEntityInRange(level, center, range, candidatePos -> {
             if (MetaMachine.getMachine(level, candidatePos) instanceof DataAccessHatchMachine dataHatch &&
                     dataHatch.isFormed() && validTarget(dataHatch)) {
@@ -562,19 +564,14 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
         int chunkMaxX = (center.getX() + range) >> 4;
         int chunkMinZ = (center.getZ() - range) >> 4;
         int chunkMaxZ = (center.getZ() + range) >> 4;
-
         for (int cx = chunkMinX; cx <= chunkMaxX; cx++) {
             for (int cz = chunkMinZ; cz <= chunkMaxZ; cz++) {
                 if (!level.hasChunk(cx, cz)) continue;
-
                 LevelChunk chunk = level.getChunk(cx, cz);
-
                 for (BlockEntity blockEntity : chunk.getBlockEntities().values()) {
                     BlockPos candidatePos = blockEntity.getBlockPos();
-
                     if (!isWithinCubeRange(candidatePos, center, range)) continue;
                     if (candidatePos.equals(center)) continue;
-
                     visitor.visit(candidatePos);
                 }
             }

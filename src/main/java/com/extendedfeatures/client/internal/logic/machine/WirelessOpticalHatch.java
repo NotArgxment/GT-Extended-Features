@@ -23,11 +23,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("all")
 public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMachineLife {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
-            WirelessOpticalHatch.class, MultiblockPartMachine.MANAGED_FIELD_HOLDER);
+            WirelessOpticalHatch.class, MultiblockPartMachine.MANAGED_FIELD_HOLDER
+    );
 
     public enum WirelessTier {
         LuV(GTValues.LuV, 16, 4),
@@ -52,6 +53,11 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
         }
     }
 
+    @Override
+    public ManagedFieldHolder getFieldHolder() {
+        return MANAGED_FIELD_HOLDER;
+    }
+
     @Getter
     private final WirelessTier wirelessTier;
 
@@ -70,11 +76,6 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
     public WirelessOpticalHatch(IMachineBlockEntity holder, boolean isTransmissor, int gtTier) {
         super(holder, isTransmissor);
         this.wirelessTier = WirelessTier.byGTTier(gtTier);
-    }
-
-    @Override
-    public ManagedFieldHolder getFieldHolder() {
-        return MANAGED_FIELD_HOLDER;
     }
 
     // Link data (the controller drives these)
@@ -102,6 +103,14 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
         return !linkedDataHatchPositions.contains(pos) && linkedDataHatchPositions.add(pos);
     }
 
+    public boolean removeLinkedReceptor(BlockPos pos) {
+        return linkedReceptorPositions.remove(pos);
+    }
+
+    public boolean removeLinkedDataHatch(BlockPos pos) {
+        return linkedDataHatchPositions.remove(pos);
+    }
+
     public boolean isLinked() {
         return isTransmitter()
                 ? !linkedReceptorPositions.isEmpty() || !linkedDataHatchPositions.isEmpty()
@@ -115,11 +124,8 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
     // Lifecycle
     @Override
     public void onMachineRemoved() {
-
-        // Clean up bidirectional bookkeeping so stale links don't linger
-        Level level = getLevel();
+        Level level = getLevel(); // Clean up bidirectional bookkeeping so stale links don't linger
         if (level == null) return;
-
         if (isTransmitter()) {
             for (BlockPos receptorPos : linkedReceptorPositions) {
                 if (MetaMachine.getMachine(level, receptorPos) instanceof WirelessOpticalHatch receptor &&
@@ -137,28 +143,21 @@ public class WirelessOpticalHatch extends OpticalDataHatchMachine implements IMa
     @Override
     public boolean isRecipeAvailable(GTRecipe recipe, Collection<IDataAccessHatch> seen) {
         seen.add(this);
-
         if (!isFormed()) return false;
-
         Level level = getLevel();
         if (level == null) return false;
-
         if (isTransmitter()) {
             for (BlockPos dataHatchPos : linkedDataHatchPositions) {
                 if (!level.isLoaded(dataHatchPos)) continue;
-                if (!(MetaMachine.getMachine(level, dataHatchPos) instanceof DataAccessHatchMachine dataHatch))
-                    continue;
+                if (!(MetaMachine.getMachine(level, dataHatchPos) instanceof DataAccessHatchMachine dataHatch)) continue;
                 if (seen.contains(dataHatch)) continue;
-
                 if (dataHatch.isRecipeAvailable(recipe, seen)) return true;
             }
             return false;
         }
 
         if (linkedTransmissorPos == null || !level.isLoaded(linkedTransmissorPos)) return false;
-
-        if (!(MetaMachine.getMachine(level, linkedTransmissorPos) instanceof WirelessOpticalHatch partner) ||
-                !partner.isTransmitter() || seen.contains(partner)) {
+        if (!(MetaMachine.getMachine(level, linkedTransmissorPos) instanceof WirelessOpticalHatch partner) || !partner.isTransmitter() || seen.contains(partner)) {
             return false;
         }
         return partner.isRecipeAvailable(recipe, seen);

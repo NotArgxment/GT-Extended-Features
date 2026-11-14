@@ -6,8 +6,7 @@ import java.util.function.Function;
 
 public class ParticleAnimator {
 
-    private final int durationTicks;
-    private final int intervalTicks;
+    private final int durationTicks, intervalTicks;
     private final Runnable onFrame;
 
     private int ticksElapsed = 0;
