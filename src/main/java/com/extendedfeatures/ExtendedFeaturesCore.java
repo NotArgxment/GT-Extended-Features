@@ -1,6 +1,7 @@
 package com.extendedfeatures;
 
 import com.extendedfeatures.client.integration.GTCEuTerminalsPlugin;
+import com.extendedfeatures.client.ClientRenders;
 import com.extendedfeatures.gtef.misc.RecipeTypes;
 import com.extendedfeatures.gtef.misc.ConfigClass;
 import com.extendedfeatures.client.internal.visual.PacketManager;

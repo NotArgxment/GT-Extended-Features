@@ -1,5 +1,6 @@
-package com.extendedfeatures;
+package com.extendedfeatures.client;
 
+import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherTankRender;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderManager;
 
