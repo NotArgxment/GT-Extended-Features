@@ -24,7 +24,7 @@ public class UniversalCircuits {
         ExtendedFeaturesRegister.creativeModeTab(() -> CreativeTabs.CIRCUITS_TAB);
     }
 
-    // Credits to witherschat for allowing me to use the universal circuits textures
+    // Credits to diggypt_ for allowing me to use his universal circuits textures
     public static final ItemEntry<Item>[] UNIVERSAL_CIRCUITS = new ItemEntry[GTValues.TIER_COUNT];
 
     static {
