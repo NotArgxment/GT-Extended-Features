@@ -46,7 +46,7 @@ public class ChemicalSkips {
                     .duration(500)
                     .save(provider);
 
-            /* For 3.2.0, WIP
+            /* WIP
             Polyethylene (is this really needed?)
             Polyvynil Chloride
             Polytetrafluoroethylene
