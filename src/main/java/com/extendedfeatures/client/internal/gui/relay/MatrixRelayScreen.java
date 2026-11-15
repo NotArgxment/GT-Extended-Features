@@ -86,6 +86,7 @@ public class MatrixRelayScreen extends Screen {
     private boolean lastLinksLocked = false;
     private Boolean lastPowerTip = null;
     private boolean lastCooldown = false;
+    private boolean lastRangeCooldown = false;
 
     private RelayButton rangeButton;
     private RelayButton linksButton;
@@ -125,7 +126,6 @@ public class MatrixRelayScreen extends Screen {
     }
 
     // Data
-
     public void applySnapshot(RelaySnapshot snapshot) {
         this.state = snapshot;
         clampScroll();
@@ -145,6 +145,13 @@ public class MatrixRelayScreen extends Screen {
                 this.minecraft.level.getGameTime() < state.cooldownEndGameTime();
     }
 
+    private boolean isRangeOnCooldown() {
+        return state != null &&
+                this.minecraft != null &&
+                this.minecraft.level != null &&
+                this.minecraft.level.getGameTime() < state.rangeCooldownEndGameTime();
+    }
+
     @Override
     public void tick() {
         if (machine.isInValid()) {
@@ -157,21 +164,25 @@ public class MatrixRelayScreen extends Screen {
         }
         // Cooldown label counts down locally between syncs
         boolean cooldown = isOnCooldown();
-        if (cooldown || cooldown != lastCooldown) refreshWidgets();
+        boolean rangeCooldown = isRangeOnCooldown();
+        if (cooldown != lastCooldown || rangeCooldown != lastRangeCooldown) refreshWidgets();
+        lastRangeCooldown = rangeCooldown;
         lastCooldown = cooldown;
     }
 
     // Widgets
-
     private void refreshWidgets() {
         if (rangeButton == null) return;
-
         boolean ready = state != null;
         boolean formed = ready && state.status() != RelaySnapshot.Status.UNFORMED;
         boolean hasTx = ready && state.hasTransmissor();
-
-        rangeButton.setMessage(toggleLabel("gui.extendedfeatures.matrix_relay.show_range", ready && state.showRange()));
-        rangeButton.active = formed && hasTx;
+        if (isRangeOnCooldown()) {
+            float seconds = Math.max(0f, (state.rangeCooldownEndGameTime() - this.minecraft.level.getGameTime()) / 20f);
+            rangeButton.setMessage(Component.translatable("gui.extendedfeatures.matrix_relay.cooldown", String.format(Locale.ROOT, "%.1f", seconds)));
+        } else {
+            rangeButton.setMessage(toggleLabel("gui.extendedfeatures.matrix_relay.show_range", ready && state.showRange()));
+        }
+        rangeButton.active = formed && hasTx && !isRangeOnCooldown();
 
         boolean canLinks = ready && (state.hasScannedOnce() || state.showLinks());
         linksButton.setMessage(toggleLabel("gui.extendedfeatures.matrix_relay.show_links", ready && state.showLinks()));
@@ -211,7 +222,6 @@ public class MatrixRelayScreen extends Screen {
     }
 
     // Rendering
-
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partial) {
         renderBackground(g);

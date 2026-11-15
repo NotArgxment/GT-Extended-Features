@@ -5,22 +5,27 @@
 package com.extendedfeatures.client.internal.visual.range;
 
 import com.extendedfeatures.ExtendedFeaturesCore;
-
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.RenderStateShard;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
-import net.minecraftforge.api.distmarker.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.joml.Matrix4f;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Mod.EventBusSubscriber(
         modid = ExtendedFeaturesCore.MOD_ID,
@@ -30,16 +35,35 @@ import java.util.*;
 @OnlyIn(Dist.CLIENT)
 public class RangeRenderer {
 
-    private static final Map<BlockPos, Integer> activeBoxes = new HashMap<>();
+    private static final float TINT_R = 0.35f, TINT_G = 0.65f, TINT_B = 0.85f;
+    private static final float TINT_ALPHA = 0.075f;
 
-    public static void showBoxAtPosition(BlockPos position, int range) {
-        activeBoxes.put(position.immutable(), range);
-    }
+    private static final float EDGE_R = 0.35f, EDGE_G = 0.85f, EDGE_B = 1.00f;
+    private static final float VERTEX_R = 0.75f, VERTEX_G = 0.98f, VERTEX_B = 1.00f;
 
-    public static void hideBoxAtPosition(BlockPos position) {
-        activeBoxes.remove(position.immutable());
-    }
+    private static final float EDGE_ALPHA = 0.35f;
+    private static final float VERTEX_ALPHA_MIN = 0.20f;
+    private static final float VERTEX_ALPHA_MAX = 0.85f;
 
+    private static final double CELL_SIZE = 3.0;
+    private static final double JITTER = 0.7;
+    private static final double EDGE_THICKNESS = 0.03;
+
+    private static final double CULL_DISTANCE_PADDING = 24.0;
+    private static final double MAX_RENDER_DISTANCE = 96.0;
+    private static final double LOD_NEAR_DISTANCE = 32.0;
+    private static final double LOD_FAR_DISTANCE = 96.0;
+    private static final double LOD_MAX_CELL_SIZE = 8.0;
+
+    private static final float FADE_TICKS = 10f;
+
+    private static final double VERTEX_SIZE = 0.09;
+    private static final double VERTEX_CHANCE = 3.0;
+    private static final float SCAN_PERIOD_TICKS = 100f;
+    private static final double SCAN_BAND = 3.0;
+    private static double lastFrameTime = -1;
+
+    private static final Map<BlockPos, BoxEntry> activeBoxes = new HashMap<>();
     private static final Lazy<RenderStateShard.TransparencyStateShard> TRANSLUCENT_TRANSPARENCY = Lazy.of(() ->
             new RenderStateShard.TransparencyStateShard("translucent",
                     () -> {
@@ -81,6 +105,23 @@ public class RangeRenderer {
                     .setCullState(new RenderStateShard.CullStateShard(false))
                     .createCompositeState(true)));
 
+    public static void showBoxAtPosition(BlockPos position, int range) {
+        BlockPos key = position.immutable();
+        BoxEntry e = activeBoxes.get(key);
+        if (e == null) {
+            e = new BoxEntry(range);
+            activeBoxes.put(key, e);
+        } else {
+            e.range = range;
+            e.showing = true;
+        }
+    }
+
+    public static void hideBoxAtPosition(BlockPos position) {
+        BoxEntry e = activeBoxes.get(position.immutable());
+        if (e != null) e.showing = false;
+    }
+
     @SubscribeEvent
     public static void onRenderWorld(RenderLevelStageEvent event) {
         if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS)
@@ -90,6 +131,23 @@ public class RangeRenderer {
         if (mc.player == null || mc.level == null)
             return;
 
+        // Update fade alphas
+        double now = mc.level.getGameTime() + event.getPartialTick();
+        double dt = (lastFrameTime < 0) ? 0 : (now - lastFrameTime);
+        lastFrameTime = now;
+        if (dt < 0) dt = 0;
+        if (dt > 1) dt = 1;
+        java.util.Iterator<java.util.Map.Entry<BlockPos, BoxEntry>> it = activeBoxes.entrySet().iterator();
+        while (it.hasNext()) {
+            java.util.Map.Entry<BlockPos, BoxEntry> e = it.next();
+            BoxEntry b = e.getValue();
+            if (b.showing) {
+                b.alpha = (float) Math.min(1.0, b.alpha + dt / FADE_TICKS);
+            } else {
+                b.alpha = (float) Math.max(0.0, b.alpha - dt / FADE_TICKS);
+                if (b.alpha <= 0f) it.remove();
+            }
+        }
         if (activeBoxes.isEmpty()) return;
 
         PoseStack poseStack = event.getPoseStack();
@@ -114,9 +172,11 @@ public class RangeRenderer {
         double worldMinY = mc.level.getMinBuildHeight();
         double worldMaxY = mc.level.getMaxBuildHeight();
 
-        for (Map.Entry<BlockPos, Integer> entry : activeBoxes.entrySet()) {
+        for (Map.Entry<BlockPos, BoxEntry> entry : activeBoxes.entrySet()) {
             BlockPos pos = entry.getKey();
-            int range = entry.getValue();
+            int range = entry.getValue().range;
+            float boxAlpha = entry.getValue().alpha;
+            if (boxAlpha <= 0f) continue;
 
             double radius = (double) range - 0.01f;
             double x1 = pos.getX() - radius;
@@ -139,38 +199,18 @@ public class RangeRenderer {
             double horizDist = Math.sqrt(horizDistSqr);
             double cellSize = lodCellSize(horizDist);
 
-            renderTint(poseStack.last().pose(), tintBuffer, x1, minY, z1, x2, maxY, z2);
+            renderTint(poseStack.last().pose(), tintBuffer, x1, minY, z1, x2, maxY, z2, boxAlpha);
 
-            renderWallMesh(poseStack.last().pose(), glowBuffer, x1, x2, minY, maxY, true, z1, seed ^ 0x1L, animTime, cellSize);
-            renderWallMesh(poseStack.last().pose(), glowBuffer, x1, x2, minY, maxY, true, z2, seed ^ 0x2L, animTime, cellSize);
-            renderWallMesh(poseStack.last().pose(), glowBuffer, z1, z2, minY, maxY, false, x1, seed ^ 0x3L, animTime, cellSize);
-            renderWallMesh(poseStack.last().pose(), glowBuffer, z1, z2, minY, maxY, false, x2, seed ^ 0x4L, animTime, cellSize);
+            renderWallMesh(poseStack.last().pose(), glowBuffer, x1, x2, minY, maxY, true, z1, seed ^ 0x1L, animTime, cellSize, boxAlpha);
+            renderWallMesh(poseStack.last().pose(), glowBuffer, x1, x2, minY, maxY, true, z2, seed ^ 0x2L, animTime, cellSize, boxAlpha);
+            renderWallMesh(poseStack.last().pose(), glowBuffer, z1, z2, minY, maxY, false, x1, seed ^ 0x3L, animTime, cellSize, boxAlpha);
+            renderWallMesh(poseStack.last().pose(), glowBuffer, z1, z2, minY, maxY, false, x2, seed ^ 0x4L, animTime, cellSize, boxAlpha);
         }
 
         bufferSource.endBatch(TINT_FILL.get());
         bufferSource.endBatch(GLOW_FILL.get());
         poseStack.popPose();
     }
-
-    private static final float TINT_R = 0.35f, TINT_G = 0.65f, TINT_B = 0.85f;
-    private static final float TINT_ALPHA = 0.075f;
-
-    private static final float EDGE_R = 0.35f, EDGE_G = 0.85f, EDGE_B = 1.00f;
-    private static final float VERTEX_R = 0.75f, VERTEX_G = 0.98f, VERTEX_B = 1.00f;
-
-    private static final float EDGE_ALPHA = 0.35f;
-    private static final float VERTEX_ALPHA_MIN = 0.20f;
-    private static final float VERTEX_ALPHA_MAX = 0.85f;
-
-    private static final double CELL_SIZE = 3.0;
-    private static final double JITTER = 0.7;
-    private static final double EDGE_THICKNESS = 0.03;
-
-    private static final double CULL_DISTANCE_PADDING = 24.0;
-    private static final double MAX_RENDER_DISTANCE = 96.0;
-    private static final double LOD_NEAR_DISTANCE = 32.0;
-    private static final double LOD_FAR_DISTANCE = 96.0;
-    private static final double LOD_MAX_CELL_SIZE = 8.0;
 
     private static double clamp(double v, double min, double max) {
         return v < min ? min : Math.min(v, max);
@@ -186,25 +226,20 @@ public class RangeRenderer {
         double t = (horizDist - LOD_NEAR_DISTANCE) / (LOD_FAR_DISTANCE - LOD_NEAR_DISTANCE);
         return CELL_SIZE + t * (LOD_MAX_CELL_SIZE - CELL_SIZE);
     }
-    private static final double VERTEX_SIZE = 0.09;
-    private static final double VERTEX_CHANCE = 3.0;
-
-    private static final float SCAN_PERIOD_TICKS = 100f;
-    private static final double SCAN_BAND = 3.0;
 
     private static void renderTint(Matrix4f matrix, VertexConsumer buffer,
                                    double x1, double y1, double z1,
-                                   double x2, double y2, double z2) {
-        quad(matrix, buffer, true, x1, x2, y1, y2, z1, TINT_R, TINT_G, TINT_B, TINT_ALPHA);
-        quad(matrix, buffer, true, x1, x2, y1, y2, z2, TINT_R, TINT_G, TINT_B, TINT_ALPHA);
-        quad(matrix, buffer, false, z1, z2, y1, y2, x1, TINT_R, TINT_G, TINT_B, TINT_ALPHA);
-        quad(matrix, buffer, false, z1, z2, y1, y2, x2, TINT_R, TINT_G, TINT_B, TINT_ALPHA);
+                                   double x2, double y2, double z2, float boxAlpha) {
+        quad(matrix, buffer, true, x1, x2, y1, y2, z1, TINT_R, TINT_G, TINT_B, TINT_ALPHA * boxAlpha);
+        quad(matrix, buffer, true, x1, x2, y1, y2, z2, TINT_R, TINT_G, TINT_B, TINT_ALPHA * boxAlpha);
+        quad(matrix, buffer, false, z1, z2, y1, y2, x1, TINT_R, TINT_G, TINT_B, TINT_ALPHA * boxAlpha);
+        quad(matrix, buffer, false, z1, z2, y1, y2, x2, TINT_R, TINT_G, TINT_B, TINT_ALPHA * boxAlpha);
     }
 
     private static void renderWallMesh(Matrix4f matrix, VertexConsumer buffer,
                                        double u1, double u2, double y1, double y2,
                                        boolean axisIsX, double fixed,
-                                       long seed, float animTime, double cellSize) {
+                                       long seed, float animTime, double cellSize, float boxAlpha) {
         double width = u2 - u1;
         double height = y2 - y1;
 
@@ -243,21 +278,22 @@ public class RangeRenderer {
                 float brightness = pulseBrightness(seed, i, j, animTime, scanY, cellMidY);
                 float a = EDGE_ALPHA * brightness;
 
-                lineSegment(matrix, buffer, axisIsX, x00u, x00v, x10u, x10v, fixed, a);
-                lineSegment(matrix, buffer, axisIsX, x00u, x00v, x01u, x01v, fixed, a);
-                lineSegment(matrix, buffer, axisIsX, x10u, x10v, x11u, x11v, fixed, a);
-                lineSegment(matrix, buffer, axisIsX, x01u, x01v, x11u, x11v, fixed, a);
+                lineSegment(matrix, buffer, axisIsX, x00u, x00v, x10u, x10v, fixed, a, boxAlpha);
+                lineSegment(matrix, buffer, axisIsX, x00u, x00v, x01u, x01v, fixed, a, boxAlpha);
+                lineSegment(matrix, buffer, axisIsX, x10u, x10v, x11u, x11v, fixed, a, boxAlpha);
+                lineSegment(matrix, buffer, axisIsX, x01u, x01v, x11u, x11v, fixed, a, boxAlpha);
 
                 if (hash(seed, i, j) % 2 == 0) {
-                    lineSegment(matrix, buffer, axisIsX, x00u, x00v, x11u, x11v, fixed, a);
+                    lineSegment(matrix, buffer, axisIsX, x00u, x00v, x11u, x11v, fixed, a, boxAlpha);
                 } else {
-                    lineSegment(matrix, buffer, axisIsX, x10u, x10v, x01u, x01v, fixed, a);
+                    lineSegment(matrix, buffer, axisIsX, x10u, x10v, x01u, x01v, fixed, a, boxAlpha);
                 }
 
                 if (hash(seed, i, j) % (long) VERTEX_CHANCE == 0) {
                     float vBrightness = pulseBrightness(seed, i, j + 100, animTime, scanY, x00v);
-                    vertexDot(matrix, buffer, axisIsX, x00u, x00v, fixed, vBrightness);
+                    vertexDot(matrix, buffer, axisIsX, x00u, x00v, fixed, vBrightness, boxAlpha);
                 }
+
             }
         }
     }
@@ -290,7 +326,7 @@ public class RangeRenderer {
 
     private static void lineSegment(Matrix4f matrix, VertexConsumer buffer, boolean axisIsX,
                                     double u1, double v1, double u2, double v2, double fixed,
-                                    float a) {
+                                    float a, float boxAlpha) {
         double du = u2 - u1, dv = v2 - v1;
         double len = Math.sqrt(du * du + dv * dv);
         if (len < 1e-6) return;
@@ -299,17 +335,17 @@ public class RangeRenderer {
         double px = -dv / len * half;
         double py = du / len * half;
 
-        vertex(matrix, buffer, axisIsX, u1 + px, v1 + py, fixed, EDGE_R, EDGE_G, EDGE_B, a);
-        vertex(matrix, buffer, axisIsX, u2 + px, v2 + py, fixed, EDGE_R, EDGE_G, EDGE_B, a);
-        vertex(matrix, buffer, axisIsX, u2 - px, v2 - py, fixed, EDGE_R, EDGE_G, EDGE_B, a);
-        vertex(matrix, buffer, axisIsX, u1 - px, v1 - py, fixed, EDGE_R, EDGE_G, EDGE_B, a);
+        vertex(matrix, buffer, axisIsX, u1 + px, v1 + py, fixed, EDGE_R, EDGE_G, EDGE_B, a * boxAlpha);
+        vertex(matrix, buffer, axisIsX, u2 + px, v2 + py, fixed, EDGE_R, EDGE_G, EDGE_B, a * boxAlpha);
+        vertex(matrix, buffer, axisIsX, u2 - px, v2 - py, fixed, EDGE_R, EDGE_G, EDGE_B, a * boxAlpha);
+        vertex(matrix, buffer, axisIsX, u1 - px, v1 - py, fixed, EDGE_R, EDGE_G, EDGE_B, a * boxAlpha);
     }
 
     private static void vertexDot(Matrix4f matrix, VertexConsumer buffer, boolean axisIsX,
-                                  double u, double v, double fixed, float brightness) {
+                                  double u, double v, double fixed, float brightness, float boxAlpha) {
         double half = VERTEX_SIZE / 2;
         quad(matrix, buffer, axisIsX, u - half, u + half, v - half, v + half, fixed,
-                VERTEX_R, VERTEX_G, VERTEX_B, brightness);
+                VERTEX_R, VERTEX_G, VERTEX_B, brightness * boxAlpha);
     }
 
     private static void quad(Matrix4f matrix, VertexConsumer buffer, boolean axisIsX,
@@ -330,4 +366,17 @@ public class RangeRenderer {
             buffer.vertex(matrix, (float) fixed, (float) v, (float) u).color(r, g, b, a).endVertex();
         }
     }
+
+    private static class BoxEntry {
+        int range;
+        float alpha;
+        boolean showing;
+
+        BoxEntry(int range) {
+            this.range = range;
+            this.alpha = 0f;
+            this.showing = true;
+        }
+    }
+
 }

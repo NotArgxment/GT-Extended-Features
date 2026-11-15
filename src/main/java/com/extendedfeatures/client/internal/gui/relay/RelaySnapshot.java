@@ -10,7 +10,8 @@ public record RelaySnapshot(BlockPos pos, Status status, boolean workingEnabled,
                             int maintenanceProblems, long consumingEUt, int coolantPerSecond,
                             int activeDataHatches, int transmissorTier, int linkedDataHatches,
                             int maxConnections, List<BlockPos> receptors, boolean showRange,
-                            boolean showLinks, boolean hasScannedOnce, long cooldownEndGameTime) {
+                            boolean showLinks, boolean hasScannedOnce, long cooldownEndGameTime,
+                            long rangeCooldownEndGameTime) {
 
     public enum Status {
         UNFORMED,
@@ -45,6 +46,7 @@ public record RelaySnapshot(BlockPos pos, Status status, boolean workingEnabled,
         buf.writeBoolean(showLinks);
         buf.writeBoolean(hasScannedOnce);
         buf.writeVarLong(cooldownEndGameTime);
+        buf.writeVarLong(rangeCooldownEndGameTime);
     }
 
     public static RelaySnapshot decode(FriendlyByteBuf buf) {
@@ -71,13 +73,14 @@ public record RelaySnapshot(BlockPos pos, Status status, boolean workingEnabled,
         boolean showLinks = buf.readBoolean();
         boolean scanned = buf.readBoolean();
         long cooldownEnd = buf.readVarLong();
+        long rangeCooldownEnd = buf.readVarLong();
 
         return new RelaySnapshot(
                 pos, status, workingEnabled,
                 maintenanceProblems, consuming, coolant,
                 activeHatches, tier, linkedHatches,
                 maxConnections, receptors, showRange,
-                showLinks, scanned, cooldownEnd
+                showLinks, scanned, cooldownEnd, rangeCooldownEnd
         );
     }
 }

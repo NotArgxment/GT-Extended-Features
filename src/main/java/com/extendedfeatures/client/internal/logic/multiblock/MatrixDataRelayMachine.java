@@ -85,6 +85,8 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     @Persisted
     private long lastScanGameTime = Long.MIN_VALUE / 2;
 
+    private long lastRangeToggleGameTime = Long.MIN_VALUE / 2;
+
     private boolean showRangeEnabled = false, showLinksEnabled = false;
 
     private ParticleAnimator linksLoopAnimator;
@@ -265,7 +267,8 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
                 transmissor == null ? -1 : transmissor.getWirelessTier().gtTier,
                 transmissor == null ? 0 : transmissor.getLinkedDataHatchPositions().size(),
                 transmissor == null ? 0 : transmissor.getWirelessTier().maxConnections,
-                receptors, showRangeEnabled, showLinksEnabled, hasScannedOnce(), lastScanGameTime + scanCooldown);
+                receptors, showRangeEnabled, showLinksEnabled, hasScannedOnce(), lastScanGameTime + scanCooldown,
+                lastRangeToggleGameTime + 20);
     }
 
     public void sendStateSyncTo(ServerPlayer player) {
@@ -297,6 +300,10 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     public void toggleShowRange(ServerPlayer player) {
         WirelessOpticalHatch transmissor = requireTransmissor(player);
         if (transmissor == null) return;
+        if (!(getLevel() instanceof ServerLevel serverLevel)) return;
+        long now = serverLevel.getGameTime();
+        if (now - lastRangeToggleGameTime < 20) { sendStateSyncTo(player); return; }
+        lastRangeToggleGameTime = now;
         showRangeEnabled = !showRangeEnabled;
         updateRangeLoop();
     }
