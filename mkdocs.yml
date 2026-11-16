@@ -1,5 +1,5 @@
 site_name: GTM Extended Features
-site_description: Addon for GTCEu Modern 1.20.1 providing quality-of-life changes and tools for modpack developers
+site_description: Addon for GTCEu Modern 1.20.1 providing quality-of-life changes and small tools for modpack developers
 site_url: https://NotArgxment.github.io/GT-Extended-Features/
 repo_url: https://github.com/NotArgxment/GT-Extended-Features
 repo_name: NotArgxment/GT-Extended-Features
@@ -30,9 +30,7 @@ theme:
     - content.action.edit
 
 nav:
-  - Home: index.md
-  - Features: features.md
-  - Installation: installation.md
+  - Home: main.md
 
 markdown_extensions:
   - admonition
