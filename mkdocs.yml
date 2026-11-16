@@ -30,7 +30,10 @@ theme:
     - content.action.edit
 
 nav:
-  - Home: main.md
+  - Main:
+    - Overview: main.md
+    - Addon Features: features.md
+  - Integration: integration.md
 
 markdown_extensions:
   - admonition
