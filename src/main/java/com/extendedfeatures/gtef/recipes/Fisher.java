@@ -1,75 +1,62 @@
 package com.extendedfeatures.gtef.recipes;
 
 import com.extendedfeatures.gtef.misc.MachineRegistry;
+
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
+
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import java.util.function.Consumer;
 
+import static com.extendedfeatures.gtef.misc.FormatUtil.*;
 import static com.extendedfeatures.gtef.misc.RecipeTypes.FISHER;
 
-//            FISHKISSFISHKIS
-//        SFISHKISSFISHKISSFISH            F
-//     ISHK   ISSFISHKISSFISHKISS         FI
-//   SHKISS   FISHKISSFISHKISSFISS       FIS
-// HKISSFISHKISSFISHKISSFISHKISSFISH    KISS
-//   FISHKISSFISHKISSFISHKISSFISHKISS  FISHK
-//       SSFISHKISSFISHKISSFISHKISSFISHKISSF
-//   ISHKISSFISHKISSFISHKISSFISHKISSF  ISHKI
-// SSFISHKISSFISHKISSFISHKISSFISHKIS    SFIS
-//   HKISSFISHKISSFISHKISSFISHKISS       FIS
-//     HKISSFISHKISSFISHKISSFISHK         IS
-//        SFISHKISSFISHKISSFISH            K
-//          ISSFISHKISSFISHK
-// Powered by P-Corp Fishing Cards
 public class Fisher {
 
+    // Powered by P-Corp Fishing Cards
     public static void init(Consumer<FinishedRecipe> provider) {
 
         if (MachineRegistry.FISHER != null) {
-            FISHER.recipeBuilder("mince_meat_c1")
-                    .inputItems(TagPrefix.dustSmall, GTMaterials.Meat, 2)
-                    .inputItems(Items.STRING, 32)
-                    .inputFluids(GTMaterials.Biomass.getFluid(144))
-                    .outputItemsRanged(Items.TROPICAL_FISH, UniformInt.of(1, 8))
-                    .outputItemsRanged(Items.PUFFERFISH, UniformInt.of(1, 8))
-                    .outputItemsRanged(Items.SALMON, UniformInt.of(1, 12))
-                    .outputItemsRanged(Items.COD, UniformInt.of(1, 6))
+            FISHER.recipeBuilder("tiny_pile_meat")
+                    .chancedInput(new ItemStack(Items.FISHING_ROD), 7500, 0)
+                    .inputItems(TagPrefix.dustTiny, GTMaterials.Meat, 2)
+                    .outputItemsRanged(Items.TROPICAL_FISH, ranged(1, 8))
+                    .outputItemsRanged(Items.PUFFERFISH, ranged(1, 8))
+                    .outputItemsRanged(Items.SALMON, ranged(1, 8))
+                    .outputItemsRanged(Items.COD, ranged(1, 8))
                     .circuitMeta(1)
-                    .duration(1500)
+                    .duration(seconds(50))
                     .EUt(GTValues.VA[GTValues.HV])
                     .save(provider);
 
-            FISHER.recipeBuilder("mince_meat_c2")
-                    .inputItems(TagPrefix.dustSmall, GTMaterials.Meat, 2)
-                    .inputItems(Items.STRING, 32)
-                    .inputFluids(GTMaterials.FermentedBiomass.getFluid(144))
-                    .outputItemsRanged(Items.TROPICAL_FISH, UniformInt.of(1, 16))
-                    .outputItemsRanged(Items.PUFFERFISH, UniformInt.of(1, 12))
-                    .outputItemsRanged(Items.SALMON, UniformInt.of(1, 24))
-                    .outputItemsRanged(Items.COD, UniformInt.of(1, 8))
+            FISHER.recipeBuilder("small_pile_meat")
+                    .chancedInput(new ItemStack(Items.FISHING_ROD), 5000, 0)
+                    .inputItems(TagPrefix.dustSmall, GTMaterials.Meat, 4)
+                    .outputItemsRanged(Items.TROPICAL_FISH, ranged(4, 16))
+                    .outputItemsRanged(Items.PUFFERFISH, ranged(4, 16))
+                    .outputItemsRanged(Items.SALMON, ranged(4, 16))
+                    .outputItemsRanged(Items.COD, ranged(4, 16))
                     .circuitMeta(2)
-                    .duration(1200)
-                    .EUt(GTValues.VA[GTValues.HV])
+                    .duration(minutes(3,50))
+                    .EUt(GTValues.VA[GTValues.IV])
                     .save(provider);
 
-            FISHER.recipeBuilder("collagen")
-                    .inputItems(TagPrefix.dustSmall, GTMaterials.Collagen, 2)
-                    .inputItems(Items.STRING, 32)
-                    .inputFluids(GTMaterials.SeedOil.getFluid(288))
-                    .outputItemsRanged(Items.TROPICAL_FISH, UniformInt.of(4, 24))
-                    .outputItemsRanged(Items.PUFFERFISH, UniformInt.of(4, 16))
-                    .outputItemsRanged(Items.SALMON, UniformInt.of(4, 32))
-                    .outputItemsRanged(Items.COD, UniformInt.of(4, 48))
+            FISHER.recipeBuilder("meat_pile")
+                    .chancedInput(new ItemStack(Items.FISHING_ROD), 3500, 0)
+                    .inputItems(TagPrefix.dust, GTMaterials.Meat, 8)
+                    .outputItemsRanged(Items.TROPICAL_FISH, ranged(8, 32))
+                    .outputItemsRanged(Items.PUFFERFISH, ranged(8, 32))
+                    .outputItemsRanged(Items.SALMON, ranged(8, 32))
+                    .outputItemsRanged(Items.COD, ranged(8, 32))
                     .circuitMeta(3)
-                    .duration(1000)
-                    .EUt(GTValues.VA[GTValues.LuV])
+                    .duration(minutes(6,50))
+                    .EUt(GTValues.VA[GTValues.ZPM])
                     .save(provider);
-
         }
+
     }
 }
