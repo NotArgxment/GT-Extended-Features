@@ -102,5 +102,4 @@ dependencies {
         // GT Terminals
         modRuntimeOnly("curse.maven:gtceu-terminals-1423461:8315854")
         }
-
     }
