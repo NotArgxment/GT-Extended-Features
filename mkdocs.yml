@@ -33,6 +33,7 @@ nav:
   - Home: index.md
   - Overview: content/features.md
   - Versions:
+      - About Versions: content/Versions/About_Versions.md
       - 4.0.0: content/Versions/4.0.0.md
       - 3.0.0: content/Versions/3.0.0.md
       - 2.4.0: content/Versions/2.4.0.md
