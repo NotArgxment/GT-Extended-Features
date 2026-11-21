@@ -14,6 +14,9 @@ contains a few utilites for Addon/Modpack developers
 Quick mention that this project could also be great for people that's getting into GTM Addon development! since everything
 is pretty basic and follows most of the native/public APIs GT provides
 
+!!! danger "Work in progress"
+    Please note that this documentation is currently heavily work-in-progress and therefore still missing a lot of content.
+
 ## How to include it
 Through `gradle` dependencies using **Modrinth**:
 ```groovy

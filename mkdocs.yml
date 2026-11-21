@@ -9,16 +9,16 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-7
+        icon: material/toggle-switch
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: deep purple
+      accent: deep purple
       toggle:
-        icon: material/brightness-4
+        icon: material/toggle-switch-off-outline
         name: Switch to light mode
   features:
     - navigation.tabs
@@ -33,14 +33,17 @@ nav:
   - Home: index.md
   - Overview: content/features.md
   - Versions:
-      - 4.0.0: content/versions/4.0.0.md
-      - 3.0.0: content/versions/3.0.0.md
-      - 2.4.0: content/versions/2.4.0.md
-      - 2.3.0: content/versions/2.3.0.md
-      - 2.2.0: content/versions/2.2.0.md
-      - 2.1.0: content/versions/2.1.0.md
-      - 2.0.1: content/versions/2.0.1.md
-      - 2.0.0: content/versions/2.0.0.md
+      - 4.0.0: content/Versions/4.0.0.md
+      - 3.0.0: content/Versions/3.0.0.md
+      - 2.4.0: content/Versions/2.4.0.md
+      - 2.3.0: content/Versions/2.3.0.md
+      - 2.2.0: content/Versions/2.2.0.md
+      - 2.1.0: content/Versions/2.1.0.md
+      - 2.0.1: content/Versions/2.0.1.md
+      - 2.0.0: content/Versions/2.0.0.md
+  - Examples:
+      - Modifiers: content/Miscellaneous/modifiers.md
+      - KubeJS Examples: content/Miscellaneous/recipes.md
 
 markdown_extensions:
   - admonition

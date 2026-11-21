@@ -69,7 +69,7 @@
 
 ### Casing Disassembly
 
-**small note: avoid making new recipes for "machine_disassembly" mode, this recipe type has its own recipe logic already that fetches all singleblock machines and multiblock controllers**
+**small note: try to avoid making new recipes for "machine_disassembly" mode, that recipe type has its own recipe logic that fetches all singleblock machines and multiblock controllers**
 
 ```javascript
     ServerEvents.recipes(event => {

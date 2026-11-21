@@ -1,3 +1,11 @@
+---
+hide:
+  - toc
+title: Home
+---
+
+# How to use `ExtendedModifiers`
+
 ### MACHINE_PARALLEL
 
 Allows parallels without a proper parallel hatch, has configurable duration and energy
@@ -8,7 +16,9 @@ import static com.extendedfeatures.gtef.modifiers.ExtendedModifiers.*;
 
 .recipeModifiers(
     MACHINE_PARALLEL(
-        maxParallels: 8, durationMultiplier: 0.5, energyMultiplier: 0
+        8, // Max Parallels
+        0.5, // Duration Multiplier
+        0 // Energy Multiplier
     )
 )
 ```
@@ -19,7 +29,9 @@ const $ExtendedModifiers = Java.loadClass('com.extendedfeatures.gtef.modifiers.E
 
 .recipeModifiers(
     $ExtendedModifiers.MACHINE_PARALLEL(
-        maxParallels: 8, durationMultiplier: 0.5, energyMultiplier: 0
+        8, // Max Parallels
+        0.5, // Duration Multiplier
+        0 // Energy Multiplier
     )
 )
 ```
@@ -35,7 +47,10 @@ import com.extendedfeatures.gtef.modifiers.ExtendedModifiers;
 
 .recipeModifiers(
     ExtendedModifiers.SCALING_PARALLEL(
-        baseParallels: 1, maxParallels: 64, parallelsPerCycle: 2, durationPerCycle: 0.25 /* +25% */
+        1, // Base parallels
+        64, // Max Parallels
+        2, // Parallels per Cycle
+        0.25 // Duration per Cycle
     )
 )
 ```
@@ -46,7 +61,10 @@ const $ExtendedModifiers = Java.loadClass('com.extendedfeatures.gtef.modifiers.E
 
 .recipeModifiers(
     $ExtendedModifiers.SCALING_PARALLEL(
-        baseParallels: 1, maxParallels: 64, parallelsPerCycle: 2, durationPerCycle: 0.25 /* +25% */
+        1, // Base parallels
+        64, // Max Parallels
+        2, // Parallels per Cycle
+        0.25 // Duration per Cycle
     )
 )
 ```
