@@ -41,11 +41,12 @@ Indexes all crafting, assembler and assembly line recipes for machines/multibloc
 Wireless data bank, needs 144mb/t of PCB Coolant while working.
 
 Each part it allows drains a different EU value:
-- The LuV Transmissor consumes 1A of ZPM Energy `(131.072 EU/t)`
-- The ZPM Transmissor consumes 1A of UV Energy `(524.288 EU/t)`
-- THe UV Transmissor consumes 1A of UHV Energy `(2.097.152 EU/t)`
-- Regular Data Hatches uses `1980 EU/t`
-- Expanded Data Hatches uses `4096 EU/t`
+
+* The LuV Transmissor consumes 1A of ZPM Energy `(131.072 EU/t)`
+* The ZPM Transmissor consumes 1A of UV Energy `(524.288 EU/t)`
+* THe UV Transmissor consumes 1A of UHV Energy `(2.097.152 EU/t)`
+* Regular Data Hatches uses `1980 EU/t`
+* Expanded Data Hatches uses `4096 EU/t`
 
 ### **Large Gas Collector [LGC]**
 Multiblock version of the regular Singleblock Gas Collectors
@@ -55,3 +56,19 @@ Active transformer that can be expanded to 4 rows that allows any inputs or outp
 
 ### **Large Fisher [LF]**
 Allows gathering large quantities of fish
+
+## Singleblocks
+
+### Configurable Cleaning Maintenance Hatch
+Combines a Configurable Maintenance Hatch with the Cleaning Maintenance Hatch, so you can run cleanroom recipes outside the cleanroom slightly faster
+
+### Expanded Data Access Hatches
+Bigger data access hatches
+
+### Wireless Optical Transmissors/Receptor Hatches
+Allows sharing research data to assembly lines without the need of Optical Fiber Pipes, isn't that great?
+
+## Items
+
+### Universal Circuits
+although there is multiple instances where you would say *"Why there's universal circuits in this addon?"*, it's necessary for the **Universal Dissasembly Machine**, to return the player only 1 type of circuit when a recipe is runned
