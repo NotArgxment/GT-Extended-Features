@@ -8,46 +8,4 @@ Addon for GTCEu Modern 1.20.1 designed to provide quality of life changes for th
 
 **Curseforge (3.0.0):** https://www.curseforge.com/minecraft/mc-mods/gtm-extended-features
 
-# Current features for player use
-
-### Multiblocks
-
-- [X]  POC & Batching ABS [RAM]
-- [X]  GCYM Cracker (IV) [LCM]
-- [X]  GCYM Pyro (IV) [LPO]
-- [X]  Chemical Plant type multiblock (1-step lines) [SyVe]
-- [X]  Databank with wireless connections [MDR]
-- [X]  Ways to make wood [IGh & AC]
-- [X]  1-Step Rock Processing [RPP]
-- [X]  GCYM Gas Collector [LGC]
-- [X]  Fisher multiblock [PFCT]
-- [X]  Expandable Active Transformer [PT]
-
-### Machines
-
-- [X]  Expanded Data Hatches [ZPM, UV, UHV]
-- [X]  Wireless Optical T/R Hatches [LuV, ZPM, UV]
-- [X]  Configurable Cleaning Maintenance Hatch
-
-### Items
-
-- [X]  Universal Circuits
-
-### Probably not a foreseeable-addition
-
-- Given the RPP existence: Rock Breaker Multiblock [SM]
-
-### Not Planned
-
-Stuff that was already made by another addons, See:
-
-- GTM Things (Most wireless related features)
-- GTM Utils (Sterile hatch, Spraycan, etc)
-- GT--
-- "MEGA" Multis from GTNH
-- New Materials or Custom Casings, everything is Base GTCEu stuff
-
-### Scrapped/Removed
-- Multiversal Circuits (Uses the previous tier and its own tier)
-- +64A Converters/Laser Hatches/Energy Hatches/Dynamos
-- Parallel Fusion Reactors (Present in <2.4.0 versions)
+### [Check out the wiki!](https://notargxment.github.io/GT-Extended-Features/)
