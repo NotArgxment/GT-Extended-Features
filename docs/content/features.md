@@ -48,10 +48,10 @@ Each part it allows drains a different EU value:
 - Expanded Data Hatches uses `4096 EU/t`
 
 ### **Large Gas Collector [LGC]**
-
+Multiblock version of the regular Singleblock Gas Collectors
 
 ### **Power Transformer [PwT]**
-Active transformer 
+Active transformer that can be expanded to 4 rows that allows any inputs or outputs
 
 ### **Large Fisher [LF]**
-
+Allows gathering large quantities of fish
