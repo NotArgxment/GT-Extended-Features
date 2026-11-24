@@ -111,6 +111,10 @@ public class Tooltips {
             Component.translatable("extendedfeatures.large_fisher.tooltip.2")
     );
 
+    public static final List<Component> DOCA = List.of(
+            Component.translatable("extendedfeatures.dual_oversized_computation_array.tooltip")
+    );
+
     public static final BiConsumer<ItemStack, List<Component>> ActiveTransformer =
             (stack, list) -> list.add(
                     Component.translatable("gtceu.machine.active_transformer.tooltip.2")
