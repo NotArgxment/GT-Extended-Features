@@ -625,7 +625,7 @@ public class Multiblocks {
     static {
         if (MultiblocksConfig.DOCA || GTCEu.isDataGen()) {
             DUAL_OVERSIZED_COMPUTER_ARRAY = ExtendedFeaturesRegister
-                    .multiblock("dual_oversized_computer_matrix", DualOversizedComputationArray::new)
+                    .multiblock("dual_oversized_computer_array", DualOversizedComputationArray::new)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .tooltips(Tooltips.DOCA)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)

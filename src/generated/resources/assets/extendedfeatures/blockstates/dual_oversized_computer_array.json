@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extendedfeatures:block/machine/dual_oversized_computer_array",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extendedfeatures:block/machine/dual_oversized_computer_array"
+    },
+    "facing=south": {
+      "model": "extendedfeatures:block/machine/dual_oversized_computer_array",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extendedfeatures:block/machine/dual_oversized_computer_array",
+      "y": 270
+    }
+  }
+}
