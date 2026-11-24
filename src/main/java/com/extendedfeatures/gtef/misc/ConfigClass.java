@@ -118,14 +118,14 @@ public class ConfigClass {
 
         @Configurable
         @Configurable.Comment({
-                "Whether the Fisher Multiblock Center is Enabled",
+                "Whether the Fisher Multiblock is Enabled",
                 "Default = True"
         })
         public boolean Fisher = true;
 
         @Configurable
         @Configurable.Comment({
-                "Whether the Dual Oversized Computation Array Center is Enabled",
+                "Whether the Dual Oversized Computation Array is Enabled",
                 "Default = True"
         })
         public boolean DOCA = true;
