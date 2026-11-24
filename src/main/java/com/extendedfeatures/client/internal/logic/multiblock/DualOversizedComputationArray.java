@@ -183,9 +183,9 @@ public class DualOversizedComputationArray extends HPCAMachine {
             int sizeW = getSize().width, h = getSize().height;
             drawFrames(graph, posX, y, sizeW, h, OUTLINE_COLOR);
 
-            double p = Math.max(0, Math.min(1, progress.getAsDouble()));
-            if (p > 0) {
-                int fillW = (int) Math.ceil(sizeW * p);
+            double prog = Math.max(0, Math.min(1, progress.getAsDouble()));
+            if (prog > 0) {
+                int fillW = (int) Math.ceil(sizeW * prog);
                 int x0 = mirrored ? posX + sizeW - fillW : posX;
                 graph.enableScissor(x0, y, x0 + fillW, y + h);
                 drawFrames(graph, posX, y, sizeW, h, FILL_COLOR);
