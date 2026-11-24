@@ -178,13 +178,7 @@ public class LangManager {
         provider.add("extendedfeatures.power_transformer.tooltip.0", "§fAlternative Active Transformer");
         provider.add("extendedfeatures.power_transformer.tooltip.1", "§7Can be extended up to 4 rows");
 
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.0", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.1", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.2", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.3", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.4", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.5", "");
-        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.6", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip", "§7A highly boosted High Performance Computation Array!");
 
     }
 }
