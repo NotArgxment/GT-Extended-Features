@@ -28,6 +28,7 @@ public class LangManager {
         replace(provider, "block.extendedfeatures.matrix_data_relay", "Matrix Data Relay [MDR]");
         replace(provider, "block.extendedfeatures.power_transformer", "Power Transformer [PT]");
         replace(provider, "block.extendedfeatures.large_fisher", "Large Fisher Tank [LFT]");
+        replace(provider, "block.extendedfeatures.dual_oversized_computer_array", "Dual Oversized Computer Array [DOCA]");
 
         // Expanded Data Hatches
         replace(provider, "block.extendedfeatures.zpm_data_access_hatch", "Elite Data Access Hatch");
@@ -176,6 +177,14 @@ public class LangManager {
 
         provider.add("extendedfeatures.power_transformer.tooltip.0", "§fAlternative Active Transformer");
         provider.add("extendedfeatures.power_transformer.tooltip.1", "§7Can be extended up to 4 rows");
+
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.0", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.1", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.2", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.3", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.4", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.5", "");
+        provider.add("extendedfeatures.dual_oversized_computation_array.tooltip.6", "");
 
     }
 }

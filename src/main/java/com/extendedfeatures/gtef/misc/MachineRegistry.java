@@ -26,10 +26,11 @@ public class MachineRegistry {
             LARGE_GAS_COLLECTOR,
             MATRIX_DATA_RELAY,
             POWER_TRANSFORMER,
-            FISHER;
+            FISHER,
+            DUAL_OVERSIZED_COMPUTER_ARRAY;
 
     // =====================================
-    //        Singleblocks/Machines
+    //        Singleblocks/MultiParts
     // =====================================
 
     // Configurable Cleaning Maintenance Hatch

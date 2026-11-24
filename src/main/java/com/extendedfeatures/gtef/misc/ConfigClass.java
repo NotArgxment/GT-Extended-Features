@@ -24,7 +24,7 @@ public class ConfigClass {
     public MultiblocksToggles MultiblocksConfig = new MultiblocksToggles();
 
     @Configurable
-    @Configurable.Comment("ConfigClass Toggles for Normal Machines")
+    @Configurable.Comment("ConfigClass Toggles for Normal MultiParts")
     public MachineToggles MachinesConfig = new MachineToggles();
 
     public static class MultiblocksToggles {
@@ -122,6 +122,13 @@ public class ConfigClass {
                 "Default = True"
         })
         public boolean Fisher = true;
+
+        @Configurable
+        @Configurable.Comment({
+                "Whether the Dual Oversized Computation Array Center is Enabled",
+                "Default = True"
+        })
+        public boolean DOCA = true;
 
     }
 

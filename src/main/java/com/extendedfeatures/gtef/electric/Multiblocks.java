@@ -2,11 +2,13 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
+import com.extendedfeatures.client.internal.logic.multiblock.DOCAMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherRenderer;
 import com.extendedfeatures.gtef.misc.*;
 import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
 import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
 
+import com.extendedfeatures.gtef.modifiers.ExtendedModifiers;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine;
@@ -49,7 +51,9 @@ public class Multiblocks {
                     .recipeModifiers(
                             GTRecipeModifiers.OC_PERFECT,
                             GTRecipeModifiers.BATCH_MODE,
-                            GTRecipeModifiers::ebfOverclock)
+                            GTRecipeModifiers::ebfOverclock,
+                            ExtendedModifiers.SCALLING_PARALLELS(4, 32, 1, 0.5)
+                    )
                     .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
                     .pattern(definition -> FactoryBlockPattern.start()
                             .aisle("   CCC   ", "   XXX   ", "   XXX   ", "   EEE   ", "   XXX   ", "   XXX   ", "   CCC   ")
@@ -613,6 +617,41 @@ public class Multiblocks {
                                     GTCEu.id("block/multiblock/gcym/large_assembler"))
                             .andThen(b -> b.addDynamicRenderer(FisherRenderer::kelpAndMossRender)))
                     .hasBER(true)
+                    .allowExtendedFacing(false)
+                    .register();
+        }
+    }
+
+    static {
+        if (MultiblocksConfig.DOCA || GTCEu.isDataGen()) {
+            DUAL_OVERSIZED_COMPUTER_ARRAY = ExtendedFeaturesRegister
+                    .multiblock("dual_oversized_computer_matrix", DOCAMachine::new)
+                    .rotationState(RotationState.NON_Y_AXIS)
+                    .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+                    .appearanceBlock(GTBlocks.COMPUTER_CASING)
+                    .pattern(definition -> FactoryBlockPattern.start()
+                            .aisle("EEE", "CCC", "CCC", "CCC", "CCC", "CCC", "EEE")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("VEV", "XVX", "XVX", "XVX", "XVX", "XVX", "VEV")
+                            .aisle("EEE", "CCC", "CCC", "C@C", "CCC", "CCC", "EEE")
+                            .where('@', controller(blocks(definition.getBlock())))
+                            .where('E', blocks(ADVANCED_COMPUTER_CASING.get()))
+                            .where('V', blocks(COMPUTER_HEAT_VENT.get()))
+                            .where('C', blocks(COMPUTER_CASING.get())
+                                    .or(abilities(PartAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(2, 1))
+                                    .or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1))
+                                    .or(abilities(PartAbility.COMPUTATION_DATA_TRANSMISSION).setExactLimit(1))
+                                    .or(autoAbilities(true, false, false)))
+                            .where('X', abilities(PartAbility.HPCA_COMPONENT))
+                            .build())
+                    .workableCasingModel(
+                            GTCEu.id("block/casings/hpca/computer_casing/top"),
+                            GTCEu.id("block/multiblock/hpca"))
                     .allowExtendedFacing(false)
                     .register();
         }
