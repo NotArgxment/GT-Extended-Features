@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.gui.relay;
 
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelay;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 import com.extendedfeatures.client.internal.visual.network.RelayActionPacket;
 import com.extendedfeatures.client.internal.visual.network.RelayActionPacket.Action;
@@ -76,7 +76,7 @@ public class MatrixRelayScreen extends Screen {
 
     private static final int POLL_INTERVAL = 10;
 
-    private final MatrixDataRelayMachine machine;
+    private final MatrixDataRelay machine;
     @Getter
     private final BlockPos relayPos;
 
@@ -96,7 +96,7 @@ public class MatrixRelayScreen extends Screen {
     private int left;
     private int top;
 
-    public MatrixRelayScreen(MatrixDataRelayMachine machine) {
+    public MatrixRelayScreen(MatrixDataRelay machine) {
         super(machine.getBlockState().getBlock().getName());
         this.machine = machine;
         this.relayPos = machine.getPos();

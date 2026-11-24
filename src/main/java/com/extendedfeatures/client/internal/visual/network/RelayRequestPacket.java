@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.visual.network;
 
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelay;
 import com.extendedfeatures.client.internal.visual.PacketManager;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -34,10 +34,10 @@ public class RelayRequestPacket {
         return new RelayRequestPacket(buf.readBlockPos());
     }
 
-    static MatrixDataRelayMachine resolve(ServerPlayer player, BlockPos pos) {
+    static MatrixDataRelay resolve(ServerPlayer player, BlockPos pos) {
         if (!player.level().isLoaded(pos)) return null;
         if (player.distanceToSqr(Vec3.atCenterOf(pos)) > MAX_DISTANCE_SQR) return null;
-        return MetaMachine.getMachine(player.level(), pos) instanceof MatrixDataRelayMachine relay ? relay : null;
+        return MetaMachine.getMachine(player.level(), pos) instanceof MatrixDataRelay relay ? relay : null;
     }
 
     public static void handle(RelayRequestPacket msg, Supplier<NetworkEvent.Context> ctxSupplier) {
@@ -48,7 +48,7 @@ public class RelayRequestPacket {
             ServerPlayer player = ctx.getSender();
             if (player == null) return;
 
-            MatrixDataRelayMachine relay = resolve(player, msg.pos);
+            MatrixDataRelay relay = resolve(player, msg.pos);
             if (relay != null) {
                 PacketManager.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player),
                         new RelayStatePacket(relay.createSnapshot()));

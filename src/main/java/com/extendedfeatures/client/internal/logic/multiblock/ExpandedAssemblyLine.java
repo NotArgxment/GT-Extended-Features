@@ -43,13 +43,13 @@ import java.util.Map;
  * <p>
  * This does not mean that you need only 1 input for items and fluids, layers for making recipes are still required
  */
-public class ExpandedAssemblyLineMachine extends AssemblyLineMachine {
+public class ExpandedAssemblyLine extends AssemblyLineMachine {
 
-    public ExpandedAssemblyLineMachine(IMachineBlockEntity holder, boolean allowCircuitSlots) {
+    public ExpandedAssemblyLine(IMachineBlockEntity holder, boolean allowCircuitSlots) {
         super(holder, allowCircuitSlots);
     }
 
-    public ExpandedAssemblyLineMachine(IMachineBlockEntity holder) {
+    public ExpandedAssemblyLine(IMachineBlockEntity holder) {
         this(holder, false);
     }
 

@@ -66,13 +66,13 @@ import static com.gregtechceu.gtceu.common.data.GTMaterials.PCBCoolant;
 import static com.gregtechceu.gtceu.utils.GTTransferUtils.drainFluidAccountNotifiableList;
 import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.*;
 
-public class MatrixDataRelayMachine extends DataBankMachine implements IInteractedMachine {
+public class MatrixDataRelay extends DataBankMachine implements IInteractedMachine {
 
     public static final int hatchAmpUsage = 1, expandedDataHatchUsage = 8192, coolantAmount = 144, consuptionInterval = 20;
     private static final int durationTicks = 200, intervalTicks = 4, scanCooldown = 100, resyncInterval = 100;
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
-            MatrixDataRelayMachine.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER
+            MatrixDataRelay.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER
     );
 
     private final List<ParticleAnimator> particleAnimators = new ArrayList<>();
@@ -94,7 +94,7 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     private int rangeResyncCounter = 0;
     private BlockPos rangeShownAt;
 
-    public MatrixDataRelayMachine(IMachineBlockEntity holder) {
+    public MatrixDataRelay(IMachineBlockEntity holder) {
         super(holder);
     }
 
@@ -557,7 +557,7 @@ public class MatrixDataRelayMachine extends DataBankMachine implements IInteract
     private boolean validTarget(DataAccessHatchMachine dataHatch) {
         if (!ConfigClass.INSTANCE.DataHatchLinkingBehavior) return true;
         return ((IMultiPart) dataHatch).getControllers().stream()
-                .anyMatch(controller -> controller instanceof MatrixDataRelayMachine);
+                .anyMatch(controller -> controller instanceof MatrixDataRelay);
     }
 
     private boolean isWithinCubeRange(BlockPos candidate, BlockPos center, int range) {

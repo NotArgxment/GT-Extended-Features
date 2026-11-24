@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.visual.network;
 
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelay;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -45,7 +45,7 @@ public class RelayActionPacket {
             ServerPlayer player = ctx.getSender();
             if (player == null) return;
 
-            MatrixDataRelayMachine relay = RelayRequestPacket.resolve(player, msg.pos);
+            MatrixDataRelay relay = RelayRequestPacket.resolve(player, msg.pos);
             if (relay == null) return;
 
             switch (msg.action) {

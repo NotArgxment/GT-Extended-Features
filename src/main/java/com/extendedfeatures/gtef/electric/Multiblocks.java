@@ -2,11 +2,11 @@ package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
 import com.extendedfeatures.ExtendedFeaturesCore;
-import com.extendedfeatures.client.internal.logic.multiblock.DOCAMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.DualOversizedComputationArray;
 import com.extendedfeatures.client.internal.logic.multiblock.fisher.FisherRenderer;
 import com.extendedfeatures.gtef.misc.*;
-import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLineMachine;
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.ExpandedAssemblyLine;
+import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelay;
 
 import com.extendedfeatures.gtef.modifiers.ExtendedModifiers;
 import com.gregtechceu.gtceu.GTCEu;
@@ -238,7 +238,7 @@ public class Multiblocks {
     static {
         if (MultiblocksConfig.ExpandedAssemblyLine || GTCEu.isDataGen()) {
             EXPANDED_ASSEMBLY_LINE = ExtendedFeaturesRegister
-                    .multiblock("expanded_assembly_line", ExpandedAssemblyLineMachine::new)
+                    .multiblock("expanded_assembly_line", ExpandedAssemblyLine::new)
                     .rotationState(RotationState.ALL)
                     .tooltips(Tooltips.ExpandedAssemblyLine)
                     .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
@@ -502,7 +502,7 @@ public class Multiblocks {
     static {
         if (MultiblocksConfig.MatrixDataRelay || GTCEu.isDataGen()) {
             MATRIX_DATA_RELAY = ExtendedFeaturesRegister
-                    .multiblock("matrix_data_relay", MatrixDataRelayMachine::new)
+                    .multiblock("matrix_data_relay", MatrixDataRelay::new)
                     .tooltips(Tooltips.MatrixDataRelay)
                     .rotationState(RotationState.NON_Y_AXIS)
                     .recipeType(GTRecipeTypes.DUMMY_RECIPES)

@@ -1,6 +1,6 @@
 package com.extendedfeatures.client.internal.gui.relay;
 
-import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelayMachine;
+import com.extendedfeatures.client.internal.logic.multiblock.MatrixDataRelay;
 
 import net.minecraft.client.Minecraft;
 
@@ -8,7 +8,7 @@ public final class RelayScreenHandler {
 
     private RelayScreenHandler() {}
 
-    public static void open(MatrixDataRelayMachine machine) {
+    public static void open(MatrixDataRelay machine) {
         Minecraft.getInstance().setScreen(new MatrixRelayScreen(machine));
     }
 
