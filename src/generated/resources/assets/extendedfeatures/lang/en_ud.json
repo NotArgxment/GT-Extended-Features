@@ -2,7 +2,8 @@
   "block.extendedfeatures.advanced_conservatory": "ʎɹoʇɐʌɹǝsuoƆ pǝɔuɐʌpⱯ",
   "block.extendedfeatures.articial_conservatory": "]ƆⱯ[ ʎɹoʇɐʌɹǝsuoƆ ןɐıɔıɟıʇɹⱯ",
   "block.extendedfeatures.configurable_cleaning_maintenance_hatch": "ɥɔʇɐH ǝɔuɐuǝʇuıɐW buıuɐǝןƆ ǝןqɐɹnbıɟuoƆ",
-  "block.extendedfeatures.dual_oversized_computer_matrix": "]ⱯƆOᗡ[ xıɹʇɐW ɹǝʇndɯoƆ pǝzısɹǝʌO ןɐnᗡ",
+  "block.extendedfeatures.dual_oversized_computer_array": "]ⱯƆOᗡ[ ʎɐɹɹⱯ ɹǝʇndɯoƆ pǝzısɹǝʌO ןɐnᗡ",
+  "block.extendedfeatures.dual_oversized_computer_matrix": "xıɹʇɐW ɹǝʇndɯoƆ pǝzısɹǝʌO ןɐnᗡ",
   "block.extendedfeatures.expanded_assembly_line": "]ꞀⱯƎ[ ǝuıꞀ ʎןqɯǝssⱯ pǝpuɐdxƎ",
   "block.extendedfeatures.industrial_greenhouse": "]⅁I[ ǝsnoɥuǝǝɹ⅁ ןɐıɹʇsnpuI",
   "block.extendedfeatures.large_cracking_machine": "]WƆꞀ[ ǝuıɥɔɐW buıʞɔɐɹƆ ǝbɹɐꞀ",
@@ -50,6 +51,7 @@
   "extendedfeatures.chemical_skips": "uoıʇɔnpǝᴚ ןɐɔıɯǝɥƆ",
   "extendedfeatures.component_disassembly": "ʎןqɯǝssɐsıᗡ ʇuǝuodɯoƆ",
   "extendedfeatures.configurable_cleaning_maintenance_hatch": "¡buıuɐǝןƆ ɥʇıʍ sʞɔoןqıʇןnɯ uo ǝɔuɐuǝʇuıɐɯ ǝןqɐɹnbıɟuoɔ ɹoℲɟ§",
+  "extendedfeatures.dual_oversized_computation_array.tooltip": "¡ʎɐɹɹⱯ uoıʇɐʇndɯoƆ ǝɔuɐɯɹoɟɹǝԀ ɥbıH pǝʇsooq ʎןɥbıɥ Ɐㄥ§",
   "extendedfeatures.expanded_assembly_line.tooltip.0": "sǝɥɔʇɐH buıʞɔoʇS ᄅƎⱯp§ ɟo ǝbɐʇuɐʌpɐ sǝʞɐʇ ʇɐɥʇ ǝuıꞀ ʎןqɯǝssⱯ uⱯㄥ§",
   "extendedfeatures.expanded_assembly_line.tooltip.1": "sʇnduI pǝɹǝpɹOɔ§ ʇnoɥʇıʍ sǝdıɔǝɹ sɯɹoɟɹǝԀɟ§",
   "extendedfeatures.expanded_assembly_line.tooltip.2": "uoıʇdǝɔǝᴚ ɐʇɐᗡ ɹoɟ ɟ§ɹoʇdǝɔǝᴚ ןɐɔıʇdO ssǝןǝɹıMɐ§ ɐ sǝɹınbǝᴚɟ§",
@@ -147,5 +149,5 @@
   "item.extendedfeatures.zpm_universal_circuit": "ʇınɔɹıƆ ןɐsɹǝʌıu∩ɹ§ WԀZɔ§",
   "itemGroup.extendedfeatures.creative_tab_1": "sʞɔoןqıʇןnW ℲƎ:⟘⅁",
   "itemGroup.extendedfeatures.creative_tab_2": "sʇınɔɹıƆ ןɐsɹǝʌıu∩ ℲƎ:⟘⅁",
-  "itemGroup.extendedfeatures.creative_tab_3": "sǝuıɥɔɐW ℲƎ:⟘⅁"
+  "itemGroup.extendedfeatures.creative_tab_3": "sʇɹɐԀıʇןnW ℲƎ:⟘⅁"
 }
