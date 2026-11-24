@@ -57,7 +57,7 @@ public class CreativeTabs {
                                             ExtendedFeaturesRegister))
                             .title(ExtendedFeaturesRegister.addLang(
                                     "itemGroup", ExtendedFeaturesCore.id("creative_tab_3"),
-                                    "GT:EF Machines")
+                                    "GT:EF MultiParts")
                             )
                             .icon(GTMachines.CLEANING_MAINTENANCE_HATCH::asStack)
                             .build()

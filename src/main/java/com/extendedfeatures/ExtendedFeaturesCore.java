@@ -2,10 +2,10 @@ package com.extendedfeatures;
 
 import com.extendedfeatures.client.integration.GTCEuTerminalsPlugin;
 import com.extendedfeatures.client.ClientRenders;
+import com.extendedfeatures.gtef.electric.MultiParts;
 import com.extendedfeatures.gtef.misc.RecipeTypes;
 import com.extendedfeatures.gtef.misc.ConfigClass;
 import com.extendedfeatures.client.internal.visual.PacketManager;
-import com.extendedfeatures.gtef.electric.Machines;
 import com.extendedfeatures.gtef.electric.Multiblocks;
 import com.extendedfeatures.gtef.misc.UniversalCircuits;
 
@@ -102,7 +102,7 @@ public class ExtendedFeaturesCore {
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         Multiblocks.init();
-        Machines.init();
+        MultiParts.init();
     }
 
 }

@@ -22,7 +22,7 @@ import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_FORMED;
 
-public class Machines {
+public class MultiParts {
 
     static {
         ExtendedFeaturesRegister.creativeModeTab(() -> CreativeTabs.MACHINES_TAB);
