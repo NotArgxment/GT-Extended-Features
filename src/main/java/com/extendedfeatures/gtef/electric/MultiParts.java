@@ -21,6 +21,7 @@ import static com.extendedfeatures.ExtendedFeaturesCore.ExtendedFeaturesRegister
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_FORMED;
+import static com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_TAPED;
 
 public class MultiParts {
 
@@ -48,6 +49,7 @@ public class MultiParts {
                     .rotationState(RotationState.ALL)
                     .abilities(PartAbility.MAINTENANCE)
                     .modelProperty(IS_FORMED, false)
+                    .modelProperty(IS_TAPED, false)
                     .overlayTieredHullModel("configurable_cleaning_maintenance_hatch")
                     .register();
         }
