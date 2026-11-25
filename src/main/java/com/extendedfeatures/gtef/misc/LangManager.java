@@ -118,6 +118,8 @@ public class LangManager {
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.receptor", "§7Gets linked automatically when scanned by a Wireless Transmissor of the same tier");
         replace(provider, "extendedfeatures.machine.wireless_optical_hatch.tooltip.scan", "§7Links to nearby Wireless Receptors and Data Access Hatches across its range");
 
+        // Just for the funnies, personally i don't like that longass name
+        replace(provider, "item.gtceu.duct_tape", "American Tape");
     }
 
     private static void Tooltips(RegistrateLangProvider provider) {
@@ -166,14 +168,14 @@ public class LangManager {
         provider.add("extendedfeatures.large_fisher.tooltip.2", "§fAllows §3Parallel Hatches §fand has §9Batching §fenabled");
 
         provider.add("extendedfeatures.matrix_data_relay.tooltip.1", "§7Your personal §fWireless Databank");
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 6 Data Access Hatches");
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.3", "§7Each tier of Wireless Transmissors has an energy usage of 1A from the next tier:");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.2", "§7This structure allows a maximum of 24 Data Access Hatches");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.3", "§7Each tier of Wireless Transmissors uses 1 Energy Amp of the next tier:");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.4", "   §dLuV §fWireless Transmissor: §c131.072 §fEU/t");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.5", "   §cZPM §fWireless Transmissor: §3524.288 §fEU/t");
         provider.add("extendedfeatures.matrix_data_relay.tooltip.6", "   §3UV §fWireless Transmissor: §42.097.152 §fEU/t");
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.7", "   §7Uses §f1920 EU/t §7per §fData Access Hatch");
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.8", "   §7Uses §98192 EU/t §7per §fExpanded Data Access Hatch");
-        provider.add("extendedfeatures.matrix_data_relay.tooltip.9", "§7In order to work, a constant supply of §fPCB Coolant §7is required");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.7", "§7Each §fRegular Data Access Hatch §7uses §61920 EU/t");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.8", "§7Each §9Expanded Data Access Hatch §7uses §54096 EU/t");
+        provider.add("extendedfeatures.matrix_data_relay.tooltip.9", "§7While working, 144mb/t of PCB Coolant has to be supplied to keep the Matrix Data Relay running");
 
         provider.add("extendedfeatures.power_transformer.tooltip.0", "§fAlternative Active Transformer");
         provider.add("extendedfeatures.power_transformer.tooltip.1", "§7Can be extended up to 4 rows");
