@@ -68,7 +68,7 @@ import static net.minecraftforge.fluids.capability.IFluidHandler.FluidAction.*;
 
 public class MatrixDataRelay extends DataBankMachine implements IInteractedMachine {
 
-    public static final int hatchAmpUsage = 1, expandedDataHatchUsage = 8192, coolantAmount = 144, consuptionInterval = 20;
+    public static final int hatchAmpUsage = 1, expandedDataHatchUsage = 4096, coolantAmount = 144, consuptionInterval = 20;
     private static final int durationTicks = 200, intervalTicks = 4, scanCooldown = 100, resyncInterval = 100;
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
