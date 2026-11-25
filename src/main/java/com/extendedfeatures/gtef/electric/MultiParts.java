@@ -1,11 +1,13 @@
 package com.extendedfeatures.gtef.electric;
 
 import com.extendedfeatures.CreativeTabs;
+import com.extendedfeatures.ExtendedFeaturesCore;
 import com.extendedfeatures.client.internal.logic.machine.ConfigurableCleanroomHatch;
 import com.extendedfeatures.client.internal.logic.machine.ExpandedDataAccessHatch;
 import com.extendedfeatures.client.internal.logic.machine.WirelessOpticalHatch;
 import com.extendedfeatures.gtef.misc.ExtendedAbilities;
 
+import com.extendedfeatures.gtef.misc.ExtendedMachineModels;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -50,7 +52,7 @@ public class MultiParts {
                     .abilities(PartAbility.MAINTENANCE)
                     .modelProperty(IS_FORMED, false)
                     .modelProperty(IS_TAPED, false)
-                    .overlayTieredHullModel("configurable_cleaning_maintenance_hatch")
+                    .model(ExtendedMachineModels.createTapedOverlay(ExtendedFeaturesCore.id("block/machine/part/configurable_cleaning_maintenance_hatch")))
                     .register();
         }
     }

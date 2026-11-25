@@ -23,6 +23,7 @@
         "parent": "extendedfeatures:block/machine/part/configurable_cleaning_maintenance_hatch",
         "textures": {
           "bottom": "gtceu:block/casings/voltage/hv/bottom",
+          "overlay_2": "extendedfeatures:block/overlay/machine/configurable_cleaning_maintenance_hatch_taped",
           "side": "gtceu:block/casings/voltage/hv/side",
           "top": "gtceu:block/casings/voltage/hv/top"
         }
@@ -43,6 +44,7 @@
         "parent": "extendedfeatures:block/machine/part/configurable_cleaning_maintenance_hatch",
         "textures": {
           "bottom": "gtceu:block/casings/voltage/hv/bottom",
+          "overlay_2": "extendedfeatures:block/overlay/machine/configurable_cleaning_maintenance_hatch_taped",
           "side": "gtceu:block/casings/voltage/hv/side",
           "top": "gtceu:block/casings/voltage/hv/top"
         }
